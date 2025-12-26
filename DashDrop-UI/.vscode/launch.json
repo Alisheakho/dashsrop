@@ -1,0 +1,68 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "dash_drop",
+            "cwd": "dash_drop",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "dash_drop (profile mode)",
+            "cwd": "dash_drop",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "dash_drop (release mode)",
+            "cwd": "dash_drop",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "dash_drop_dashboard",
+            "cwd": "dash_drop_dashboard",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "dash_drop_dashboard (profile mode)",
+            "cwd": "dash_drop_dashboard",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "dash_drop_dashboard (release mode)",
+            "cwd": "dash_drop_dashboard",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "dashdrop_uikit",
+            "cwd": "dash_drop_dashboard/packages/dashdrop_uikit",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "dashdrop_uikit (profile mode)",
+            "cwd": "dash_drop_dashboard/packages/dashdrop_uikit",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "dashdrop_uikit (release mode)",
+            "cwd": "dash_drop_dashboard/packages/dashdrop_uikit",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        }
+    ]
+}
