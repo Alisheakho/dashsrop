@@ -22,7 +22,7 @@ class GetDriverEvent extends DriverEvent {
 class CreateDriverEvent extends DriverEvent {
   final String firstName;
   final String lastName;
-  final String email;
+  final String userID;
   final String phoneNumber;
   final int gender;
   final String birthdate;
@@ -35,7 +35,7 @@ class CreateDriverEvent extends DriverEvent {
   CreateDriverEvent(
       {required this.firstName,
       required this.lastName,
-      required this.email,
+      required this.userID,
       required this.phoneNumber,
       required this.gender,
       required this.birthdate,
@@ -49,7 +49,7 @@ class CreateDriverEvent extends DriverEvent {
   List<Object?> get props => [
         firstName,
         lastName,
-        email,
+        userID,
         phoneNumber,
         gender,
         birthdate,
@@ -65,7 +65,7 @@ class UpdateDriverEvent extends DriverEvent {
   final int id;
   final String firstName;
   final String lastName;
-  final String email;
+  final String userID;
   final String phoneNumber;
   final int gender;
   final String birthdate;
@@ -79,7 +79,7 @@ class UpdateDriverEvent extends DriverEvent {
       {required this.id,
       required this.firstName,
       required this.lastName,
-      required this.email,
+      required this.userID,
       required this.phoneNumber,
       required this.gender,
       required this.birthdate,
@@ -93,7 +93,7 @@ class UpdateDriverEvent extends DriverEvent {
   List<Object?> get props => [
         firstName,
         lastName,
-        email,
+        userID,
         phoneNumber,
         gender,
         birthdate,
@@ -114,7 +114,6 @@ class DeleteDriverEvent extends DriverEvent {
 
   @override
   List<Object?> get props => [id];
-
 }
 
-class GetRegVegEvent extends DriverEvent{}
+class GetRegVegEvent extends DriverEvent {}

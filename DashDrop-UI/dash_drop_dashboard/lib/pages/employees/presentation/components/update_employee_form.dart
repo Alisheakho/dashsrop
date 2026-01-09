@@ -27,7 +27,7 @@ class UpdateEmployeeForm extends StatelessWidget {
 
   String? firstName;
   String? lastName;
-  String? email;
+  String? userID;
   String? phoneNumber;
   String? title;
   Gender? gender;
@@ -53,14 +53,17 @@ class UpdateEmployeeForm extends StatelessWidget {
     'HR-Customers-Support': ['Can Manage Reports']
   };
 
-
   ValueNotifier<String> checkedNotifier = ValueNotifier('');
 
-
   List<String> gnd = ['Male', 'Female'];
-  List<String> ttl = ['Admin', 'Drivers-Manager', 'HR-Manager','HR-Customers-Support'];
+  List<String> ttl = [
+    'Admin',
+    'Drivers-Manager',
+    'HR-Manager',
+    'HR-Customers-Support'
+  ];
 
-  RegExp get _emailRegex => RegExp(
+  RegExp get _userIDRegex => RegExp(
       r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'); //RegExp(r'^\S+@\S+$')
   RegExp get _phoneRegex => RegExp(r'^(\+90\d{10}|\+963\d{10}|\d{11})$');
 
@@ -102,165 +105,177 @@ class UpdateEmployeeForm extends StatelessWidget {
         Expanded(
           child: CommonCard(
             child: _titleWidget(
-          AppLocalizations.of(context)!.info,
-          Form(
-            key: _formKey,
-            child:
-                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-              Row(
-                children: [
-                  Expanded(
-                      child: OutBorderTextFormField(
-                    initialValue: employee.firstName,
-                    labelText: AppLocalizations.of(context)!.firstName,
-                    hintText: AppLocalizations.of(context)!.firstNameHint,
-                    validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        Tost().warning(context, "Please enter first name");
-                        isValidate = false;
-                      }
-                      return;
-                    },
-                    onSave: (value) => firstName = value,
-                  )),
-                  const SizedBox(
-                    width: 12,
-                  ),
-                  Expanded(
-                      child: OutBorderTextFormField(
-                    initialValue: employee.lastName,
-                    labelText: AppLocalizations.of(context)!.lastName,
-                    hintText: AppLocalizations.of(context)!.lastNameHint,
-                    validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        Tost().warning(context, "Please enter last name");
-                        isValidate = false;
-                        return;
-                      }
-                      return;
-                    },
-                    onSave: (value) => lastName = value,
-                  ))
-                ],
-              ),
-              const SizedBox(
-                height: 16,
-              ),
-              OutBorderTextFormField(
-                initialValue: employee.email,
-                labelText: AppLocalizations.of(context)!.email,
-                hintText: AppLocalizations.of(context)!.emailHint,
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    Tost().warning(context, "Please enter Email");
-                    isValidate = false;
-                    return;
-                  } else if (!_emailRegex.hasMatch(value)) {
-                    Tost().warning(context, "Email address is not valid");
-                    isValidate = false;
-                    return;
-                  }
-                  return;
-                },
-                onSave: (value) => email = value,
-              ),
-              const SizedBox(
-                height: 16,
-              ),
-              OutBorderTextFormField(
-                controller: passwordController,
-                labelText: AppLocalizations.of(context)!.password,
-                hintText: AppLocalizations.of(context)!.passwordHint,
-                validator: (value) {
-                  if (value.length < 8 && value.length > 0) {
-                    Tost().warning(context, "the password must be 8 character");
-                    isValidate = false;
-                    return;
-                  }
-                  return;
-                },
-              ),
-              const SizedBox(
-                height: 16,
-              ),
-              OutBorderTextFormField(
-                labelText: AppLocalizations.of(context)!.retypePassword,
-                hintText: AppLocalizations.of(context)!.retypePasswordHint,
-                validator: (value) {
-                  if (value != passwordController.text) {
-                    Tost().warning(context, "the password must same");
-                    isValidate = false;
-                    return;
-                  }
-                  return;
-                },
-                onSave: (value) => password = value,
-              ),
-              const SizedBox(
-                height: 16,
-              ),
-              OutBorderTextFormField(
-                initialValue: employee.phoneNumber,
-                labelText: AppLocalizations.of(context)!.phoneNumber,
-                hintText: AppLocalizations.of(context)!.phoneNumberHint,
-                validator: (value) {
-                  if (value == null || value.isEmpty) {
-                    Tost().warning(context, "Please enter phone number");
-                    isValidate = false;
-                    return;
-                  } else if (!_phoneRegex.hasMatch(value)) {
-                    Tost()
-                        .warning(context, "Please enter correct phone number");
-                    isValidate = false;
-                    return;
-                  }
-                  return;
-                },
-                onSave: (value) => phoneNumber = value,
-              ),
-              const SizedBox(
-                height: 16,
-              ),
-              Text(
-                AppLocalizations.of(context)!.title,
-                style: const TextStyle(fontSize: 14),
-              ),
-              const SizedBox(
-                height: 12,
-              ),
-              SelectWidget(
-                selectionList: ttl,
-                onDropdownChanged: (value) {
-                  title = value;
-                },
-              ),
-              const SizedBox(
-                height: 16,
-              ),
-              Text(
-                AppLocalizations.of(context)!.gender,
-                style: const TextStyle(fontSize: 14),
-              ),
-              const SizedBox(
-                height: 12,
-              ),
-              SelectWidget(
-                selectionList: gnd,
-                onDropdownChanged: (value) {
-                  gender = value == 'Female' ? Gender.female : Gender.male;
-                },
-              ),
-              const SizedBox(
-                height: 16,
-              ),
-              _buildBirthdateSelector(context, employee),
-              const SizedBox(
-                height: 16,
-              ),
-              _updateButton(context, employee)
-            ]),
-          )),
-    
+                AppLocalizations.of(context)!.info,
+                Form(
+                  key: _formKey,
+                  child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          children: [
+                            Expanded(
+                                child: OutBorderTextFormField(
+                              initialValue: employee.firstName,
+                              labelText:
+                                  AppLocalizations.of(context)!.firstName,
+                              hintText:
+                                  AppLocalizations.of(context)!.firstNameHint,
+                              validator: (value) {
+                                if (value == null || value.isEmpty) {
+                                  Tost().warning(
+                                      context, "Please enter first name");
+                                  isValidate = false;
+                                }
+                                return;
+                              },
+                              onSave: (value) => firstName = value,
+                            )),
+                            const SizedBox(
+                              width: 12,
+                            ),
+                            Expanded(
+                                child: OutBorderTextFormField(
+                              initialValue: employee.lastName,
+                              labelText: AppLocalizations.of(context)!.lastName,
+                              hintText:
+                                  AppLocalizations.of(context)!.lastNameHint,
+                              validator: (value) {
+                                if (value == null || value.isEmpty) {
+                                  Tost().warning(
+                                      context, "Please enter last name");
+                                  isValidate = false;
+                                  return;
+                                }
+                                return;
+                              },
+                              onSave: (value) => lastName = value,
+                            ))
+                          ],
+                        ),
+                        const SizedBox(
+                          height: 16,
+                        ),
+                        OutBorderTextFormField(
+                          initialValue: employee.userID,
+                          labelText: AppLocalizations.of(context)!.userID,
+                          hintText: AppLocalizations.of(context)!.userIDHint,
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              Tost().warning(context, "Please enter userID");
+                              isValidate = false;
+                              return;
+                            } else if (!_userIDRegex.hasMatch(value)) {
+                              Tost().warning(
+                                  context, "userID address is not valid");
+                              isValidate = false;
+                              return;
+                            }
+                            return;
+                          },
+                          onSave: (value) => userID = value,
+                        ),
+                        const SizedBox(
+                          height: 16,
+                        ),
+                        OutBorderTextFormField(
+                          controller: passwordController,
+                          labelText: AppLocalizations.of(context)!.password,
+                          hintText: AppLocalizations.of(context)!.passwordHint,
+                          validator: (value) {
+                            if (value.length < 8 && value.length > 0) {
+                              Tost().warning(
+                                  context, "the password must be 8 character");
+                              isValidate = false;
+                              return;
+                            }
+                            return;
+                          },
+                        ),
+                        const SizedBox(
+                          height: 16,
+                        ),
+                        OutBorderTextFormField(
+                          labelText:
+                              AppLocalizations.of(context)!.retypePassword,
+                          hintText:
+                              AppLocalizations.of(context)!.retypePasswordHint,
+                          validator: (value) {
+                            if (value != passwordController.text) {
+                              Tost().warning(context, "the password must same");
+                              isValidate = false;
+                              return;
+                            }
+                            return;
+                          },
+                          onSave: (value) => password = value,
+                        ),
+                        const SizedBox(
+                          height: 16,
+                        ),
+                        OutBorderTextFormField(
+                          initialValue: employee.phoneNumber,
+                          labelText: AppLocalizations.of(context)!.phoneNumber,
+                          hintText:
+                              AppLocalizations.of(context)!.phoneNumberHint,
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              Tost().warning(
+                                  context, "Please enter phone number");
+                              isValidate = false;
+                              return;
+                            } else if (!_phoneRegex.hasMatch(value)) {
+                              Tost().warning(
+                                  context, "Please enter correct phone number");
+                              isValidate = false;
+                              return;
+                            }
+                            return;
+                          },
+                          onSave: (value) => phoneNumber = value,
+                        ),
+                        const SizedBox(
+                          height: 16,
+                        ),
+                        Text(
+                          AppLocalizations.of(context)!.title,
+                          style: const TextStyle(fontSize: 14),
+                        ),
+                        const SizedBox(
+                          height: 12,
+                        ),
+                        SelectWidget(
+                          selectionList: ttl,
+                          onDropdownChanged: (value) {
+                            title = value;
+                          },
+                        ),
+                        const SizedBox(
+                          height: 16,
+                        ),
+                        Text(
+                          AppLocalizations.of(context)!.gender,
+                          style: const TextStyle(fontSize: 14),
+                        ),
+                        const SizedBox(
+                          height: 12,
+                        ),
+                        SelectWidget(
+                          selectionList: gnd,
+                          onDropdownChanged: (value) {
+                            gender =
+                                value == 'Female' ? Gender.female : Gender.male;
+                          },
+                        ),
+                        const SizedBox(
+                          height: 16,
+                        ),
+                        _buildBirthdateSelector(context, employee),
+                        const SizedBox(
+                          height: 16,
+                        ),
+                        _updateButton(context, employee)
+                      ]),
+                )),
           ),
         ),
         const SizedBox(
@@ -271,7 +286,7 @@ class UpdateEmployeeForm extends StatelessWidget {
     );
   }
 
-   Widget _employeePermissions(BuildContext context) {
+  Widget _employeePermissions(BuildContext context) {
     return CommonCard(
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         Container(
@@ -313,7 +328,6 @@ class UpdateEmployeeForm extends StatelessWidget {
       ]),
     );
   }
-
 
   _titleWidget(String title, Widget childWidget) {
     return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
@@ -410,7 +424,7 @@ class UpdateEmployeeForm extends StatelessWidget {
                 id: employee.id,
                 firstName: firstName ?? employee.firstName,
                 lastName: lastName ?? employee.lastName,
-                email: email ?? employee.email,
+                userID: userID ?? employee.userID,
                 password: password!,
                 phoneNumber: phoneNumber ?? employee.phoneNumber,
                 title: title ?? employee.title,

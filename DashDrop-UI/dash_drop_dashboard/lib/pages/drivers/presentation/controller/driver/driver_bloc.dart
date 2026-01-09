@@ -55,8 +55,7 @@ class DriverBloc extends Bloc<DriverEvent, DriverState> {
   }
 
   FutureOr<void> _getDriverHandler(event, emit) async {
-     emit(state.copyWith(
-          getDriverstate: RequestState.loading));
+    emit(state.copyWith(getDriverstate: RequestState.loading));
     final result = await getDriverUseCase(GetDriverParameters(id: event.id));
     final resultR = await getRegionsUseCase(const NoParameters());
     final resultVD = await getVehicleDetailssUseCase(const NoParameters());
@@ -87,12 +86,11 @@ class DriverBloc extends Bloc<DriverEvent, DriverState> {
   }
 
   FutureOr<void> _createDriverHandler(event, emit) async {
-     emit(state.copyWith(
-          createDriverstate: RequestState.loading));
+    emit(state.copyWith(createDriverstate: RequestState.loading));
     final result = await createDriverUseCase(CreateDriverParameters(
         firstName: event.firstName,
         lastName: event.lastName,
-        email: event.email,
+        userID: event.userID,
         phoneNumber: event.phoneNumber,
         gender: event.gender,
         birthdate: event.birthdate,
@@ -114,14 +112,13 @@ class DriverBloc extends Bloc<DriverEvent, DriverState> {
   }
 
   FutureOr<void> _updateDriverHandler(event, emit) async {
-     emit(state.copyWith(
-          updateDriverstate: RequestState.loading));
-          
+    emit(state.copyWith(updateDriverstate: RequestState.loading));
+
     final result = await updateDriversUseCase(UpdateDriversParameters(
         id: event.id,
         firstName: event.firstName,
         lastName: event.lastName,
-        email: event.email,
+        userID: event.userID,
         phoneNumber: event.phoneNumber,
         gender: event.gender,
         birthdate: event.birthdate,
@@ -140,11 +137,11 @@ class DriverBloc extends Bloc<DriverEvent, DriverState> {
         if (drivers.id == event.id as int) {
           print(event.id);
           //updatedDrivers.add(drivers.copyWith(
-            return drivers.copyWith(
+          return drivers.copyWith(
               id: event.id,
               firstName: event.firstName,
               lastName: event.lastName,
-              email: event.email,
+              userID: event.userID,
               phoneNumber: event.phoneNumber,
               gender: event.gender,
               birthdate: event.birthdate,
@@ -153,7 +150,7 @@ class DriverBloc extends Bloc<DriverEvent, DriverState> {
               idNumber: event.idNumber,
               regionId: event.regionId,
               vehicleDetailId: event.vehicleDetailId);
-              //);
+          //);
         }
         return drivers; // Return unchanged Driverss
       });
@@ -178,8 +175,7 @@ class DriverBloc extends Bloc<DriverEvent, DriverState> {
   }
 
   Future<void> _getRegVegHandler(event, emit) async {
-     emit(state.copyWith(
-          getDriverstate: RequestState.loading));
+    emit(state.copyWith(getDriverstate: RequestState.loading));
     final result = await getRegionsUseCase(const NoParameters());
     final resultVD = await getVehicleDetailssUseCase(const NoParameters());
 

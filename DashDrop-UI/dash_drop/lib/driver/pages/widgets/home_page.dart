@@ -28,8 +28,9 @@ class HomeDriverPage extends StatefulWidget {
 
 class _HomePageState extends State<HomeDriverPage> {
   HomePageController controller = Get.put(HomePageController());
-  DriverLocationController driverLocationController =
-      Get.put(DriverLocationController());
+  DriverLocationController driverLocationController = Get.put(
+    DriverLocationController(),
+  );
   final animationsMap = {
     'textOnPageLoadAnimation': AnimationInfo(
       trigger: AnimationTrigger.onPageLoad,
@@ -137,7 +138,11 @@ class _HomePageState extends State<HomeDriverPage> {
             children: [
               Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(
-                    20.0, 24.0, 20.0, 24.0),
+                  20.0,
+                  24.0,
+                  20.0,
+                  24.0,
+                ),
                 child: Row(
                   mainAxisSize: MainAxisSize.max,
                   children: [
@@ -148,9 +153,7 @@ class _HomePageState extends State<HomeDriverPage> {
                         color: CustomTheme.of(context).secondaryTheme,
                         image: DecorationImage(
                           fit: BoxFit.cover,
-                          image: Image.asset(
-                            'assets/images/Avatar.png',
-                          ).image,
+                          image: Image.asset('assets/images/Avatar.png').image,
                         ),
                         shape: BoxShape.circle,
                       ),
@@ -158,40 +161,44 @@ class _HomePageState extends State<HomeDriverPage> {
                     Expanded(
                       child: Padding(
                         padding: const EdgeInsetsDirectional.fromSTEB(
-                            8.0, 0.0, 0.0, 0.0),
+                          8.0,
+                          0.0,
+                          0.0,
+                          0.0,
+                        ),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              lang.getText(
-                                    'hello' /* Hello */,
-                                  ) +
+                              lang.getText('hello' /* Hello */) +
                                   AuthController.to.user.name,
                               maxLines: 1,
-                              style:
-                                  CustomTheme.of(context).bodyMedium.override(
-                                        fontFamily: 'SF Pro Text',
-                                        color: CustomTheme.of(context)
-                                            .primaryTextColor,
-                                        fontSize: 16.0,
-                                        fontWeight: FontWeight.w600,
-                                        useGoogleFonts: false,
-                                        lineHeight: 1.5,
-                                      ),
+                              style: CustomTheme.of(context).bodyMedium
+                                  .override(
+                                    fontFamily: 'SF Pro Text',
+                                    color: CustomTheme.of(
+                                      context,
+                                    ).primaryTextColor,
+                                    fontSize: 16.0,
+                                    fontWeight: FontWeight.w600,
+                                    useGoogleFonts: false,
+                                    lineHeight: 1.5,
+                                  ),
                             ).animateOnPageLoad(
-                                animationsMap['textOnPageLoadAnimation']!),
+                              animationsMap['textOnPageLoadAnimation']!,
+                            ),
                             Text(
-                              AuthController.to.user.emailaddress,
+                              AuthController.to.user.text,
                               maxLines: 1,
-                              style:
-                                  CustomTheme.of(context).bodyMedium.override(
-                                        fontFamily: 'SF Pro Text',
-                                        color: CustomTheme.of(context).black40,
-                                        fontSize: 12.0,
-                                        useGoogleFonts: false,
-                                        lineHeight: 1.5,
-                                      ),
+                              style: CustomTheme.of(context).bodyMedium
+                                  .override(
+                                    fontFamily: 'SF Pro Text',
+                                    color: CustomTheme.of(context).black40,
+                                    fontSize: 12.0,
+                                    useGoogleFonts: false,
+                                    lineHeight: 1.5,
+                                  ),
                             ),
                           ],
                         ),
@@ -203,9 +210,7 @@ class _HomePageState extends State<HomeDriverPage> {
                       hoverColor: Colors.transparent,
                       highlightColor: Colors.transparent,
                       onTap: () async {
-                        Get.toNamed(
-                          AppRoutes.notificationsScreenWidget,
-                        );
+                        Get.toNamed(AppRoutes.notificationsScreenWidget);
                       },
                       child: InkWell(
                         child: Container(
@@ -249,13 +254,16 @@ class _HomePageState extends State<HomeDriverPage> {
                             // Get the MapId
                             print("Map ID: ${mapController.mapId}");
                             if (!driverLocationController
-                                .gMapsController.isCompleted) {
-                              driverLocationController.gMapsController
-                                  .complete(mapController);
+                                .gMapsController
+                                .isCompleted) {
+                              driverLocationController.gMapsController.complete(
+                                mapController,
+                              );
                             }
                           },
-                          markers:
-                              Set<Marker>.of(driverLocationController.markers),
+                          markers: Set<Marker>.of(
+                            driverLocationController.markers,
+                          ),
                         ),
                       ),
                     ),
@@ -276,15 +284,15 @@ class _HomePageState extends State<HomeDriverPage> {
                             alignment: const AlignmentDirectional(0.0, 0.0),
                             child: Text(
                               lang.getText('startStream'),
-                              style:
-                                  CustomTheme.of(context).bodyMedium.override(
-                                        fontFamily: 'SF Pro Text',
-                                        color: CustomTheme.of(context).white,
-                                        fontSize: 18.0,
-                                        fontWeight: FontWeight.bold,
-                                        useGoogleFonts: false,
-                                        lineHeight: 1.5,
-                                      ),
+                              style: CustomTheme.of(context).bodyMedium
+                                  .override(
+                                    fontFamily: 'SF Pro Text',
+                                    color: CustomTheme.of(context).white,
+                                    fontSize: 18.0,
+                                    fontWeight: FontWeight.bold,
+                                    useGoogleFonts: false,
+                                    lineHeight: 1.5,
+                                  ),
                             ),
                           ),
                         ),

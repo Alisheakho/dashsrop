@@ -20,8 +20,9 @@ class ProfilePageWidget extends StatefulWidget {
 
 class _ProfilePageWidgetState extends State<ProfilePageWidget> {
   ProfilePageController controller = Get.put(ProfilePageController());
-  HomepageLongContainerController homepageLongContainerController =
-      Get.put(HomepageLongContainerController());
+  HomepageLongContainerController homepageLongContainerController = Get.put(
+    HomepageLongContainerController(),
+  );
   @override
   Widget build(BuildContext context) {
     if (isiOS) {
@@ -59,8 +60,12 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                 ),
               ),
               child: Padding(
-                padding:
-                    const EdgeInsetsDirectional.fromSTEB(0.0, 60.0, 0.0, 30.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(
+                  0.0,
+                  60.0,
+                  0.0,
+                  30.0,
+                ),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -68,21 +73,25 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                     Align(
                       alignment: const AlignmentDirectional(0.0, 0.0),
                       child: Text(
-                        AppLocalizations.of(context).getText(
-                          '53fzj50m' /* My Profile */,
-                        ),
+                        AppLocalizations.of(
+                          context,
+                        ).getText('53fzj50m' /* My Profile */),
                         style: CustomTheme.of(context).bodyMedium.override(
-                              fontFamily: 'SF Pro Text',
-                              color: CustomTheme.of(context).white,
-                              fontSize: 20.0,
-                              fontWeight: FontWeight.bold,
-                              useGoogleFonts: false,
-                            ),
+                          fontFamily: 'SF Pro Text',
+                          color: CustomTheme.of(context).white,
+                          fontSize: 20.0,
+                          fontWeight: FontWeight.bold,
+                          useGoogleFonts: false,
+                        ),
                       ),
                     ),
                     Padding(
                       padding: const EdgeInsetsDirectional.fromSTEB(
-                          20.0, 0.0, 20.0, 0.0),
+                        20.0,
+                        0.0,
+                        20.0,
+                        0.0,
+                      ),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         children: [
@@ -103,7 +112,11 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                           Expanded(
                             child: Padding(
                               padding: const EdgeInsetsDirectional.fromSTEB(
-                                  14.0, 0.0, 14.0, 0.0),
+                                14.0,
+                                0.0,
+                                14.0,
+                                0.0,
+                              ),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
                                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -111,8 +124,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                                   Text(
                                     AuthController.to.user.name,
                                     maxLines: 1,
-                                    style: CustomTheme.of(context)
-                                        .bodyMedium
+                                    style: CustomTheme.of(context).bodyMedium
                                         .override(
                                           fontFamily: 'SF Pro Text',
                                           color: CustomTheme.of(context).white,
@@ -122,10 +134,9 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                                         ),
                                   ),
                                   Text(
-                                    AuthController.to.user.emailaddress,
+                                    AuthController.to.user.text,
                                     maxLines: 1,
-                                    style: CustomTheme.of(context)
-                                        .bodyMedium
+                                    style: CustomTheme.of(context).bodyMedium
                                         .override(
                                           fontFamily: 'SF Pro Text',
                                           color: CustomTheme.of(context).white,
@@ -143,9 +154,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                             hoverColor: Colors.transparent,
                             highlightColor: Colors.transparent,
                             onTap: () async {
-                              Get.toNamed(
-                                AppRoutes.editProfileScreenWidget,
-                              );
+                              Get.toNamed(AppRoutes.editProfileScreenWidget);
                             },
                             child: Container(
                               decoration: BoxDecoration(
@@ -154,17 +163,21 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                               ),
                               child: Padding(
                                 padding: const EdgeInsetsDirectional.fromSTEB(
-                                    12.0, 6.0, 12.0, 6.0),
+                                  12.0,
+                                  6.0,
+                                  12.0,
+                                  6.0,
+                                ),
                                 child: Text(
-                                  AppLocalizations.of(context).getText(
-                                    'maazto0d' /* Edit Profile */,
-                                  ),
-                                  style: CustomTheme.of(context)
-                                      .bodyMedium
+                                  AppLocalizations.of(
+                                    context,
+                                  ).getText('maazto0d' /* Edit Profile */),
+                                  style: CustomTheme.of(context).bodyMedium
                                       .override(
                                         fontFamily: 'SF Pro Text',
-                                        color: CustomTheme.of(context)
-                                            .primaryTextColor,
+                                        color: CustomTheme.of(
+                                          context,
+                                        ).primaryTextColor,
                                         useGoogleFonts: false,
                                       ),
                                 ),
@@ -180,30 +193,31 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
             ),
             Expanded(
               child: Padding(
-                padding:
-                    const EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
+                padding: const EdgeInsetsDirectional.fromSTEB(
+                  20.0,
+                  0.0,
+                  20.0,
+                  0.0,
+                ),
                 child: ListView(
-                  padding: const EdgeInsets.fromLTRB(
-                    0,
-                    24.0,
-                    0,
-                    24.0,
-                  ),
+                  padding: const EdgeInsets.fromLTRB(0, 24.0, 0, 24.0),
                   shrinkWrap: true,
                   scrollDirection: Axis.vertical,
                   children: [
                     Padding(
                       padding: const EdgeInsetsDirectional.fromSTEB(
-                          0.0, 0.0, 0.0, 20.0),
+                        0.0,
+                        0.0,
+                        0.0,
+                        20.0,
+                      ),
                       child: InkWell(
                         splashColor: Colors.transparent,
                         focusColor: Colors.transparent,
                         hoverColor: Colors.transparent,
                         highlightColor: Colors.transparent,
                         onTap: () async {
-                          Get.toNamed(
-                            AppRoutes.changePasswordScreenWidget,
-                          );
+                          Get.toNamed(AppRoutes.changePasswordScreenWidget);
                         },
                         child: Container(
                           width: double.infinity,
@@ -213,7 +227,11 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                           ),
                           child: Padding(
                             padding: const EdgeInsetsDirectional.fromSTEB(
-                                16.0, 16.0, 16.0, 16.0),
+                              16.0,
+                              16.0,
+                              16.0,
+                              16.0,
+                            ),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               children: [
@@ -230,17 +248,21 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                                   child: Padding(
                                     padding:
                                         const EdgeInsetsDirectional.fromSTEB(
-                                            16.0, 0.0, 0.0, 0.0),
+                                          16.0,
+                                          0.0,
+                                          0.0,
+                                          0.0,
+                                        ),
                                     child: Text(
                                       AppLocalizations.of(context).getText(
                                         'mnpn8f1j' /* Change Password */,
                                       ),
-                                      style: CustomTheme.of(context)
-                                          .bodyMedium
+                                      style: CustomTheme.of(context).bodyMedium
                                           .override(
                                             fontFamily: 'SF Pro Text',
-                                            color: CustomTheme.of(context)
-                                                .primaryTextColor,
+                                            color: CustomTheme.of(
+                                              context,
+                                            ).primaryTextColor,
                                             fontSize: 16.0,
                                             useGoogleFonts: false,
                                           ),
@@ -264,16 +286,18 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                     ),
                     Padding(
                       padding: const EdgeInsetsDirectional.fromSTEB(
-                          0.0, 0.0, 0.0, 20.0),
+                        0.0,
+                        0.0,
+                        0.0,
+                        20.0,
+                      ),
                       child: InkWell(
                         splashColor: Colors.transparent,
                         focusColor: Colors.transparent,
                         hoverColor: Colors.transparent,
                         highlightColor: Colors.transparent,
                         onTap: () {
-                          Get.toNamed(
-                            AppRoutes.faqsScreenWidget,
-                          );
+                          Get.toNamed(AppRoutes.faqsScreenWidget);
                         },
                         child: Container(
                           width: double.infinity,
@@ -283,7 +307,11 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                           ),
                           child: Padding(
                             padding: const EdgeInsetsDirectional.fromSTEB(
-                                16.0, 16.0, 16.0, 16.0),
+                              16.0,
+                              16.0,
+                              16.0,
+                              16.0,
+                            ),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               children: [
@@ -300,17 +328,21 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                                   child: Padding(
                                     padding:
                                         const EdgeInsetsDirectional.fromSTEB(
-                                            16.0, 0.0, 0.0, 0.0),
+                                          16.0,
+                                          0.0,
+                                          0.0,
+                                          0.0,
+                                        ),
                                     child: Text(
-                                      AppLocalizations.of(context).getText(
-                                        'qhejjv5f' /* FAQs */,
-                                      ),
-                                      style: CustomTheme.of(context)
-                                          .bodyMedium
+                                      AppLocalizations.of(
+                                        context,
+                                      ).getText('qhejjv5f' /* FAQs */),
+                                      style: CustomTheme.of(context).bodyMedium
                                           .override(
                                             fontFamily: 'SF Pro Text',
-                                            color: CustomTheme.of(context)
-                                                .primaryTextColor,
+                                            color: CustomTheme.of(
+                                              context,
+                                            ).primaryTextColor,
                                             fontSize: 16.0,
                                             useGoogleFonts: false,
                                           ),
@@ -334,7 +366,11 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                     ),
                     Padding(
                       padding: const EdgeInsetsDirectional.fromSTEB(
-                          0.0, 0.0, 0.0, 20.0),
+                        0.0,
+                        0.0,
+                        0.0,
+                        20.0,
+                      ),
                       child: Container(
                         width: double.infinity,
                         decoration: BoxDecoration(
@@ -343,7 +379,11 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                         ),
                         child: Padding(
                           padding: const EdgeInsetsDirectional.fromSTEB(
-                              16.0, 16.0, 16.0, 16.0),
+                            16.0,
+                            16.0,
+                            16.0,
+                            16.0,
+                          ),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
@@ -359,17 +399,21 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                               Expanded(
                                 child: Padding(
                                   padding: const EdgeInsetsDirectional.fromSTEB(
-                                      16.0, 0.0, 0.0, 0.0),
+                                    16.0,
+                                    0.0,
+                                    0.0,
+                                    0.0,
+                                  ),
                                   child: Text(
-                                    AppLocalizations.of(context).getText(
-                                      'lifdjqf3' /* Privacy Policy */,
-                                    ),
-                                    style: CustomTheme.of(context)
-                                        .bodyMedium
+                                    AppLocalizations.of(
+                                      context,
+                                    ).getText('lifdjqf3' /* Privacy Policy */),
+                                    style: CustomTheme.of(context).bodyMedium
                                         .override(
                                           fontFamily: 'SF Pro Text',
-                                          color: CustomTheme.of(context)
-                                              .primaryTextColor,
+                                          color: CustomTheme.of(
+                                            context,
+                                          ).primaryTextColor,
                                           fontSize: 16.0,
                                           useGoogleFonts: false,
                                         ),
@@ -392,7 +436,11 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                     ),
                     Padding(
                       padding: const EdgeInsetsDirectional.fromSTEB(
-                          0.0, 0.0, 0.0, 20.0),
+                        0.0,
+                        0.0,
+                        0.0,
+                        20.0,
+                      ),
                       child: Container(
                         width: double.infinity,
                         decoration: BoxDecoration(
@@ -401,7 +449,11 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                         ),
                         child: Padding(
                           padding: const EdgeInsetsDirectional.fromSTEB(
-                              16.0, 16.0, 16.0, 16.0),
+                            16.0,
+                            16.0,
+                            16.0,
+                            16.0,
+                          ),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             children: [
@@ -417,17 +469,21 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                               Expanded(
                                 child: Padding(
                                   padding: const EdgeInsetsDirectional.fromSTEB(
-                                      16.0, 0.0, 0.0, 0.0),
+                                    16.0,
+                                    0.0,
+                                    0.0,
+                                    0.0,
+                                  ),
                                   child: Text(
-                                    AppLocalizations.of(context).getText(
-                                      '80twuagy' /* Share */,
-                                    ),
-                                    style: CustomTheme.of(context)
-                                        .bodyMedium
+                                    AppLocalizations.of(
+                                      context,
+                                    ).getText('80twuagy' /* Share */),
+                                    style: CustomTheme.of(context).bodyMedium
                                         .override(
                                           fontFamily: 'SF Pro Text',
-                                          color: CustomTheme.of(context)
-                                              .primaryTextColor,
+                                          color: CustomTheme.of(
+                                            context,
+                                          ).primaryTextColor,
                                           fontSize: 16.0,
                                           useGoogleFonts: false,
                                         ),
@@ -450,15 +506,21 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                     ),
                     Padding(
                       padding: const EdgeInsetsDirectional.fromSTEB(
-                          0.0, 0.0, 0.0, 20.0),
+                        0.0,
+                        0.0,
+                        0.0,
+                        20.0,
+                      ),
                       child: CustomLanguageSelector(
                         width: double.infinity,
                         height: 56.0,
-                        backgroundColor:
-                            CustomTheme.of(context).backgroundColor,
+                        backgroundColor: CustomTheme.of(
+                          context,
+                        ).backgroundColor,
                         dropdownColor: CustomTheme.of(context).backgroundColor,
-                        dropdownIconColor:
-                            CustomTheme.of(context).primaryTextColor,
+                        dropdownIconColor: CustomTheme.of(
+                          context,
+                        ).primaryTextColor,
                         borderRadius: 12.0,
                         textStyle: TextStyle(
                           fontFamily: 'SF Pro Text',
@@ -469,8 +531,9 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                         hideFlags: false,
                         flagSize: 22.0,
                         flagTextGap: 8.0,
-                        currentLanguage:
-                            AppLocalizations.of(context).languageCode,
+                        currentLanguage: AppLocalizations.of(
+                          context,
+                        ).languageCode,
                         languages: AppLocalizations.languages(),
                         onChanged: (lang) => setAppLanguage(context, lang),
                       ),
@@ -489,13 +552,16 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                                 elevation: 0,
                                 insetPadding: EdgeInsets.zero,
                                 backgroundColor: Colors.transparent,
-                                alignment: const AlignmentDirectional(0.0, 0.0)
-                                    .resolve(Directionality.of(context)),
+                                alignment: const AlignmentDirectional(
+                                  0.0,
+                                  0.0,
+                                ).resolve(Directionality.of(context)),
                                 child: GestureDetector(
-                                  onTap: () => controller
-                                          .unfocusNode.canRequestFocus
-                                      ? FocusScope.of(context)
-                                          .requestFocus(controller.unfocusNode)
+                                  onTap: () =>
+                                      controller.unfocusNode.canRequestFocus
+                                      ? FocusScope.of(
+                                          context,
+                                        ).requestFocus(controller.unfocusNode)
                                       : FocusScope.of(context).unfocus(),
                                   child: const LogoutDialogWidget(),
                                 ),
@@ -511,7 +577,11 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                           ),
                           child: Padding(
                             padding: const EdgeInsetsDirectional.fromSTEB(
-                                16.0, 16.0, 16.0, 16.0),
+                              16.0,
+                              16.0,
+                              16.0,
+                              16.0,
+                            ),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               children: [
@@ -528,17 +598,21 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                                   child: Padding(
                                     padding:
                                         const EdgeInsetsDirectional.fromSTEB(
-                                            16.0, 0.0, 0.0, 0.0),
+                                          16.0,
+                                          0.0,
+                                          0.0,
+                                          0.0,
+                                        ),
                                     child: Text(
-                                      AppLocalizations.of(context).getText(
-                                        'f1orjahy' /* Logout */,
-                                      ),
-                                      style: CustomTheme.of(context)
-                                          .bodyMedium
+                                      AppLocalizations.of(
+                                        context,
+                                      ).getText('f1orjahy' /* Logout */),
+                                      style: CustomTheme.of(context).bodyMedium
                                           .override(
                                             fontFamily: 'SF Pro Text',
-                                            color: CustomTheme.of(context)
-                                                .primaryTextColor,
+                                            color: CustomTheme.of(
+                                              context,
+                                            ).primaryTextColor,
                                             fontSize: 16.0,
                                             useGoogleFonts: false,
                                           ),

@@ -35,7 +35,7 @@ class DeleteHieringEvent extends HieringEvent {
 class CreateHieringEvent extends HieringEvent {
   final String firstName;
   final String lastName;
-  final String email;
+  final String userID;
   final String phoneNumber;
   final Gender gender;
   final String birthdate;
@@ -44,24 +44,25 @@ class CreateHieringEvent extends HieringEvent {
   final bool isAccepted;
   final int jobOfferId;
 
-  CreateHieringEvent(
-      {required this.firstName,
-      required this.lastName,
-      required this.email,
-      required this.phoneNumber,
-      required this.gender,
-      required this.birthdate,
-      required this.vehiclePlateNumber,
-      required this.idNumber,
-      required this.isAccepted,
-      required this.jobOfferId,});
+  CreateHieringEvent({
+    required this.firstName,
+    required this.lastName,
+    required this.userID,
+    required this.phoneNumber,
+    required this.gender,
+    required this.birthdate,
+    required this.vehiclePlateNumber,
+    required this.idNumber,
+    required this.isAccepted,
+    required this.jobOfferId,
+  });
 
   @override
   List<Object> get props {
     return [
       firstName,
       lastName,
-      email,
+      userID,
       phoneNumber,
       gender,
       birthdate,
@@ -77,7 +78,7 @@ class UpdateHieringEvent extends HieringEvent {
   final int id;
   final String firstName;
   final String lastName;
-  final String email;
+  final String userID;
   final String phoneNumber;
   final Gender gender;
   final String birthdate;
@@ -85,27 +86,27 @@ class UpdateHieringEvent extends HieringEvent {
   final String idNumber;
   final bool isAccepted;
   final int jobOfferId;
- 
 
-  UpdateHieringEvent(
-      {required this.id,
-      required this.firstName,
-      required this.lastName,
-      required this.email,
-      required this.phoneNumber,
-      required this.gender,
-      required this.birthdate,
-      required this.vehiclePlateNumber,
-      required this.idNumber,
-      required this.isAccepted,
-      required this.jobOfferId,});
+  UpdateHieringEvent({
+    required this.id,
+    required this.firstName,
+    required this.lastName,
+    required this.userID,
+    required this.phoneNumber,
+    required this.gender,
+    required this.birthdate,
+    required this.vehiclePlateNumber,
+    required this.idNumber,
+    required this.isAccepted,
+    required this.jobOfferId,
+  });
 
   @override
   List<Object> get props {
     return [
       firstName,
       lastName,
-      email,
+      userID,
       phoneNumber,
       gender,
       birthdate,

@@ -99,18 +99,22 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget>
                       ? 'Create your Account'
                       : 'Login to your Account',
                   style: CustomTheme.of(context).bodyMedium.override(
-                        fontFamily: 'SF Pro Text',
-                        color: CustomTheme.of(context).primaryTextColor,
-                        fontSize: 20.0,
-                        fontWeight: FontWeight.bold,
-                        useGoogleFonts: false,
-                      ),
+                    fontFamily: 'SF Pro Text',
+                    color: CustomTheme.of(context).primaryTextColor,
+                    fontSize: 20.0,
+                    fontWeight: FontWeight.bold,
+                    useGoogleFonts: false,
+                  ),
                 ),
               ),
               Expanded(
                 child: Padding(
-                  padding:
-                      const EdgeInsetsDirectional.fromSTEB(0.0, 34.0, 0.0, 0.0),
+                  padding: const EdgeInsetsDirectional.fromSTEB(
+                    0.0,
+                    34.0,
+                    0.0,
+                    0.0,
+                  ),
                   child: Stack(
                     alignment: const AlignmentDirectional(0.0, -1.0),
                     children: [
@@ -118,7 +122,11 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget>
                         alignment: const AlignmentDirectional(0.0, -1.0),
                         child: Padding(
                           padding: const EdgeInsetsDirectional.fromSTEB(
-                              20.0, 0.0, 20.0, 0.0),
+                            20.0,
+                            0.0,
+                            20.0,
+                            0.0,
+                          ),
                           child: Container(
                             width: double.infinity,
                             height: 54.0,
@@ -132,15 +140,18 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget>
                       ),
                       Padding(
                         padding: const EdgeInsetsDirectional.fromSTEB(
-                            20.0, 0.0, 20.0, 0.0),
+                          20.0,
+                          0.0,
+                          20.0,
+                          0.0,
+                        ),
                         child: Column(
                           children: [
                             Align(
                               alignment: const Alignment(0.0, 0),
                               child: CustomButtonTabBar(
                                 useToggleButtonStyle: false,
-                                labelStyle: CustomTheme.of(context)
-                                    .titleMedium
+                                labelStyle: CustomTheme.of(context).titleMedium
                                     .override(
                                       fontFamily: 'SF Pro Text',
                                       fontSize: 14.0,
@@ -148,10 +159,12 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget>
                                       useGoogleFonts: false,
                                     ),
                                 unselectedLabelStyle: const TextStyle(),
-                                labelColor:
-                                    CustomTheme.of(context).primaryTextColor,
-                                unselectedLabelColor:
-                                    CustomTheme.of(context).black40,
+                                labelColor: CustomTheme.of(
+                                  context,
+                                ).primaryTextColor,
+                                unselectedLabelColor: CustomTheme.of(
+                                  context,
+                                ).black40,
                                 backgroundColor: CustomTheme.of(context).white,
                                 borderWidth: 0.0,
                                 borderRadius: 50.0,
@@ -159,14 +172,14 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget>
                                 buttonMargin: const EdgeInsets.all(4.0),
                                 tabs: [
                                   Tab(
-                                    text: AppLocalizations.of(context).getText(
-                                      'z8slfq2k' /* Sign Up */,
-                                    ),
+                                    text: AppLocalizations.of(
+                                      context,
+                                    ).getText('z8slfq2k' /* Sign Up */),
                                   ),
                                   Tab(
-                                    text: AppLocalizations.of(context).getText(
-                                      'uq0f74jc' /* Sign In */,
-                                    ),
+                                    text: AppLocalizations.of(
+                                      context,
+                                    ).getText('uq0f74jc' /* Sign In */),
                                   ),
                                 ],
                                 controller: controller.tabBarController,
@@ -201,9 +214,12 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget>
                                           children: [
                                             Padding(
                                               padding:
-                                                  const EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                      0.0, 5.0, 0.0, 0.0),
+                                                  const EdgeInsetsDirectional.fromSTEB(
+                                                    0.0,
+                                                    5.0,
+                                                    0.0,
+                                                    0.0,
+                                                  ),
                                               child: Row(
                                                 children: [
                                                   Expanded(
@@ -214,19 +230,19 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget>
                                                       children: [
                                                         Text(
                                                           AppLocalizations.of(
-                                                                  context)
-                                                              .getText(
+                                                            context,
+                                                          ).getText(
                                                             'firstName',
                                                           ),
-                                                          style: CustomTheme.of(
-                                                                  context)
-                                                              .bodyMedium
-                                                              .override(
+                                                          style:
+                                                              CustomTheme.of(
+                                                                context,
+                                                              ).bodyMedium.override(
                                                                 fontFamily:
                                                                     'SF Pro Text',
                                                                 color: CustomTheme.of(
-                                                                        context)
-                                                                    .primaryTextColor,
+                                                                  context,
+                                                                ).primaryTextColor,
                                                                 fontSize: 16.0,
                                                                 fontWeight:
                                                                     FontWeight
@@ -244,130 +260,125 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget>
                                                               TextInputAction
                                                                   .next,
                                                           obscureText: false,
-                                                          decoration:
-                                                              InputDecoration(
+                                                          decoration: InputDecoration(
                                                             isDense: true,
                                                             labelStyle:
                                                                 CustomTheme.of(
-                                                                        context)
-                                                                    .labelMedium
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          'SF Pro Text',
-                                                                      color: CustomTheme.of(
-                                                                              context)
-                                                                          .black40,
-                                                                      fontSize:
-                                                                          16.0,
-                                                                      useGoogleFonts:
-                                                                          false,
-                                                                    ),
+                                                                  context,
+                                                                ).labelMedium.override(
+                                                                  fontFamily:
+                                                                      'SF Pro Text',
+                                                                  color:
+                                                                      CustomTheme.of(
+                                                                        context,
+                                                                      ).black40,
+                                                                  fontSize:
+                                                                      16.0,
+                                                                  useGoogleFonts:
+                                                                      false,
+                                                                ),
                                                             hintText:
                                                                 AppLocalizations.of(
-                                                                        context)
-                                                                    .getText(
-                                                              'firstNameHint',
-                                                            ),
+                                                                  context,
+                                                                ).getText(
+                                                                  'firstNameHint',
+                                                                ),
                                                             hintStyle:
                                                                 CustomTheme.of(
-                                                                        context)
-                                                                    .labelMedium
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          'SF Pro Text',
-                                                                      color: CustomTheme.of(
-                                                                              context)
-                                                                          .black40,
-                                                                      fontSize:
-                                                                          16.0,
-                                                                      useGoogleFonts:
-                                                                          false,
-                                                                    ),
+                                                                  context,
+                                                                ).labelMedium.override(
+                                                                  fontFamily:
+                                                                      'SF Pro Text',
+                                                                  color:
+                                                                      CustomTheme.of(
+                                                                        context,
+                                                                      ).black40,
+                                                                  fontSize:
+                                                                      16.0,
+                                                                  useGoogleFonts:
+                                                                      false,
+                                                                ),
                                                             errorStyle:
                                                                 CustomTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          'SF Pro Text',
-                                                                      color: CustomTheme.of(
-                                                                              context)
-                                                                          .errorText,
-                                                                      fontSize:
-                                                                          16.0,
-                                                                      useGoogleFonts:
-                                                                          false,
-                                                                    ),
-                                                            enabledBorder:
-                                                                OutlineInputBorder(
-                                                              borderSide:
-                                                                  BorderSide(
-                                                                color: CustomTheme.of(
-                                                                        context)
-                                                                    .black20,
+                                                                  context,
+                                                                ).bodyMedium.override(
+                                                                  fontFamily:
+                                                                      'SF Pro Text',
+                                                                  color:
+                                                                      CustomTheme.of(
+                                                                        context,
+                                                                      ).errorText,
+                                                                  fontSize:
+                                                                      16.0,
+                                                                  useGoogleFonts:
+                                                                      false,
+                                                                ),
+                                                            enabledBorder: OutlineInputBorder(
+                                                              borderSide: BorderSide(
+                                                                color:
+                                                                    CustomTheme.of(
+                                                                      context,
+                                                                    ).black20,
                                                                 width: 1.0,
                                                               ),
                                                               borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          12.0),
+                                                                  BorderRadius.circular(
+                                                                    12.0,
+                                                                  ),
                                                             ),
-                                                            focusedBorder:
-                                                                OutlineInputBorder(
-                                                              borderSide:
-                                                                  BorderSide(
+                                                            focusedBorder: OutlineInputBorder(
+                                                              borderSide: BorderSide(
                                                                 color: CustomTheme.of(
-                                                                        context)
-                                                                    .primaryTheme,
+                                                                  context,
+                                                                ).primaryTheme,
                                                                 width: 1.0,
                                                               ),
                                                               borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          12.0),
+                                                                  BorderRadius.circular(
+                                                                    12.0,
+                                                                  ),
                                                             ),
-                                                            errorBorder:
-                                                                OutlineInputBorder(
-                                                              borderSide:
-                                                                  BorderSide(
-                                                                color: CustomTheme.of(
-                                                                        context)
-                                                                    .errorText,
+                                                            errorBorder: OutlineInputBorder(
+                                                              borderSide: BorderSide(
+                                                                color:
+                                                                    CustomTheme.of(
+                                                                      context,
+                                                                    ).errorText,
                                                                 width: 1.0,
                                                               ),
                                                               borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          12.0),
+                                                                  BorderRadius.circular(
+                                                                    12.0,
+                                                                  ),
                                                             ),
                                                             focusedErrorBorder:
                                                                 OutlineInputBorder(
-                                                              borderSide:
-                                                                  BorderSide(
-                                                                color: CustomTheme.of(
-                                                                        context)
-                                                                    .errorText,
-                                                                width: 1.0,
-                                                              ),
-                                                              borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          12.0),
-                                                            ),
+                                                                  borderSide: BorderSide(
+                                                                    color: CustomTheme.of(
+                                                                      context,
+                                                                    ).errorText,
+                                                                    width: 1.0,
+                                                                  ),
+                                                                  borderRadius:
+                                                                      BorderRadius.circular(
+                                                                        12.0,
+                                                                      ),
+                                                                ),
                                                             filled: true,
-                                                            fillColor: CustomTheme
-                                                                    .of(context)
-                                                                .backgroundColor,
+                                                            fillColor:
+                                                                CustomTheme.of(
+                                                                  context,
+                                                                ).backgroundColor,
                                                           ),
-                                                          style: CustomTheme.of(
-                                                                  context)
-                                                              .bodyMedium
-                                                              .override(
+                                                          style:
+                                                              CustomTheme.of(
+                                                                context,
+                                                              ).bodyMedium.override(
                                                                 fontFamily:
                                                                     'SF Pro Text',
                                                                 color: CustomTheme.of(
-                                                                        context)
-                                                                    .primaryTextColor,
+                                                                  context,
+                                                                ).primaryTextColor,
                                                                 fontSize: 16.0,
                                                                 fontWeight:
                                                                     FontWeight
@@ -377,14 +388,14 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget>
                                                               ),
                                                           cursorColor:
                                                               CustomTheme.of(
-                                                                      context)
-                                                                  .primaryTheme,
+                                                                context,
+                                                              ).primaryTheme,
                                                           validator: (value) {
                                                             if (value == null ||
                                                                 value.isEmpty) {
-                                                              return AppLocalizations
-                                                                      .of(context)
-                                                                  .getText(
+                                                              return AppLocalizations.of(
+                                                                context,
+                                                              ).getText(
                                                                 '3kka47zo' /* Please enter a valid full name */,
                                                               );
                                                             }
@@ -403,19 +414,17 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget>
                                                       children: [
                                                         Text(
                                                           AppLocalizations.of(
-                                                                  context)
-                                                              .getText(
-                                                            'lastName',
-                                                          ),
-                                                          style: CustomTheme.of(
-                                                                  context)
-                                                              .bodyMedium
-                                                              .override(
+                                                            context,
+                                                          ).getText('lastName'),
+                                                          style:
+                                                              CustomTheme.of(
+                                                                context,
+                                                              ).bodyMedium.override(
                                                                 fontFamily:
                                                                     'SF Pro Text',
                                                                 color: CustomTheme.of(
-                                                                        context)
-                                                                    .primaryTextColor,
+                                                                  context,
+                                                                ).primaryTextColor,
                                                                 fontSize: 16.0,
                                                                 fontWeight:
                                                                     FontWeight
@@ -433,130 +442,125 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget>
                                                               TextInputAction
                                                                   .next,
                                                           obscureText: false,
-                                                          decoration:
-                                                              InputDecoration(
+                                                          decoration: InputDecoration(
                                                             isDense: true,
                                                             labelStyle:
                                                                 CustomTheme.of(
-                                                                        context)
-                                                                    .labelMedium
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          'SF Pro Text',
-                                                                      color: CustomTheme.of(
-                                                                              context)
-                                                                          .black40,
-                                                                      fontSize:
-                                                                          16.0,
-                                                                      useGoogleFonts:
-                                                                          false,
-                                                                    ),
+                                                                  context,
+                                                                ).labelMedium.override(
+                                                                  fontFamily:
+                                                                      'SF Pro Text',
+                                                                  color:
+                                                                      CustomTheme.of(
+                                                                        context,
+                                                                      ).black40,
+                                                                  fontSize:
+                                                                      16.0,
+                                                                  useGoogleFonts:
+                                                                      false,
+                                                                ),
                                                             hintText:
                                                                 AppLocalizations.of(
-                                                                        context)
-                                                                    .getText(
-                                                              'lastNameHint',
-                                                            ),
+                                                                  context,
+                                                                ).getText(
+                                                                  'lastNameHint',
+                                                                ),
                                                             hintStyle:
                                                                 CustomTheme.of(
-                                                                        context)
-                                                                    .labelMedium
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          'SF Pro Text',
-                                                                      color: CustomTheme.of(
-                                                                              context)
-                                                                          .black40,
-                                                                      fontSize:
-                                                                          16.0,
-                                                                      useGoogleFonts:
-                                                                          false,
-                                                                    ),
+                                                                  context,
+                                                                ).labelMedium.override(
+                                                                  fontFamily:
+                                                                      'SF Pro Text',
+                                                                  color:
+                                                                      CustomTheme.of(
+                                                                        context,
+                                                                      ).black40,
+                                                                  fontSize:
+                                                                      16.0,
+                                                                  useGoogleFonts:
+                                                                      false,
+                                                                ),
                                                             errorStyle:
                                                                 CustomTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          'SF Pro Text',
-                                                                      color: CustomTheme.of(
-                                                                              context)
-                                                                          .errorText,
-                                                                      fontSize:
-                                                                          16.0,
-                                                                      useGoogleFonts:
-                                                                          false,
-                                                                    ),
-                                                            enabledBorder:
-                                                                OutlineInputBorder(
-                                                              borderSide:
-                                                                  BorderSide(
-                                                                color: CustomTheme.of(
-                                                                        context)
-                                                                    .black20,
+                                                                  context,
+                                                                ).bodyMedium.override(
+                                                                  fontFamily:
+                                                                      'SF Pro Text',
+                                                                  color:
+                                                                      CustomTheme.of(
+                                                                        context,
+                                                                      ).errorText,
+                                                                  fontSize:
+                                                                      16.0,
+                                                                  useGoogleFonts:
+                                                                      false,
+                                                                ),
+                                                            enabledBorder: OutlineInputBorder(
+                                                              borderSide: BorderSide(
+                                                                color:
+                                                                    CustomTheme.of(
+                                                                      context,
+                                                                    ).black20,
                                                                 width: 1.0,
                                                               ),
                                                               borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          12.0),
+                                                                  BorderRadius.circular(
+                                                                    12.0,
+                                                                  ),
                                                             ),
-                                                            focusedBorder:
-                                                                OutlineInputBorder(
-                                                              borderSide:
-                                                                  BorderSide(
+                                                            focusedBorder: OutlineInputBorder(
+                                                              borderSide: BorderSide(
                                                                 color: CustomTheme.of(
-                                                                        context)
-                                                                    .primaryTheme,
+                                                                  context,
+                                                                ).primaryTheme,
                                                                 width: 1.0,
                                                               ),
                                                               borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          12.0),
+                                                                  BorderRadius.circular(
+                                                                    12.0,
+                                                                  ),
                                                             ),
-                                                            errorBorder:
-                                                                OutlineInputBorder(
-                                                              borderSide:
-                                                                  BorderSide(
-                                                                color: CustomTheme.of(
-                                                                        context)
-                                                                    .errorText,
+                                                            errorBorder: OutlineInputBorder(
+                                                              borderSide: BorderSide(
+                                                                color:
+                                                                    CustomTheme.of(
+                                                                      context,
+                                                                    ).errorText,
                                                                 width: 1.0,
                                                               ),
                                                               borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          12.0),
+                                                                  BorderRadius.circular(
+                                                                    12.0,
+                                                                  ),
                                                             ),
                                                             focusedErrorBorder:
                                                                 OutlineInputBorder(
-                                                              borderSide:
-                                                                  BorderSide(
-                                                                color: CustomTheme.of(
-                                                                        context)
-                                                                    .errorText,
-                                                                width: 1.0,
-                                                              ),
-                                                              borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          12.0),
-                                                            ),
+                                                                  borderSide: BorderSide(
+                                                                    color: CustomTheme.of(
+                                                                      context,
+                                                                    ).errorText,
+                                                                    width: 1.0,
+                                                                  ),
+                                                                  borderRadius:
+                                                                      BorderRadius.circular(
+                                                                        12.0,
+                                                                      ),
+                                                                ),
                                                             filled: true,
-                                                            fillColor: CustomTheme
-                                                                    .of(context)
-                                                                .backgroundColor,
+                                                            fillColor:
+                                                                CustomTheme.of(
+                                                                  context,
+                                                                ).backgroundColor,
                                                           ),
-                                                          style: CustomTheme.of(
-                                                                  context)
-                                                              .bodyMedium
-                                                              .override(
+                                                          style:
+                                                              CustomTheme.of(
+                                                                context,
+                                                              ).bodyMedium.override(
                                                                 fontFamily:
                                                                     'SF Pro Text',
                                                                 color: CustomTheme.of(
-                                                                        context)
-                                                                    .primaryTextColor,
+                                                                  context,
+                                                                ).primaryTextColor,
                                                                 fontSize: 16.0,
                                                                 fontWeight:
                                                                     FontWeight
@@ -566,14 +570,14 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget>
                                                               ),
                                                           cursorColor:
                                                               CustomTheme.of(
-                                                                      context)
-                                                                  .primaryTheme,
+                                                                context,
+                                                              ).primaryTheme,
                                                           validator: (value) {
                                                             if (value == null ||
                                                                 value.isEmpty) {
-                                                              return AppLocalizations
-                                                                      .of(context)
-                                                                  .getText(
+                                                              return AppLocalizations.of(
+                                                                context,
+                                                              ).getText(
                                                                 '3kka47zo' /* Please enter a valid full name */,
                                                               );
                                                             }
@@ -588,21 +592,25 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget>
                                             ),
                                             Padding(
                                               padding:
-                                                  const EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                      0.0, 20.0, 0.0, 0.0),
+                                                  const EdgeInsetsDirectional.fromSTEB(
+                                                    0.0,
+                                                    20.0,
+                                                    0.0,
+                                                    0.0,
+                                                  ),
                                               child: Text(
-                                                AppLocalizations.of(context)
-                                                    .getText(
-                                                  'email' /* Phone Number */,
+                                                AppLocalizations.of(
+                                                  context,
+                                                ).getText(
+                                                  'userID' /* Phone Number */,
                                                 ),
                                                 style: CustomTheme.of(context)
                                                     .bodyMedium
                                                     .override(
                                                       fontFamily: 'SF Pro Text',
                                                       color: CustomTheme.of(
-                                                              context)
-                                                          .primaryTextColor,
+                                                        context,
+                                                      ).primaryTextColor,
                                                       fontSize: 16.0,
                                                       fontWeight:
                                                           FontWeight.normal,
@@ -612,9 +620,12 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget>
                                             ),
                                             Padding(
                                               padding:
-                                                  const EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                      0.0, 5.0, 0.0, 0.0),
+                                                  const EdgeInsetsDirectional.fromSTEB(
+                                                    0.0,
+                                                    5.0,
+                                                    0.0,
+                                                    0.0,
+                                                  ),
                                               child: TextFormField(
                                                 controller:
                                                     controller.textController6,
@@ -625,123 +636,127 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget>
                                                 obscureText: false,
                                                 decoration: InputDecoration(
                                                   isDense: true,
-                                                  labelStyle: CustomTheme.of(
-                                                          context)
-                                                      .labelMedium
-                                                      .override(
+                                                  labelStyle:
+                                                      CustomTheme.of(
+                                                        context,
+                                                      ).labelMedium.override(
                                                         fontFamily:
                                                             'SF Pro Text',
                                                         color: CustomTheme.of(
-                                                                context)
-                                                            .black40,
+                                                          context,
+                                                        ).black40,
                                                         fontSize: 16.0,
                                                         useGoogleFonts: false,
                                                       ),
-                                                  hintText: AppLocalizations.of(
-                                                          context)
-                                                      .getText(
-                                                    'emailHint' /* example@example.com */,
-                                                  ),
-                                                  hintStyle: CustomTheme.of(
-                                                          context)
-                                                      .labelMedium
-                                                      .override(
+                                                  hintText:
+                                                      AppLocalizations.of(
+                                                        context,
+                                                      ).getText(
+                                                        'userIDHint' /* example@example.com */,
+                                                      ),
+                                                  hintStyle:
+                                                      CustomTheme.of(
+                                                        context,
+                                                      ).labelMedium.override(
                                                         fontFamily:
                                                             'SF Pro Text',
                                                         color: CustomTheme.of(
-                                                                context)
-                                                            .black40,
+                                                          context,
+                                                        ).black40,
                                                         fontSize: 16.0,
                                                         useGoogleFonts: false,
                                                       ),
-                                                  errorStyle: CustomTheme.of(
-                                                          context)
-                                                      .bodyMedium
-                                                      .override(
+                                                  errorStyle:
+                                                      CustomTheme.of(
+                                                        context,
+                                                      ).bodyMedium.override(
                                                         fontFamily:
                                                             'SF Pro Text',
                                                         color: CustomTheme.of(
-                                                                context)
-                                                            .errorText,
+                                                          context,
+                                                        ).errorText,
                                                         fontSize: 16.0,
                                                         useGoogleFonts: false,
                                                       ),
                                                   enabledBorder:
                                                       OutlineInputBorder(
-                                                    borderSide: BorderSide(
-                                                      color: CustomTheme.of(
-                                                              context)
-                                                          .black20,
-                                                      width: 1.0,
-                                                    ),
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            12.0),
-                                                  ),
+                                                        borderSide: BorderSide(
+                                                          color: CustomTheme.of(
+                                                            context,
+                                                          ).black20,
+                                                          width: 1.0,
+                                                        ),
+                                                        borderRadius:
+                                                            BorderRadius.circular(
+                                                              12.0,
+                                                            ),
+                                                      ),
                                                   focusedBorder:
                                                       OutlineInputBorder(
+                                                        borderSide: BorderSide(
+                                                          color: CustomTheme.of(
+                                                            context,
+                                                          ).primaryTheme,
+                                                          width: 1.0,
+                                                        ),
+                                                        borderRadius:
+                                                            BorderRadius.circular(
+                                                              12.0,
+                                                            ),
+                                                      ),
+                                                  errorBorder: OutlineInputBorder(
                                                     borderSide: BorderSide(
                                                       color: CustomTheme.of(
-                                                              context)
-                                                          .primaryTheme,
+                                                        context,
+                                                      ).errorText,
                                                       width: 1.0,
                                                     ),
                                                     borderRadius:
                                                         BorderRadius.circular(
-                                                            12.0),
-                                                  ),
-                                                  errorBorder:
-                                                      OutlineInputBorder(
-                                                    borderSide: BorderSide(
-                                                      color: CustomTheme.of(
-                                                              context)
-                                                          .errorText,
-                                                      width: 1.0,
-                                                    ),
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            12.0),
+                                                          12.0,
+                                                        ),
                                                   ),
                                                   focusedErrorBorder:
                                                       OutlineInputBorder(
-                                                    borderSide: BorderSide(
-                                                      color: CustomTheme.of(
-                                                              context)
-                                                          .errorText,
-                                                      width: 1.0,
-                                                    ),
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            12.0),
-                                                  ),
+                                                        borderSide: BorderSide(
+                                                          color: CustomTheme.of(
+                                                            context,
+                                                          ).errorText,
+                                                          width: 1.0,
+                                                        ),
+                                                        borderRadius:
+                                                            BorderRadius.circular(
+                                                              12.0,
+                                                            ),
+                                                      ),
                                                   filled: true,
-                                                  fillColor:
-                                                      CustomTheme.of(context)
-                                                          .backgroundColor,
+                                                  fillColor: CustomTheme.of(
+                                                    context,
+                                                  ).backgroundColor,
                                                 ),
                                                 style: CustomTheme.of(context)
                                                     .bodyMedium
                                                     .override(
                                                       fontFamily: 'SF Pro Text',
                                                       color: CustomTheme.of(
-                                                              context)
-                                                          .primaryTextColor,
+                                                        context,
+                                                      ).primaryTextColor,
                                                       fontSize: 16.0,
                                                       fontWeight:
                                                           FontWeight.normal,
                                                       useGoogleFonts: false,
                                                     ),
-                                                cursorColor:
-                                                    CustomTheme.of(context)
-                                                        .primaryTheme,
+                                                cursorColor: CustomTheme.of(
+                                                  context,
+                                                ).primaryTheme,
                                                 validator: (val) {
                                                   if (val == null ||
                                                       val.isEmpty ||
-                                                      !GetUtils.isEmail(val)) {
+                                                      !GetUtils.isuserID(val)) {
                                                     return AppLocalizations.of(
-                                                            context)
-                                                        .getText(
-                                                      'validEmail' /* Please enter a valid email... */,
+                                                      context,
+                                                    ).getText(
+                                                      'validuserID' /* Please enter a valid userID... */,
                                                     );
                                                   }
 
@@ -751,12 +766,16 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget>
                                             ),
                                             Padding(
                                               padding:
-                                                  const EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                      0.0, 20.0, 0.0, 0.0),
+                                                  const EdgeInsetsDirectional.fromSTEB(
+                                                    0.0,
+                                                    20.0,
+                                                    0.0,
+                                                    0.0,
+                                                  ),
                                               child: Text(
-                                                AppLocalizations.of(context)
-                                                    .getText(
+                                                AppLocalizations.of(
+                                                  context,
+                                                ).getText(
                                                   'a9acmnfp' /* Phone Number */,
                                                 ),
                                                 style: CustomTheme.of(context)
@@ -764,8 +783,8 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget>
                                                     .override(
                                                       fontFamily: 'SF Pro Text',
                                                       color: CustomTheme.of(
-                                                              context)
-                                                          .primaryTextColor,
+                                                        context,
+                                                      ).primaryTextColor,
                                                       fontSize: 16.0,
                                                       fontWeight:
                                                           FontWeight.normal,
@@ -775,9 +794,12 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget>
                                             ),
                                             Padding(
                                               padding:
-                                                  const EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                      0.0, 5.0, 0.0, 0.0),
+                                                  const EdgeInsetsDirectional.fromSTEB(
+                                                    0.0,
+                                                    5.0,
+                                                    0.0,
+                                                    0.0,
+                                                  ),
                                               child: IntlPhoneField(
                                                 controller:
                                                     controller.textController2,
@@ -790,49 +812,51 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget>
                                                     EdgeInsets.zero,
                                                 flagsButtonMargin:
                                                     const EdgeInsets.only(
-                                                        left: 16, right: 0),
+                                                      left: 16,
+                                                      right: 0,
+                                                    ),
                                                 style: CustomTheme.of(context)
                                                     .bodyMedium
                                                     .override(
                                                       fontFamily: 'SF Pro Text',
                                                       color: CustomTheme.of(
-                                                              context)
-                                                          .primaryTextColor,
+                                                        context,
+                                                      ).primaryTextColor,
                                                       fontSize: 16.0,
                                                       fontWeight:
                                                           FontWeight.normal,
                                                       useGoogleFonts: false,
                                                     ),
                                                 dropdownTextStyle:
-                                                    CustomTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily:
-                                                              'SF Pro Text',
-                                                          color: CustomTheme.of(
-                                                                  context)
-                                                              .primaryTextColor,
-                                                          fontSize: 16.0,
-                                                          fontWeight:
-                                                              FontWeight.normal,
-                                                          useGoogleFonts: false,
-                                                        ),
-                                                cursorColor:
-                                                    CustomTheme.of(context)
-                                                        .primaryTheme,
+                                                    CustomTheme.of(
+                                                      context,
+                                                    ).bodyMedium.override(
+                                                      fontFamily: 'SF Pro Text',
+                                                      color: CustomTheme.of(
+                                                        context,
+                                                      ).primaryTextColor,
+                                                      fontSize: 16.0,
+                                                      fontWeight:
+                                                          FontWeight.normal,
+                                                      useGoogleFonts: false,
+                                                    ),
+                                                cursorColor: CustomTheme.of(
+                                                  context,
+                                                ).primaryTheme,
                                                 dropdownIconPosition:
                                                     IconPosition.trailing,
                                                 dropdownIcon: const Icon(
-                                                    Icons.keyboard_arrow_down,
-                                                    color: Colors.black),
+                                                  Icons.keyboard_arrow_down,
+                                                  color: Colors.black,
+                                                ),
                                                 dropdownDecoration:
                                                     const BoxDecoration(),
                                                 validator: (value) {
                                                   if (value == null ||
                                                       value.isEmpty) {
                                                     return AppLocalizations.of(
-                                                            context)
-                                                        .getText(
+                                                      context,
+                                                    ).getText(
                                                       '1z2k6u9v' /* Please enter a valid phone num... */,
                                                     );
                                                   }
@@ -840,81 +864,83 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget>
                                                 },
                                                 decoration: InputDecoration(
                                                   floatingLabelStyle:
-                                                      CustomTheme.of(context)
-                                                          .bodyMedium
-                                                          .override(
-                                                            fontFamily:
-                                                                'SF Pro Text',
-                                                            color: CustomTheme
-                                                                    .of(context)
-                                                                .primaryTextColor,
-                                                            fontSize: 16.0,
-                                                            fontWeight:
-                                                                FontWeight
-                                                                    .normal,
-                                                            useGoogleFonts:
-                                                                false,
-                                                          ),
+                                                      CustomTheme.of(
+                                                        context,
+                                                      ).bodyMedium.override(
+                                                        fontFamily:
+                                                            'SF Pro Text',
+                                                        color: CustomTheme.of(
+                                                          context,
+                                                        ).primaryTextColor,
+                                                        fontSize: 16.0,
+                                                        fontWeight:
+                                                            FontWeight.normal,
+                                                        useGoogleFonts: false,
+                                                      ),
                                                   contentPadding:
                                                       EdgeInsets.zero,
-                                                  hintText: AppLocalizations.of(
-                                                          context)
-                                                      .getText(
-                                                    'pxn1e11f' /*  Enter phone number */,
-                                                  ),
-                                                  errorBorder:
-                                                      OutlineInputBorder(
+                                                  hintText:
+                                                      AppLocalizations.of(
+                                                        context,
+                                                      ).getText(
+                                                        'pxn1e11f' /*  Enter phone number */,
+                                                      ),
+                                                  errorBorder: OutlineInputBorder(
                                                     borderRadius:
                                                         const BorderRadius.all(
-                                                            Radius.circular(
-                                                                12)),
+                                                          Radius.circular(12),
+                                                        ),
                                                     borderSide: BorderSide(
                                                       color: CustomTheme.of(
-                                                              context)
-                                                          .errorText,
+                                                        context,
+                                                      ).errorText,
                                                       width: 1,
                                                     ),
                                                   ),
                                                   enabledBorder:
                                                       OutlineInputBorder(
-                                                    borderSide: BorderSide(
-                                                      color: CustomTheme.of(
-                                                              context)
-                                                          .black20,
-                                                      width: 1.0,
-                                                    ),
-                                                  ),
+                                                        borderSide: BorderSide(
+                                                          color: CustomTheme.of(
+                                                            context,
+                                                          ).black20,
+                                                          width: 1.0,
+                                                        ),
+                                                      ),
                                                   border:
                                                       const OutlineInputBorder(
-                                                    borderSide: BorderSide(
-                                                      color: Colors.transparent,
-                                                    ),
-                                                  ),
+                                                        borderSide: BorderSide(
+                                                          color: Colors
+                                                              .transparent,
+                                                        ),
+                                                      ),
                                                   focusedErrorBorder:
                                                       OutlineInputBorder(
-                                                    borderRadius:
-                                                        const BorderRadius.all(
-                                                            Radius.circular(
-                                                                12)),
-                                                    borderSide: BorderSide(
-                                                      color: CustomTheme.of(
-                                                              context)
-                                                          .errorText,
-                                                      width: 1,
-                                                    ),
-                                                  ),
+                                                        borderRadius:
+                                                            const BorderRadius.all(
+                                                              Radius.circular(
+                                                                12,
+                                                              ),
+                                                            ),
+                                                        borderSide: BorderSide(
+                                                          color: CustomTheme.of(
+                                                            context,
+                                                          ).errorText,
+                                                          width: 1,
+                                                        ),
+                                                      ),
                                                   focusedBorder:
                                                       OutlineInputBorder(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            12),
-                                                    borderSide: BorderSide(
-                                                      color: CustomTheme.of(
-                                                              context)
-                                                          .primaryTextColor,
-                                                      width: 1,
-                                                    ),
-                                                  ),
+                                                        borderRadius:
+                                                            BorderRadius.circular(
+                                                              12,
+                                                            ),
+                                                        borderSide: BorderSide(
+                                                          color: CustomTheme.of(
+                                                            context,
+                                                          ).primaryTextColor,
+                                                          width: 1,
+                                                        ),
+                                                      ),
                                                 ),
                                                 onChanged: (phone) {
                                                   log(phone.completeNumber);
@@ -925,12 +951,16 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget>
                                             ),
                                             Padding(
                                               padding:
-                                                  const EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                      0.0, 20.0, 0.0, 0.0),
+                                                  const EdgeInsetsDirectional.fromSTEB(
+                                                    0.0,
+                                                    20.0,
+                                                    0.0,
+                                                    0.0,
+                                                  ),
                                               child: Text(
-                                                AppLocalizations.of(context)
-                                                    .getText(
+                                                AppLocalizations.of(
+                                                  context,
+                                                ).getText(
                                                   'pcerqf9r' /* Password */,
                                                 ),
                                                 style: CustomTheme.of(context)
@@ -938,8 +968,8 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget>
                                                     .override(
                                                       fontFamily: 'SF Pro Text',
                                                       color: CustomTheme.of(
-                                                              context)
-                                                          .primaryTextColor,
+                                                        context,
+                                                      ).primaryTextColor,
                                                       fontSize: 16.0,
                                                       fontWeight:
                                                           FontWeight.normal,
@@ -949,9 +979,12 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget>
                                             ),
                                             Padding(
                                               padding:
-                                                  const EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                      0.0, 5.0, 0.0, 0.0),
+                                                  const EdgeInsetsDirectional.fromSTEB(
+                                                    0.0,
+                                                    5.0,
+                                                    0.0,
+                                                    0.0,
+                                                  ),
                                               child: Obx(
                                                 () => TextFormField(
                                                   controller: controller
@@ -961,112 +994,122 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget>
                                                   textInputAction:
                                                       TextInputAction.next,
                                                   obscureText: controller
-                                                      .isShowPassword.value,
+                                                      .isShowPassword
+                                                      .value,
                                                   decoration: InputDecoration(
                                                     hintText:
                                                         AppLocalizations.of(
-                                                                context)
-                                                            .getText(
-                                                      'zu2i71c6' /* Enter your password */,
-                                                    ),
-                                                    hintStyle: CustomTheme.of(
-                                                            context)
-                                                        .labelMedium
-                                                        .override(
+                                                          context,
+                                                        ).getText(
+                                                          'zu2i71c6' /* Enter your password */,
+                                                        ),
+                                                    hintStyle:
+                                                        CustomTheme.of(
+                                                          context,
+                                                        ).labelMedium.override(
                                                           fontFamily:
                                                               'SF Pro Text',
                                                           color: CustomTheme.of(
-                                                                  context)
-                                                              .black40,
+                                                            context,
+                                                          ).black40,
                                                           fontSize: 16.0,
                                                           useGoogleFonts: false,
                                                         ),
-                                                    errorStyle: CustomTheme.of(
-                                                            context)
-                                                        .bodyMedium
-                                                        .override(
+                                                    errorStyle:
+                                                        CustomTheme.of(
+                                                          context,
+                                                        ).bodyMedium.override(
                                                           fontFamily:
                                                               'SF Pro Text',
                                                           color: CustomTheme.of(
-                                                                  context)
-                                                              .errorText,
+                                                            context,
+                                                          ).errorText,
                                                           fontSize: 16.0,
                                                           useGoogleFonts: false,
                                                         ),
                                                     enabledBorder:
                                                         OutlineInputBorder(
-                                                      borderSide: BorderSide(
-                                                        color: CustomTheme.of(
-                                                                context)
-                                                            .black20,
-                                                        width: 1.0,
-                                                      ),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              12.0),
-                                                    ),
+                                                          borderSide: BorderSide(
+                                                            color:
+                                                                CustomTheme.of(
+                                                                  context,
+                                                                ).black20,
+                                                            width: 1.0,
+                                                          ),
+                                                          borderRadius:
+                                                              BorderRadius.circular(
+                                                                12.0,
+                                                              ),
+                                                        ),
                                                     focusedBorder:
                                                         OutlineInputBorder(
+                                                          borderSide: BorderSide(
+                                                            color:
+                                                                CustomTheme.of(
+                                                                  context,
+                                                                ).primaryTheme,
+                                                            width: 1.0,
+                                                          ),
+                                                          borderRadius:
+                                                              BorderRadius.circular(
+                                                                12.0,
+                                                              ),
+                                                        ),
+                                                    errorBorder: OutlineInputBorder(
                                                       borderSide: BorderSide(
                                                         color: CustomTheme.of(
-                                                                context)
-                                                            .primaryTheme,
+                                                          context,
+                                                        ).errorText,
                                                         width: 1.0,
                                                       ),
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                              12.0),
-                                                    ),
-                                                    errorBorder:
-                                                        OutlineInputBorder(
-                                                      borderSide: BorderSide(
-                                                        color: CustomTheme.of(
-                                                                context)
-                                                            .errorText,
-                                                        width: 1.0,
-                                                      ),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              12.0),
+                                                            12.0,
+                                                          ),
                                                     ),
                                                     focusedErrorBorder:
                                                         OutlineInputBorder(
-                                                      borderSide: BorderSide(
-                                                        color: CustomTheme.of(
-                                                                context)
-                                                            .errorText,
-                                                        width: 1.0,
-                                                      ),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              12.0),
-                                                    ),
+                                                          borderSide: BorderSide(
+                                                            color:
+                                                                CustomTheme.of(
+                                                                  context,
+                                                                ).errorText,
+                                                            width: 1.0,
+                                                          ),
+                                                          borderRadius:
+                                                              BorderRadius.circular(
+                                                                12.0,
+                                                              ),
+                                                        ),
                                                     filled: true,
-                                                    fillColor:
-                                                        CustomTheme.of(context)
-                                                            .backgroundColor,
+                                                    fillColor: CustomTheme.of(
+                                                      context,
+                                                    ).backgroundColor,
                                                     suffixIcon: GestureDetector(
                                                       onTap: () {
                                                         controller
-                                                                .isShowPassword
-                                                                .value =
-                                                            !controller
-                                                                .isShowPassword
-                                                                .value;
+                                                            .isShowPassword
+                                                            .value = !controller
+                                                            .isShowPassword
+                                                            .value;
                                                       },
                                                       child: Padding(
                                                         padding:
-                                                            const EdgeInsets
-                                                                .fromLTRB(
-                                                                12, 14, 12, 14),
+                                                            const EdgeInsets.fromLTRB(
+                                                              12,
+                                                              14,
+                                                              12,
+                                                              14,
+                                                            ),
                                                         child: SvgPicture.asset(
-                                                            controller
-                                                                    .isShowPassword
-                                                                    .value
-                                                                ? "assets/images/eye close.svg"
-                                                                : "assets/images/eye.svg",
-                                                            height: 24,
-                                                            width: 24),
+                                                          controller
+                                                                  .isShowPassword
+                                                                  .value
+                                                              ? "assets/images/eye close.svg"
+                                                              : "assets/images/eye.svg",
+                                                          height: 24,
+                                                          width: 24,
+                                                        ),
                                                       ),
                                                     ),
                                                   ),
@@ -1076,23 +1119,23 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget>
                                                         fontFamily:
                                                             'SF Pro Text',
                                                         color: CustomTheme.of(
-                                                                context)
-                                                            .primaryTextColor,
+                                                          context,
+                                                        ).primaryTextColor,
                                                         fontSize: 16.0,
                                                         useGoogleFonts: false,
                                                       ),
                                                   keyboardType: TextInputType
                                                       .visiblePassword,
-                                                  cursorColor:
-                                                      CustomTheme.of(context)
-                                                          .primaryTheme,
+                                                  cursorColor: CustomTheme.of(
+                                                    context,
+                                                  ).primaryTheme,
                                                   validator: (value) {
                                                     if (value == null ||
                                                         value.isEmpty ||
                                                         value.length < 8) {
-                                                      return AppLocalizations
-                                                              .of(context)
-                                                          .getText(
+                                                      return AppLocalizations.of(
+                                                        context,
+                                                      ).getText(
                                                         'venjprs4' /* Please enter a valid password */,
                                                       );
                                                     }
@@ -1103,21 +1146,23 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget>
                                             ),
                                             Padding(
                                               padding:
-                                                  const EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                      0.0, 20.0, 0.0, 0.0),
+                                                  const EdgeInsetsDirectional.fromSTEB(
+                                                    0.0,
+                                                    20.0,
+                                                    0.0,
+                                                    0.0,
+                                                  ),
                                               child: Text(
-                                                AppLocalizations.of(context)
-                                                    .getText(
-                                                  'birthdate',
-                                                ),
+                                                AppLocalizations.of(
+                                                  context,
+                                                ).getText('birthdate'),
                                                 style: CustomTheme.of(context)
                                                     .bodyMedium
                                                     .override(
                                                       fontFamily: 'SF Pro Text',
                                                       color: CustomTheme.of(
-                                                              context)
-                                                          .primaryTextColor,
+                                                        context,
+                                                      ).primaryTextColor,
                                                       fontSize: 16.0,
                                                       fontWeight:
                                                           FontWeight.normal,
@@ -1127,23 +1172,28 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget>
                                             ),
                                             Padding(
                                               padding:
-                                                  const EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                      0.0, 20.0, 0.0, 0.0),
+                                                  const EdgeInsetsDirectional.fromSTEB(
+                                                    0.0,
+                                                    20.0,
+                                                    0.0,
+                                                    0.0,
+                                                  ),
                                               child: Container(
                                                 padding: EdgeInsets.symmetric(
-                                                    vertical: 5.0,
-                                                    horizontal: 20.0),
+                                                  vertical: 5.0,
+                                                  horizontal: 20.0,
+                                                ),
                                                 decoration: BoxDecoration(
                                                   border: Border.all(
-                                                    color:
-                                                        CustomTheme.of(context)
-                                                            .black20,
+                                                    color: CustomTheme.of(
+                                                      context,
+                                                    ).black20,
                                                     width: 1.0,
                                                   ),
                                                   borderRadius:
                                                       BorderRadius.circular(
-                                                          12.0),
+                                                        12.0,
+                                                      ),
                                                 ),
                                                 child: Row(
                                                   mainAxisAlignment:
@@ -1156,37 +1206,37 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget>
                                                           .substring(0, 10),
                                                       style:
                                                           CustomTheme.of(
-                                                                  context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'SF Pro Text',
-                                                                color: CustomTheme.of(
-                                                                        context)
-                                                                    .primaryTextColor,
-                                                                fontSize: 16.0,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .normal,
-                                                                useGoogleFonts:
-                                                                    false,
-                                                              ),
+                                                            context,
+                                                          ).bodyMedium.override(
+                                                            fontFamily:
+                                                                'SF Pro Text',
+                                                            color: CustomTheme.of(
+                                                              context,
+                                                            ).primaryTextColor,
+                                                            fontSize: 16.0,
+                                                            fontWeight:
+                                                                FontWeight
+                                                                    .normal,
+                                                            useGoogleFonts:
+                                                                false,
+                                                          ),
                                                     ),
                                                     Container(
                                                       width: 40.0,
                                                       height: 40.0,
                                                       decoration: BoxDecoration(
                                                         color: CustomTheme.of(
-                                                                context)
-                                                            .backgroundColor,
+                                                          context,
+                                                        ).backgroundColor,
                                                         shape: BoxShape.circle,
                                                       ),
                                                       alignment:
                                                           const AlignmentDirectional(
-                                                              1.0, 0.0),
+                                                            1.0,
+                                                            0.0,
+                                                          ),
                                                       child: Builder(
-                                                        builder: (context) =>
-                                                            InkWell(
+                                                        builder: (context) => InkWell(
                                                           splashColor: Colors
                                                               .transparent,
                                                           focusColor: Colors
@@ -1198,8 +1248,7 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget>
                                                           onTap: () async {
                                                             await showDialog(
                                                               context: context,
-                                                              builder:
-                                                                  (dialogContext) {
+                                                              builder: (dialogContext) {
                                                                 return Dialog(
                                                                   elevation: 0,
                                                                   insetPadding:
@@ -1208,23 +1257,29 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget>
                                                                   backgroundColor:
                                                                       Colors
                                                                           .transparent,
-                                                                  alignment: const AlignmentDirectional(
-                                                                          0.0,
-                                                                          0.0)
-                                                                      .resolve(
-                                                                          Directionality.of(
-                                                                              context)),
-                                                                  child:
-                                                                      GestureDetector(
-                                                                    onTap: () => controller
+                                                                  alignment:
+                                                                      const AlignmentDirectional(
+                                                                        0.0,
+                                                                        0.0,
+                                                                      ).resolve(
+                                                                        Directionality.of(
+                                                                          context,
+                                                                        ),
+                                                                      ),
+                                                                  child: GestureDetector(
+                                                                    onTap: () =>
+                                                                        controller
                                                                             .unfocusNode
                                                                             .canRequestFocus
-                                                                        ? FocusScope.of(context).requestFocus(controller
-                                                                            .unfocusNode)
-                                                                        : FocusScope.of(context)
-                                                                            .unfocus(),
-                                                                    child:
-                                                                        const SizedBox(
+                                                                        ? FocusScope.of(
+                                                                            context,
+                                                                          ).requestFocus(
+                                                                            controller.unfocusNode,
+                                                                          )
+                                                                        : FocusScope.of(
+                                                                            context,
+                                                                          ).unfocus(),
+                                                                    child: const SizedBox(
                                                                       height:
                                                                           536.0,
                                                                       child:
@@ -1235,16 +1290,16 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget>
                                                               },
                                                             ).then((value) {
                                                               safeSetState(
-                                                                  () {});
+                                                                () {},
+                                                              );
                                                             });
                                                           },
                                                           child: ClipRRect(
                                                             borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        0.0),
-                                                            child: SvgPicture
-                                                                .asset(
+                                                                BorderRadius.circular(
+                                                                  0.0,
+                                                                ),
+                                                            child: SvgPicture.asset(
                                                               'assets/images/calender.svg',
                                                               width: 24.0,
                                                               height: 24.0,
@@ -1258,11 +1313,14 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget>
                                                 ),
                                               ),
                                             ),
-                                            Padding(                       
+                                            Padding(
                                               padding:
-                                                  const EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                      0.0, 20.0, 0.0, 0.0),
+                                                  const EdgeInsetsDirectional.fromSTEB(
+                                                    0.0,
+                                                    20.0,
+                                                    0.0,
+                                                    0.0,
+                                                  ),
                                               child: Row(
                                                 mainAxisAlignment:
                                                     MainAxisAlignment
@@ -1272,19 +1330,17 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget>
                                                     children: [
                                                       Text(
                                                         AppLocalizations.of(
-                                                                context)
-                                                            .getText(
-                                                          'male',
-                                                        ),
-                                                        style: CustomTheme.of(
-                                                                context)
-                                                            .bodyMedium
-                                                            .override(
+                                                          context,
+                                                        ).getText('male'),
+                                                        style:
+                                                            CustomTheme.of(
+                                                              context,
+                                                            ).bodyMedium.override(
                                                               fontFamily:
                                                                   'SF Pro Text',
-                                                              color: CustomTheme
-                                                                      .of(context)
-                                                                  .primaryTextColor,
+                                                              color: CustomTheme.of(
+                                                                context,
+                                                              ).primaryTextColor,
                                                               fontSize: 16.0,
                                                               fontWeight:
                                                                   FontWeight
@@ -1297,18 +1353,19 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget>
                                                       InkWell(
                                                         child: ClipRRect(
                                                           borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      0.0),
+                                                              BorderRadius.circular(
+                                                                0.0,
+                                                              ),
                                                           child:
                                                               SvgPicture.asset(
-                                                            isMale
-                                                                ? check
-                                                                : uncheck,
-                                                            width: 24.0,
-                                                            height: 24.0,
-                                                            fit: BoxFit.cover,
-                                                          ),
+                                                                isMale
+                                                                    ? check
+                                                                    : uncheck,
+                                                                width: 24.0,
+                                                                height: 24.0,
+                                                                fit: BoxFit
+                                                                    .cover,
+                                                              ),
                                                         ),
                                                         onTap: () {
                                                           isMale = true;
@@ -1321,19 +1378,17 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget>
                                                     children: [
                                                       Text(
                                                         AppLocalizations.of(
-                                                                context)
-                                                            .getText(
-                                                          'female',
-                                                        ),
-                                                        style: CustomTheme.of(
-                                                                context)
-                                                            .bodyMedium
-                                                            .override(
+                                                          context,
+                                                        ).getText('female'),
+                                                        style:
+                                                            CustomTheme.of(
+                                                              context,
+                                                            ).bodyMedium.override(
                                                               fontFamily:
                                                                   'SF Pro Text',
-                                                              color: CustomTheme
-                                                                      .of(context)
-                                                                  .primaryTextColor,
+                                                              color: CustomTheme.of(
+                                                                context,
+                                                              ).primaryTextColor,
                                                               fontSize: 16.0,
                                                               fontWeight:
                                                                   FontWeight
@@ -1346,18 +1401,19 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget>
                                                       InkWell(
                                                         child: ClipRRect(
                                                           borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      0.0),
+                                                              BorderRadius.circular(
+                                                                0.0,
+                                                              ),
                                                           child:
                                                               SvgPicture.asset(
-                                                            !isMale
-                                                                ? check
-                                                                : uncheck,
-                                                            width: 24.0,
-                                                            height: 24.0,
-                                                            fit: BoxFit.cover,
-                                                          ),
+                                                                !isMale
+                                                                    ? check
+                                                                    : uncheck,
+                                                                width: 24.0,
+                                                                height: 24.0,
+                                                                fit: BoxFit
+                                                                    .cover,
+                                                              ),
                                                         ),
                                                         onTap: () {
                                                           isMale = false;
@@ -1371,9 +1427,12 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget>
                                             ),
                                             Padding(
                                               padding:
-                                                  const EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                      0.0, 40.0, 0.0, 0.0),
+                                                  const EdgeInsetsDirectional.fromSTEB(
+                                                    0.0,
+                                                    40.0,
+                                                    0.0,
+                                                    0.0,
+                                                  ),
                                               child: InkWell(
                                                 splashColor: Colors.transparent,
                                                 focusColor: Colors.transparent,
@@ -1386,27 +1445,28 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget>
                                                       controller.birthdate !=
                                                           null) {
                                                     authController.register(
-                                                        controller
-                                                            .textController1
-                                                            .text,
-                                                        controller
-                                                            .textController11
-                                                            .text,
-                                                        controller
-                                                            .textController6
-                                                            .text,
-                                                        controller
-                                                            .textController3
-                                                            .text,
-                                                        controller
-                                                            .textController2
-                                                            .text,
-                                                        isMale
-                                                            ? Gender.male
-                                                            : Gender.female,
-                                                        controller.birthdate
-                                                            .toString()
-                                                            .substring(0, 10));
+                                                      controller
+                                                          .textController1
+                                                          .text,
+                                                      controller
+                                                          .textController11
+                                                          .text,
+                                                      controller
+                                                          .textController6
+                                                          .text,
+                                                      controller
+                                                          .textController3
+                                                          .text,
+                                                      controller
+                                                          .textController2
+                                                          .text,
+                                                      isMale
+                                                          ? Gender.male
+                                                          : Gender.female,
+                                                      controller.birthdate
+                                                          .toString()
+                                                          .substring(0, 10),
+                                                    );
                                                   }
                                                 },
                                                 child: const CustomButtonWidget(
@@ -1440,17 +1500,16 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget>
                                               CrossAxisAlignment.start,
                                           children: [
                                             Text(
-                                              AppLocalizations.of(context)
-                                                  .getText(
-                                                'email' /* Email */,
-                                              ),
+                                              AppLocalizations.of(
+                                                context,
+                                              ).getText('userID' /* userID */),
                                               style: CustomTheme.of(context)
                                                   .bodyMedium
                                                   .override(
                                                     fontFamily: 'SF Pro Text',
-                                                    color:
-                                                        CustomTheme.of(context)
-                                                            .primaryTextColor,
+                                                    color: CustomTheme.of(
+                                                      context,
+                                                    ).primaryTextColor,
                                                     fontSize: 16.0,
                                                     fontWeight:
                                                         FontWeight.normal,
@@ -1459,9 +1518,12 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget>
                                             ),
                                             Padding(
                                               padding:
-                                                  const EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                      0.0, 5.0, 0.0, 0.0),
+                                                  const EdgeInsetsDirectional.fromSTEB(
+                                                    0.0,
+                                                    5.0,
+                                                    0.0,
+                                                    0.0,
+                                                  ),
                                               child: TextFormField(
                                                 controller:
                                                     controller.textController4,
@@ -1472,123 +1534,127 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget>
                                                 obscureText: false,
                                                 decoration: InputDecoration(
                                                   isDense: true,
-                                                  labelStyle: CustomTheme.of(
-                                                          context)
-                                                      .labelMedium
-                                                      .override(
+                                                  labelStyle:
+                                                      CustomTheme.of(
+                                                        context,
+                                                      ).labelMedium.override(
                                                         fontFamily:
                                                             'SF Pro Text',
                                                         color: CustomTheme.of(
-                                                                context)
-                                                            .black40,
+                                                          context,
+                                                        ).black40,
                                                         fontSize: 16.0,
                                                         useGoogleFonts: false,
                                                       ),
-                                                  hintText: AppLocalizations.of(
-                                                          context)
-                                                      .getText(
-                                                    'emailHint' /* example@example.com */,
-                                                  ),
-                                                  hintStyle: CustomTheme.of(
-                                                          context)
-                                                      .labelMedium
-                                                      .override(
+                                                  hintText:
+                                                      AppLocalizations.of(
+                                                        context,
+                                                      ).getText(
+                                                        'userIDHint' /* example@example.com */,
+                                                      ),
+                                                  hintStyle:
+                                                      CustomTheme.of(
+                                                        context,
+                                                      ).labelMedium.override(
                                                         fontFamily:
                                                             'SF Pro Text',
                                                         color: CustomTheme.of(
-                                                                context)
-                                                            .black40,
+                                                          context,
+                                                        ).black40,
                                                         fontSize: 16.0,
                                                         useGoogleFonts: false,
                                                       ),
-                                                  errorStyle: CustomTheme.of(
-                                                          context)
-                                                      .bodyMedium
-                                                      .override(
+                                                  errorStyle:
+                                                      CustomTheme.of(
+                                                        context,
+                                                      ).bodyMedium.override(
                                                         fontFamily:
                                                             'SF Pro Text',
                                                         color: CustomTheme.of(
-                                                                context)
-                                                            .errorText,
+                                                          context,
+                                                        ).errorText,
                                                         fontSize: 16.0,
                                                         useGoogleFonts: false,
                                                       ),
                                                   enabledBorder:
                                                       OutlineInputBorder(
-                                                    borderSide: BorderSide(
-                                                      color: CustomTheme.of(
-                                                              context)
-                                                          .black20,
-                                                      width: 1.0,
-                                                    ),
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            12.0),
-                                                  ),
+                                                        borderSide: BorderSide(
+                                                          color: CustomTheme.of(
+                                                            context,
+                                                          ).black20,
+                                                          width: 1.0,
+                                                        ),
+                                                        borderRadius:
+                                                            BorderRadius.circular(
+                                                              12.0,
+                                                            ),
+                                                      ),
                                                   focusedBorder:
                                                       OutlineInputBorder(
+                                                        borderSide: BorderSide(
+                                                          color: CustomTheme.of(
+                                                            context,
+                                                          ).primaryTheme,
+                                                          width: 1.0,
+                                                        ),
+                                                        borderRadius:
+                                                            BorderRadius.circular(
+                                                              12.0,
+                                                            ),
+                                                      ),
+                                                  errorBorder: OutlineInputBorder(
                                                     borderSide: BorderSide(
                                                       color: CustomTheme.of(
-                                                              context)
-                                                          .primaryTheme,
+                                                        context,
+                                                      ).errorText,
                                                       width: 1.0,
                                                     ),
                                                     borderRadius:
                                                         BorderRadius.circular(
-                                                            12.0),
-                                                  ),
-                                                  errorBorder:
-                                                      OutlineInputBorder(
-                                                    borderSide: BorderSide(
-                                                      color: CustomTheme.of(
-                                                              context)
-                                                          .errorText,
-                                                      width: 1.0,
-                                                    ),
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            12.0),
+                                                          12.0,
+                                                        ),
                                                   ),
                                                   focusedErrorBorder:
                                                       OutlineInputBorder(
-                                                    borderSide: BorderSide(
-                                                      color: CustomTheme.of(
-                                                              context)
-                                                          .errorText,
-                                                      width: 1.0,
-                                                    ),
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            12.0),
-                                                  ),
+                                                        borderSide: BorderSide(
+                                                          color: CustomTheme.of(
+                                                            context,
+                                                          ).errorText,
+                                                          width: 1.0,
+                                                        ),
+                                                        borderRadius:
+                                                            BorderRadius.circular(
+                                                              12.0,
+                                                            ),
+                                                      ),
                                                   filled: true,
-                                                  fillColor:
-                                                      CustomTheme.of(context)
-                                                          .backgroundColor,
+                                                  fillColor: CustomTheme.of(
+                                                    context,
+                                                  ).backgroundColor,
                                                 ),
                                                 style: CustomTheme.of(context)
                                                     .bodyMedium
                                                     .override(
                                                       fontFamily: 'SF Pro Text',
                                                       color: CustomTheme.of(
-                                                              context)
-                                                          .primaryTextColor,
+                                                        context,
+                                                      ).primaryTextColor,
                                                       fontSize: 16.0,
                                                       fontWeight:
                                                           FontWeight.normal,
                                                       useGoogleFonts: false,
                                                     ),
-                                                cursorColor:
-                                                    CustomTheme.of(context)
-                                                        .primaryTheme,
+                                                cursorColor: CustomTheme.of(
+                                                  context,
+                                                ).primaryTheme,
                                                 validator: (val) {
                                                   if (val == null ||
                                                       val.isEmpty ||
-                                                      !GetUtils.isEmail(val)) {
+                                                      !GetUtils.isuserID(val)) {
                                                     return AppLocalizations.of(
-                                                            context)
-                                                        .getText(
-                                                      'validEmail' /* Please enter a valid email... */,
+                                                      context,
+                                                    ).getText(
+                                                      'validuserID' /* Please enter a valid userID... */,
                                                     );
                                                   }
 
@@ -1598,12 +1664,16 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget>
                                             ),
                                             Padding(
                                               padding:
-                                                  const EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                      0.0, 20.0, 0.0, 0.0),
+                                                  const EdgeInsetsDirectional.fromSTEB(
+                                                    0.0,
+                                                    20.0,
+                                                    0.0,
+                                                    0.0,
+                                                  ),
                                               child: Text(
-                                                AppLocalizations.of(context)
-                                                    .getText(
+                                                AppLocalizations.of(
+                                                  context,
+                                                ).getText(
                                                   'xkrhvehx' /* Password */,
                                                 ),
                                                 style: CustomTheme.of(context)
@@ -1611,8 +1681,8 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget>
                                                     .override(
                                                       fontFamily: 'SF Pro Text',
                                                       color: CustomTheme.of(
-                                                              context)
-                                                          .primaryTextColor,
+                                                        context,
+                                                      ).primaryTextColor,
                                                       fontSize: 16.0,
                                                       fontWeight:
                                                           FontWeight.normal,
@@ -1622,9 +1692,12 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget>
                                             ),
                                             Padding(
                                               padding:
-                                                  const EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                      0.0, 5.0, 0.0, 0.0),
+                                                  const EdgeInsetsDirectional.fromSTEB(
+                                                    0.0,
+                                                    5.0,
+                                                    0.0,
+                                                    0.0,
+                                                  ),
                                               child: Obx(
                                                 () => TextFormField(
                                                   controller: controller
@@ -1634,112 +1707,122 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget>
                                                   textInputAction:
                                                       TextInputAction.next,
                                                   obscureText: controller
-                                                      .isShowPassword1.value,
+                                                      .isShowPassword1
+                                                      .value,
                                                   decoration: InputDecoration(
                                                     hintText:
                                                         AppLocalizations.of(
-                                                                context)
-                                                            .getText(
-                                                      'jvxsknhk' /* Enter your password */,
-                                                    ),
-                                                    hintStyle: CustomTheme.of(
-                                                            context)
-                                                        .labelMedium
-                                                        .override(
+                                                          context,
+                                                        ).getText(
+                                                          'jvxsknhk' /* Enter your password */,
+                                                        ),
+                                                    hintStyle:
+                                                        CustomTheme.of(
+                                                          context,
+                                                        ).labelMedium.override(
                                                           fontFamily:
                                                               'SF Pro Text',
                                                           color: CustomTheme.of(
-                                                                  context)
-                                                              .black40,
+                                                            context,
+                                                          ).black40,
                                                           fontSize: 16.0,
                                                           useGoogleFonts: false,
                                                         ),
-                                                    errorStyle: CustomTheme.of(
-                                                            context)
-                                                        .bodyMedium
-                                                        .override(
+                                                    errorStyle:
+                                                        CustomTheme.of(
+                                                          context,
+                                                        ).bodyMedium.override(
                                                           fontFamily:
                                                               'SF Pro Text',
                                                           color: CustomTheme.of(
-                                                                  context)
-                                                              .errorText,
+                                                            context,
+                                                          ).errorText,
                                                           fontSize: 16.0,
                                                           useGoogleFonts: false,
                                                         ),
                                                     enabledBorder:
                                                         OutlineInputBorder(
-                                                      borderSide: BorderSide(
-                                                        color: CustomTheme.of(
-                                                                context)
-                                                            .black20,
-                                                        width: 1.0,
-                                                      ),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              12.0),
-                                                    ),
+                                                          borderSide: BorderSide(
+                                                            color:
+                                                                CustomTheme.of(
+                                                                  context,
+                                                                ).black20,
+                                                            width: 1.0,
+                                                          ),
+                                                          borderRadius:
+                                                              BorderRadius.circular(
+                                                                12.0,
+                                                              ),
+                                                        ),
                                                     focusedBorder:
                                                         OutlineInputBorder(
+                                                          borderSide: BorderSide(
+                                                            color:
+                                                                CustomTheme.of(
+                                                                  context,
+                                                                ).primaryTheme,
+                                                            width: 1.0,
+                                                          ),
+                                                          borderRadius:
+                                                              BorderRadius.circular(
+                                                                12.0,
+                                                              ),
+                                                        ),
+                                                    errorBorder: OutlineInputBorder(
                                                       borderSide: BorderSide(
                                                         color: CustomTheme.of(
-                                                                context)
-                                                            .primaryTheme,
+                                                          context,
+                                                        ).errorText,
                                                         width: 1.0,
                                                       ),
                                                       borderRadius:
                                                           BorderRadius.circular(
-                                                              12.0),
-                                                    ),
-                                                    errorBorder:
-                                                        OutlineInputBorder(
-                                                      borderSide: BorderSide(
-                                                        color: CustomTheme.of(
-                                                                context)
-                                                            .errorText,
-                                                        width: 1.0,
-                                                      ),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              12.0),
+                                                            12.0,
+                                                          ),
                                                     ),
                                                     focusedErrorBorder:
                                                         OutlineInputBorder(
-                                                      borderSide: BorderSide(
-                                                        color: CustomTheme.of(
-                                                                context)
-                                                            .errorText,
-                                                        width: 1.0,
-                                                      ),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              12.0),
-                                                    ),
+                                                          borderSide: BorderSide(
+                                                            color:
+                                                                CustomTheme.of(
+                                                                  context,
+                                                                ).errorText,
+                                                            width: 1.0,
+                                                          ),
+                                                          borderRadius:
+                                                              BorderRadius.circular(
+                                                                12.0,
+                                                              ),
+                                                        ),
                                                     filled: true,
-                                                    fillColor:
-                                                        CustomTheme.of(context)
-                                                            .backgroundColor,
+                                                    fillColor: CustomTheme.of(
+                                                      context,
+                                                    ).backgroundColor,
                                                     suffixIcon: GestureDetector(
                                                       onTap: () {
                                                         controller
-                                                                .isShowPassword1
-                                                                .value =
-                                                            !controller
-                                                                .isShowPassword1
-                                                                .value;
+                                                            .isShowPassword1
+                                                            .value = !controller
+                                                            .isShowPassword1
+                                                            .value;
                                                       },
                                                       child: Padding(
                                                         padding:
-                                                            const EdgeInsets
-                                                                .fromLTRB(
-                                                                12, 14, 12, 14),
+                                                            const EdgeInsets.fromLTRB(
+                                                              12,
+                                                              14,
+                                                              12,
+                                                              14,
+                                                            ),
                                                         child: SvgPicture.asset(
-                                                            controller
-                                                                    .isShowPassword1
-                                                                    .value
-                                                                ? "assets/images/eye close.svg"
-                                                                : "assets/images/eye.svg",
-                                                            height: 24,
-                                                            width: 24),
+                                                          controller
+                                                                  .isShowPassword1
+                                                                  .value
+                                                              ? "assets/images/eye close.svg"
+                                                              : "assets/images/eye.svg",
+                                                          height: 24,
+                                                          width: 24,
+                                                        ),
                                                       ),
                                                     ),
                                                   ),
@@ -1749,23 +1832,23 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget>
                                                         fontFamily:
                                                             'SF Pro Text',
                                                         color: CustomTheme.of(
-                                                                context)
-                                                            .primaryTextColor,
+                                                          context,
+                                                        ).primaryTextColor,
                                                         fontSize: 16.0,
                                                         useGoogleFonts: false,
                                                       ),
                                                   keyboardType: TextInputType
                                                       .visiblePassword,
-                                                  cursorColor:
-                                                      CustomTheme.of(context)
-                                                          .primaryTheme,
+                                                  cursorColor: CustomTheme.of(
+                                                    context,
+                                                  ).primaryTheme,
                                                   validator: (value) {
                                                     if (value == null ||
                                                         value.isEmpty ||
                                                         value.length < 8) {
-                                                      return AppLocalizations
-                                                              .of(context)
-                                                          .getText(
+                                                      return AppLocalizations.of(
+                                                        context,
+                                                      ).getText(
                                                         'ih689jgy' /* Please enter a valid password */,
                                                       );
                                                     }
@@ -1776,9 +1859,12 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget>
                                             ),
                                             Padding(
                                               padding:
-                                                  const EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                      0.0, 40.0, 0.0, 0.0),
+                                                  const EdgeInsetsDirectional.fromSTEB(
+                                                    0.0,
+                                                    40.0,
+                                                    0.0,
+                                                    0.0,
+                                                  ),
                                               child: InkWell(
                                                 splashColor: Colors.transparent,
                                                 focusColor: Colors.transparent,
@@ -1794,10 +1880,13 @@ class _LoginScreenWidgetState extends State<LoginScreenWidget>
                                                   }
 
                                                   authController.login(
-                                                      controller
-                                                          .textController4.text,
-                                                      controller.textController5
-                                                          .text);
+                                                    controller
+                                                        .textController4
+                                                        .text,
+                                                    controller
+                                                        .textController5
+                                                        .text,
+                                                  );
                                                 },
                                                 child: const CustomButtonWidget(
                                                   tittle: 'Sign In',

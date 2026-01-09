@@ -6,7 +6,7 @@ class DriverModel extends Drivers {
       {required super.id,
       required super.firstName,
       required super.lastName,
-      required super.email,
+      required super.userID,
       required super.phoneNumber,
       required super.birthdate,
       required super.gender,
@@ -22,7 +22,7 @@ class DriverModel extends Drivers {
         id: map['id'] as int,
         firstName: map['firstName'] as String,
         lastName: map['lastName'] as String,
-        email: map['email'] as String,
+        userID: map['userID'] as String,
         phoneNumber: map['phoneNumber'] as String,
         gender: map['gender'] as int,
         birthdate: map['birthdate'] as String,
@@ -30,9 +30,7 @@ class DriverModel extends Drivers {
         lastUpdatedAt: map['lastUpdatedAt'] as String,
         vehiclePlateNumber: map['vehiclePlateNumber'] as String,
         idNumber: map['idNumber'] as String,
-        regionId: map['regionId'] as int ,
-        vehicleDetailId: map['vehicleDetailId'] as int
-        );
+        regionId: map['regionId'] as int,
+        vehicleDetailId: map['vehicleDetailId'] as int);
   }
-
 }

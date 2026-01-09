@@ -28,10 +28,10 @@ class AppLocalizationsAr extends AppLocalizations {
   String get signIn => 'تسجيل الدخول';
 
   @override
-  String get email => 'البريد الإلكتروني';
+  String get userID => 'البريد الإلكتروني';
 
   @override
-  String get emailHint => 'أدخل بريدك الإلكتروني';
+  String get userIDHint => 'أدخل بريدك الإلكتروني';
 
   @override
   String get password => 'كلمة المرور';
@@ -256,7 +256,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get resetPwd => 'إعادة تعيين كلمة المرور';
 
   @override
-  String get emailReceiveResetLink =>
+  String get userIDReceiveResetLink =>
       'أدخل عنوان بريدك الإلكتروني لتلقي وصلة إعادة تعيين كلمة المرور.';
 
   @override

@@ -358,7 +358,7 @@ class ButtonPage extends LayoutWidget {
               width: 180,
               child: ButtonWidget(
                 iconWidget: const Icon(
-                  Icons.email_outlined,
+                  Icons.badge_outlined,
                   color: GlobalColors.normal,
                 ),
                 btnText: 'Default With Icon',
@@ -369,7 +369,7 @@ class ButtonPage extends LayoutWidget {
               width: 180,
               child: ButtonWidget(
                 iconWidget: const Icon(
-                  Icons.email_outlined,
+                  Icons.badge_outlined,
                   color: GlobalColors.normal,
                 ),
                 btnText: 'Default With Icon',
@@ -380,7 +380,7 @@ class ButtonPage extends LayoutWidget {
               width: 180,
               child: ButtonWidget(
                 iconWidget: const Icon(
-                  Icons.email_outlined,
+                  Icons.badge_outlined,
                   color: GlobalColors.normal,
                 ),
                 btnText: 'Default With Icon',
@@ -391,7 +391,7 @@ class ButtonPage extends LayoutWidget {
               width: 180,
               child: ButtonWidget(
                 iconWidget: const Icon(
-                  Icons.email_outlined,
+                  Icons.badge_outlined,
                   color: GlobalColors.normal,
                 ),
                 btnText: 'Default With Icon',
@@ -414,7 +414,7 @@ class ButtonPage extends LayoutWidget {
               width: 180,
               child: ButtonWidget(
                 iconWidget: const Icon(
-                  Icons.email_outlined,
+                  Icons.badge_outlined,
                   color: Colors.white,
                 ),
                 btnText: 'Primary With Icon',
@@ -426,7 +426,7 @@ class ButtonPage extends LayoutWidget {
               width: 180,
               child: ButtonWidget(
                 iconWidget: const Icon(
-                  Icons.email_outlined,
+                  Icons.badge_outlined,
                   color: Colors.white,
                 ),
                 btnText: 'Primary With Icon',
@@ -438,7 +438,7 @@ class ButtonPage extends LayoutWidget {
               width: 180,
               child: ButtonWidget(
                 iconWidget: const Icon(
-                  Icons.email_outlined,
+                  Icons.badge_outlined,
                   color: Colors.white,
                 ),
                 btnText: 'Primary With Icon',
@@ -450,7 +450,7 @@ class ButtonPage extends LayoutWidget {
               width: 180,
               child: ButtonWidget(
                 iconWidget: const Icon(
-                  Icons.email_outlined,
+                  Icons.badge_outlined,
                   color: GlobalColors.primary,
                 ),
                 btnText: 'Primary With Icon',

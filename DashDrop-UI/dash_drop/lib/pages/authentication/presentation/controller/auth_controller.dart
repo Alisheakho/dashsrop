@@ -19,7 +19,7 @@ class AuthController extends GetxController {
     id: -1,
     name: '',
     role: '',
-    emailaddress: '',
+    text: '',
     regionid: 0,
     dateofbirth: '',
   ).obs;
@@ -54,15 +54,19 @@ class AuthController extends GetxController {
     }
   }
 
-  Future<void> login(String email, String password) async {
+  Future<void> login(String userID, String password) async {
     Get.dialog(const LoadingDialogWidget());
-    final result =
-        await loginUseCase(LoginParameters(email: email, password: password));
+    final result = await loginUseCase(
+      LoginParameters(userID: userID, password: password),
+    );
     result.fold(
       (error) {
         if (Get.isDialogOpen == true) Get.back();
-        Get.snackbar('Error', error.message,
-            colorText: const Color(0xFFF57625));
+        Get.snackbar(
+          'Error',
+          error.message,
+          colorText: const Color(0xFFF57625),
+        );
       },
       (_) {
         isAuthorized.value = true;
@@ -79,22 +83,26 @@ class AuthController extends GetxController {
   }
 
   Future<void> register(
-      String firstName,
-      String lastName,
-      String email,
-      String password,
-      String phoneNumber,
-      Gender gender,
-      String birthdate) async {
+    String firstName,
+    String lastName,
+    String userID,
+    String password,
+    String phoneNumber,
+    Gender gender,
+    String birthdate,
+  ) async {
     Get.dialog(const LoadingDialogWidget());
-    final result = await registerUseCase(RegisterParameters(
+    final result = await registerUseCase(
+      RegisterParameters(
         firstName: firstName,
         lastName: lastName,
-        email: email,
+        userID: userID,
         password: password,
         phoneNumber: phoneNumber,
         gender: gender,
-        birthdate: birthdate));
+        birthdate: birthdate,
+      ),
+    );
     result.fold(
       (error) {
         if (Get.isDialogOpen == true) Get.back();
@@ -112,13 +120,10 @@ class AuthController extends GetxController {
 
   Future<void> logout() async {
     final result = await logoutUseCase(const NoParameters());
-    result.fold(
-      (error) => Get.snackbar('Error', error.message),
-      (_) {
-        isAuthorized.value = false;
-        Get.offAllNamed(AppRoutes.loginScreenWidget);
-      },
-    );
+    result.fold((error) => Get.snackbar('Error', error.message), (_) {
+      isAuthorized.value = false;
+      Get.offAllNamed(AppRoutes.loginScreenWidget);
+    });
   }
 
   Future<void> checkAuth() async {

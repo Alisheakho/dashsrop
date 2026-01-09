@@ -35,23 +35,25 @@ class DriverState extends Equatable {
     this.getRegions = const [],
     this.getRegionsMessage = '',
     this.getRegionstate = RequestState.loading,
-    this.getVehicleDetails = const[ VehicleDetails(
-        id: 0,
-        profitPerKm: 0,
-        avgSpeedKm: 0,
-        maxRangekm: 0,
-        maxCapacityCubicM: 0,
-        maxWeightKg: 0,
-        sensitivityLevel: 0,
-        type: 0,
-        specifications: '',
-        createdAt: '',
-        lastUpdatedAt: '')],
+    this.getVehicleDetails = const [
+      VehicleDetails(
+          id: 0,
+          profitPerKm: 0,
+          avgSpeedKm: 0,
+          maxRangekm: 0,
+          maxCapacityCubicM: 0,
+          maxWeightKg: 0,
+          sensitivityLevel: 0,
+          type: 0,
+          specifications: '',
+          createdAt: '',
+          lastUpdatedAt: '')
+    ],
     this.getDriver = const Drivers(
         id: 0,
         firstName: '',
         lastName: '',
-        email: 'email',
+        userID: 'userID',
         phoneNumber: '',
         gender: 0,
         birthdate: '',
@@ -103,15 +105,12 @@ class DriverState extends Equatable {
     List<Drivers>? getDrivers,
     RequestState? getDriversState,
     String? getDriversMessage,
-
     List<Regions>? getRegions,
     RequestState? getRegionstate,
     String? getRegionsMessage,
-
     List<VehicleDetails>? getVehicleDetails,
     RequestState? getVehicleDetailstate,
     String? getVehicleDetailsMessage,
-
     Drivers? getDriver,
     RequestState? getDriverstate,
     String? getDriverMessage,
@@ -130,16 +129,14 @@ class DriverState extends Equatable {
       getDriversMessage: getDriversMessage ?? this.getDriversMessage,
       getDriver: getDriver ?? this.getDriver,
       getDriverstate: getDriverstate ?? this.getDriverstate,
-
-
       getRegions: getRegions ?? this.getRegions,
-      getRegionsMessage: getRegionsMessage??this.getRegionsMessage,
-      getRegionstate: getRegionstate??this.getRegionstate,
-
+      getRegionsMessage: getRegionsMessage ?? this.getRegionsMessage,
+      getRegionstate: getRegionstate ?? this.getRegionstate,
       getVehicleDetails: getVehicleDetails ?? this.getVehicleDetails,
-      getVehicleDetailsMessage: getVehicleDetailsMessage??this.getVehicleDetailsMessage,
-      getVehicleDetailstate: getVehicleDetailstate??this.getVehicleDetailstate,
-
+      getVehicleDetailsMessage:
+          getVehicleDetailsMessage ?? this.getVehicleDetailsMessage,
+      getVehicleDetailstate:
+          getVehicleDetailstate ?? this.getVehicleDetailstate,
       getDriverMessage: getDriverMessage ?? this.getDriverMessage,
       createDriverstate: createDriverstate ?? this.createDriverstate,
       createDriversMessage: createDriversMessage ?? this.createDriversMessage,

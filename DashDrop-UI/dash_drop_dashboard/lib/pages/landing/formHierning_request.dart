@@ -21,7 +21,7 @@ class CreateHierningForm extends StatelessWidget {
   CreateHierningForm({required this.jobOfferId});
   String? firstName;
   String? lastName;
-  String? email;
+  String? userID;
   String? vehiclePlateNumber;
   String? phoneNumber;
   Gender gender = Gender.male;
@@ -31,18 +31,16 @@ class CreateHierningForm extends StatelessWidget {
 
   bool isValidate = true;
 
-  RegExp get _emailRegex =>
+  RegExp get _userIDRegex =>
       RegExp(r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$');
   RegExp get _phoneRegex => RegExp(r'^(\+90\d{10}|\+963\d{10}|\d{11})$');
 
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<HieringBloc, HieringState>(
-       buildWhen: (previous, current) =>
-          previous.createHierningState != current.createHierningState ,
-         
+      buildWhen: (previous, current) =>
+          previous.createHierningState != current.createHierningState,
       listener: (context, state) {
-        
         if (state == RequestState.loaded) {
           Tost().success(context, "create employee success");
           Navigator.popAndPushNamed(context, '/employees');
@@ -108,22 +106,23 @@ class CreateHierningForm extends StatelessWidget {
                     ),
                     OutBorderTextFormField(
                       focusColor: Color(0xFF885AF8),
-                      labelText: AppLocalizations.of(context)!.email,
-                      hintText: AppLocalizations.of(context)!.emailHint,
+                      labelText: AppLocalizations.of(context)!.userID,
+                      hintText: AppLocalizations.of(context)!.userIDHint,
                       validator: (value) {
                         if (value == null || value.isEmpty) {
-                          Tost().warning(context, "Please enter Email");
+                          Tost().warning(context, "Please enter userID");
                           isValidate = false;
                           return;
-                        } else if (!_emailRegex.hasMatch(value)) {
-                          Tost().warning(context, "Email address is not valid");
+                        } else if (!_userIDRegex.hasMatch(value)) {
+                          Tost()
+                              .warning(context, "userID address is not valid");
                           isValidate = false;
                           return;
                         }
                         return;
                       },
                       onSave: (value) {
-                        email = value;
+                        userID = value;
                       },
                     ),
                     const SizedBox(
@@ -169,8 +168,8 @@ class CreateHierningForm extends StatelessWidget {
                               context, "Please enter vehicle Plate Number");
                           isValidate = false;
                           return;
-                        } else 
-                        return;
+                        } else
+                          return;
                       },
                       onSave: (value) {
                         vehiclePlateNumber = value;
@@ -188,11 +187,11 @@ class CreateHierningForm extends StatelessWidget {
                           Tost().warning(context, "Please enter idNumber");
                           isValidate = false;
                           return;
-                        } else 
-                        return;
+                        } else
+                          return;
                       },
                       onSave: (value) {
-                        idNumber!=value;
+                        idNumber != value;
                       },
                     ),
                     const SizedBox(
@@ -332,14 +331,14 @@ class CreateHierningForm extends StatelessWidget {
         context.read<HieringBloc>().add(CreateHieringEvent(
             firstName: firstName!,
             lastName: lastName!,
-            email: email!,
+            userID: userID!,
             phoneNumber: phoneNumber!,
             gender: gender,
             birthdate: birthdate!,
-            vehiclePlateNumber:vehiclePlateNumber!,
-            idNumber:idNumber,
+            vehiclePlateNumber: vehiclePlateNumber!,
+            idNumber: idNumber,
             isAccepted: false,
-            jobOfferId:jobOfferId));
+            jobOfferId: jobOfferId));
       } catch (e) {
         Tost().error(context, '$e');
         print(e);

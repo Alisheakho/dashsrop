@@ -8,9 +8,10 @@ import 'package:dash_drop_dashboard/core/network/api_constances.dart';
 import '../../../../../core/network/error_message.dart';
 
 abstract class BaseHieringRemoteDataSource {
-  Future<HieringModel> createHiering({required String firstName,
+  Future<HieringModel> createHiering(
+      {required String firstName,
       required String lastName,
-      required String email,
+      required String userID,
       required String phoneNumber,
       required String vehiclePlateNumber,
       required String idNumber,
@@ -22,10 +23,11 @@ abstract class BaseHieringRemoteDataSource {
 
   Future<HieringModel> getHiering({required int id});
 
-  Future<void> updateHiering({required int id,
+  Future<void> updateHiering(
+      {required int id,
       required String firstName,
       required String lastName,
-      required String email,
+      required String userID,
       required String phoneNumber,
       required String vehiclePlateNumber,
       required String idNumber,
@@ -34,8 +36,6 @@ abstract class BaseHieringRemoteDataSource {
       required String birthdate});
 
   Future<void> delelteHiering({required int id});
-
-
 }
 
 class HieringRemoteDataSource extends BaseHieringRemoteDataSource {
@@ -46,7 +46,6 @@ class HieringRemoteDataSource extends BaseHieringRemoteDataSource {
       //print(response.data);
       return List<HieringModel>.from(
           (response.data as List).map((e) => HieringModel.fromJson(e)));
-
     } on DioException catch (e) {
       if (401 == e.response?.statusCode || 403 == e.response?.statusCode) {
         throw AuthException(
@@ -70,8 +69,7 @@ class HieringRemoteDataSource extends BaseHieringRemoteDataSource {
   Future<HieringModel> getHiering({required int id}) async {
     try {
       final response = await Dio().get(ApiConstances.hieringUrl(id));
-      final respon =response.data; 
-
+      final respon = response.data;
 
       return HieringModel.fromJson(respon as DataMap);
     } on DioException catch (e) {
@@ -94,10 +92,10 @@ class HieringRemoteDataSource extends BaseHieringRemoteDataSource {
   }
 
   @override
-  Future<HieringModel> createHiering({
-      required String firstName,
+  Future<HieringModel> createHiering(
+      {required String firstName,
       required String lastName,
-      required String email,
+      required String userID,
       required String phoneNumber,
       required String vehiclePlateNumber,
       required String idNumber,
@@ -111,13 +109,13 @@ class HieringRemoteDataSource extends BaseHieringRemoteDataSource {
           data: const JsonEncoder().convert({
             "firstName": firstName,
             "lastName": lastName,
-            "email": email,
+            "userID": userID,
             "phoneNumber": phoneNumber,
             "vehiclePlateNumber": vehiclePlateNumber,
             "idNumber": idNumber,
             "gender": gender.index,
             "birthdate": birthdate,
-            "jobOfferId":jobOfferId
+            "jobOfferId": jobOfferId
           }));
       return HieringModel.fromJson(response.data as DataMap);
     } on DioException catch (e) {
@@ -141,10 +139,11 @@ class HieringRemoteDataSource extends BaseHieringRemoteDataSource {
   }
 
   @override
-  Future<void> updateHiering({required int id,
+  Future<void> updateHiering(
+      {required int id,
       required String firstName,
       required String lastName,
-      required String email,
+      required String userID,
       required String phoneNumber,
       required String vehiclePlateNumber,
       required String idNumber,
@@ -158,7 +157,7 @@ class HieringRemoteDataSource extends BaseHieringRemoteDataSource {
           data: const JsonEncoder().convert({
             "firstName": firstName,
             "lastName": lastName,
-            "email": email,
+            "userID": userID,
             "phoneNumber": phoneNumber,
             "vehiclePlateNumber": vehiclePlateNumber,
             "idNumber": idNumber,
@@ -210,6 +209,4 @@ class HieringRemoteDataSource extends BaseHieringRemoteDataSource {
       throw Exception('Failed to Delete Hiering: $e');
     }
   }
-
- 
 }

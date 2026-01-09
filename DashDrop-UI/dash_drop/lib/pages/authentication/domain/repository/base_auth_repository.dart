@@ -5,16 +5,17 @@ import 'package:dash_drop/pages/authentication/domain/entities/user.dart';
 abstract class BaseAuthRepository {
   ResultFuture<User> getUser();
 
-  ResultVoid login({required String email, required String password});
+  ResultVoid login({required String userID, required String password});
 
-  ResultVoid register(
-      {required String firstName,
-      required String lastName,
-      required String email,
-      required String password,
-      required String phoneNumber,
-      required Gender gender,
-      required String birthdate});
+  ResultVoid register({
+    required String firstName,
+    required String lastName,
+    required String userID,
+    required String password,
+    required String phoneNumber,
+    required Gender gender,
+    required String birthdate,
+  });
 
   ResultVoid logout();
 

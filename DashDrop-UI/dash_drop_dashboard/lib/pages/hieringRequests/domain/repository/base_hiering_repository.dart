@@ -10,7 +10,7 @@ abstract class BaseHieringsRepository {
   ResultFuture<Hiering> createHierings(
       {required String firstName,
       required String lastName,
-      required String email,
+      required String userID,
       required String phoneNumber,
       required String vehiclePlateNumber,
       required String idNumber,
@@ -24,7 +24,7 @@ abstract class BaseHieringsRepository {
       {required int id,
       required String firstName,
       required String lastName,
-      required String email,
+      required String userID,
       required String phoneNumber,
       required String vehiclePlateNumber,
       required String idNumber,
@@ -34,5 +34,4 @@ abstract class BaseHieringsRepository {
       required String birthdate});
 
   ResultVoid deleteHierings({required int id});
-
 }

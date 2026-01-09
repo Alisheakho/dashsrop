@@ -5,39 +5,41 @@ class Reciver extends Equatable {
   final String firstName;
   final String lastName;
   final String phoneNumber;
-  final String email;
+  final String userID;
 
-  const Reciver(
-      {required this.id,
-      required this.firstName,
-      required this.lastName,
-      required this.phoneNumber,
-      required this.email});
+  const Reciver({
+    required this.id,
+    required this.firstName,
+    required this.lastName,
+    required this.phoneNumber,
+    required this.userID,
+  });
 
   factory Reciver.fromJson(Map<String, dynamic> map) {
     return Reciver(
-        id: map['id'],
-        email: map['email'],
-        firstName: map['firstName'],
-        lastName: map['lastName'],
-        phoneNumber: map['phoneNumber']);
+      id: map['id'],
+      userID: map['userID'],
+      firstName: map['firstName'],
+      lastName: map['lastName'],
+      phoneNumber: map['phoneNumber'],
+    );
   }
 
   @override
   List<Object?> get props => [
-        id,
-        firstName,
-        lastName,
-        lastName,
-        phoneNumber,
-        email,
-      ];
+    id,
+    firstName,
+    lastName,
+    lastName,
+    phoneNumber,
+    userID,
+  ];
 }
 /**"reciverCustomer": {
             "id": 2,
             "firstName": "Husam",
             "lastName": "Al-Mohamad",
-            "email": "husam@example.com",
+            "userID": "husam@example.com",
             "phoneNumber": "11223344556",
             "birthdate": "1988-05-05",
             "gender": 0,

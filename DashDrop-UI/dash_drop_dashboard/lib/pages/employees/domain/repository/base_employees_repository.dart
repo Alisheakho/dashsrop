@@ -10,7 +10,7 @@ abstract class BaseEmployeesRepository {
   ResultFuture<Employee> createEmployee(
       {required String firstName,
       required String lastName,
-      required String email,
+      required String userID,
       required String password,
       required String phoneNumber,
       required String title,
@@ -21,7 +21,7 @@ abstract class BaseEmployeesRepository {
       {required int id,
       required String firstName,
       required String lastName,
-      required String email,
+      required String userID,
       required String password,
       required String phoneNumber,
       required String title,

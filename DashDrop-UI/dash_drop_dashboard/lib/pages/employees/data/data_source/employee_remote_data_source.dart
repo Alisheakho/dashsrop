@@ -11,7 +11,7 @@ abstract class BaseEmployeeRemoteDataSource {
   Future<EmployeeModel> createEmployee(
       {required String firstName,
       required String lastName,
-      required String email,
+      required String userID,
       required String password,
       required String phoneNumber,
       required String title,
@@ -26,7 +26,7 @@ abstract class BaseEmployeeRemoteDataSource {
       {required int id,
       required String firstName,
       required String lastName,
-      required String email,
+      required String userID,
       required String password,
       required String phoneNumber,
       required String title,
@@ -44,11 +44,10 @@ class EmployeeRemoteDataSource extends BaseEmployeeRemoteDataSource {
       return List<EmployeeModel>.from(
           (response.data as List).map((e) => EmployeeModel.fromJson(e)));
     } on DioException catch (e) {
-      if (401 == e.response?.statusCode || 403 == e.response?.statusCode ) {
+      if (401 == e.response?.statusCode || 403 == e.response?.statusCode) {
         throw AuthException(
-          statusCode: e.response?.statusCode,
-          authMessage: e.response?.statusMessage
-        );
+            statusCode: e.response?.statusCode,
+            authMessage: e.response?.statusMessage);
       }
       throw ServerException(
           errorMessageModel: ErrorMessageModel.fromJson(e.response?.data),
@@ -66,11 +65,10 @@ class EmployeeRemoteDataSource extends BaseEmployeeRemoteDataSource {
       final response = await Dio().get(ApiConstances.employeeUrl(id));
       return EmployeeModel.fromJson(response.data as DataMap);
     } on DioException catch (e) {
-      if (401 == e.response?.statusCode || 403 == e.response?.statusCode ) {
+      if (401 == e.response?.statusCode || 403 == e.response?.statusCode) {
         throw AuthException(
-          statusCode: e.response?.statusCode,
-          authMessage: e.response?.statusMessage
-        );
+            statusCode: e.response?.statusCode,
+            authMessage: e.response?.statusMessage);
       }
       throw ServerException(
           errorMessageModel: ErrorMessageModel.fromJson(e.response?.data),
@@ -86,7 +84,7 @@ class EmployeeRemoteDataSource extends BaseEmployeeRemoteDataSource {
   Future<EmployeeModel> createEmployee(
       {required String firstName,
       required String lastName,
-      required String email,
+      required String userID,
       required String password,
       required String phoneNumber,
       required String title,
@@ -99,7 +97,7 @@ class EmployeeRemoteDataSource extends BaseEmployeeRemoteDataSource {
           data: const JsonEncoder().convert({
             'firstName': firstName,
             'lastName': lastName,
-            'email': email,
+            'userID': userID,
             'password': password,
             'phoneNumber': phoneNumber,
             'title': title,
@@ -108,11 +106,10 @@ class EmployeeRemoteDataSource extends BaseEmployeeRemoteDataSource {
           }));
       return EmployeeModel.fromJson(response.data as DataMap);
     } on DioException catch (e) {
-      if (401 == e.response?.statusCode || 403 == e.response?.statusCode ) {
+      if (401 == e.response?.statusCode || 403 == e.response?.statusCode) {
         throw AuthException(
-          statusCode: e.response?.statusCode,
-          authMessage: e.response?.statusMessage
-        );
+            statusCode: e.response?.statusCode,
+            authMessage: e.response?.statusMessage);
       }
       throw ServerException(
           errorMessageModel: ErrorMessageModel.fromJson(e.response?.data),
@@ -129,7 +126,7 @@ class EmployeeRemoteDataSource extends BaseEmployeeRemoteDataSource {
       {required int id,
       required String firstName,
       required String lastName,
-      required String email,
+      required String userID,
       required String password,
       required String phoneNumber,
       required String title,
@@ -142,7 +139,7 @@ class EmployeeRemoteDataSource extends BaseEmployeeRemoteDataSource {
           data: const JsonEncoder().convert({
             'firstName': firstName,
             'lastName': lastName,
-            'email': email,
+            'userID': userID,
             'password': password == "" ? null : password,
             'phoneNumber': phoneNumber,
             'title': title,
@@ -150,11 +147,10 @@ class EmployeeRemoteDataSource extends BaseEmployeeRemoteDataSource {
             'birthdate': birthdate,
           }));
     } on DioException catch (e) {
-      if (401 == e.response?.statusCode || 403 == e.response?.statusCode ) {
+      if (401 == e.response?.statusCode || 403 == e.response?.statusCode) {
         throw AuthException(
-          statusCode: e.response?.statusCode,
-          authMessage: e.response?.statusMessage
-        );
+            statusCode: e.response?.statusCode,
+            authMessage: e.response?.statusMessage);
       }
       throw ServerException(
           errorMessageModel: ErrorMessageModel.fromJson(e.response?.data),
@@ -173,11 +169,10 @@ class EmployeeRemoteDataSource extends BaseEmployeeRemoteDataSource {
       await Dio().delete(ApiConstances.employeeUrl(id),
           options: Options(headers: ApiConstances.headers(token)));
     } on DioException catch (e) {
-      if (401 == e.response?.statusCode || 403 == e.response?.statusCode ) {
+      if (401 == e.response?.statusCode || 403 == e.response?.statusCode) {
         throw AuthException(
-          statusCode: e.response?.statusCode,
-          authMessage: e.response?.statusMessage
-        );
+            statusCode: e.response?.statusCode,
+            authMessage: e.response?.statusMessage);
       }
       ServerException(
           errorMessageModel: ErrorMessageModel.fromJson(e.response?.data),

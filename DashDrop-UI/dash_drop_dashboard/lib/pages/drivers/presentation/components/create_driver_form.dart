@@ -24,7 +24,7 @@ class CreateDriverForm extends StatelessWidget {
 
   String? firstName;
   String? lastName;
-  String? email;
+  String? userID;
   String? phoneNumber;
   int? gender;
   String? birthdate;
@@ -37,13 +37,13 @@ class CreateDriverForm extends StatelessWidget {
 
   bool isValidate = true;
 
-  RegExp get _emailRegex =>
+  RegExp get _userIDRegex =>
       RegExp(r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$');
   RegExp get _phoneRegex => RegExp(r'^(\+90\d{10}|\+963\d{10}|\d{11})$');
 
   @override
   Widget build(BuildContext context) {
-     final lang = AppLocalizations.of(context)!;
+    final lang = AppLocalizations.of(context)!;
     context.read<DriverBloc>().add(GetRegVegEvent());
     return CommonCard(
       child: _titleWidget(
@@ -94,22 +94,22 @@ class CreateDriverForm extends StatelessWidget {
                 height: 16,
               ),
               OutBorderTextFormField(
-                labelText: lang.email,
-                hintText: lang.emailHint,
+                labelText: lang.userID,
+                hintText: lang.userIDHint,
                 validator: (value) {
                   if (value == null || value.isEmpty) {
-                    Tost().warning(context, "Please enter Email");
+                    Tost().warning(context, "Please enter userID");
                     isValidate = false;
                     return;
-                  } else if (!_emailRegex.hasMatch(value)) {
-                    Tost().warning(context, "Email address is not valid");
+                  } else if (!_userIDRegex.hasMatch(value)) {
+                    Tost().warning(context, "userID address is not valid");
                     isValidate = false;
                     return;
                   }
                   return;
                 },
                 onSave: (value) {
-                  email = value;
+                  userID = value;
                 },
               ),
               const SizedBox(
@@ -231,7 +231,6 @@ class CreateDriverForm extends StatelessWidget {
                   gender = value == 'Female' ? 1 : 0;
                 },
               ),
-
               BlocConsumer<DriverBloc, DriverState>(
                 builder: (context, state) {
                   if (state.getDriverstate == RequestState.loading) {
@@ -300,8 +299,7 @@ class CreateDriverForm extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(lang.birthdate,
-                      style: const TextStyle(fontSize: 14)),
+                  Text(lang.birthdate, style: const TextStyle(fontSize: 14)),
                   const SizedBox(
                     height: 10,
                   ),
@@ -407,7 +405,7 @@ class CreateDriverForm extends StatelessWidget {
         context.read<DriverBloc>().add(CreateDriverEvent(
             firstName: firstName!,
             lastName: lastName!,
-            email: email!,
+            userID: userID!,
             password: password!,
             phoneNumber: phoneNumber!,
             gender: gender!,
@@ -432,5 +430,4 @@ class CreateDriverForm extends StatelessWidget {
       }
     }).first;
   }
-
 }

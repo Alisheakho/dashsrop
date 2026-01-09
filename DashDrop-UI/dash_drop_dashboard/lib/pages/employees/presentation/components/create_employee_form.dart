@@ -24,7 +24,7 @@ class CreateEmployeeForm extends StatelessWidget {
 
   String? firstName;
   String? lastName;
-  String? email;
+  String? userID;
   String? password;
   String? phoneNumber;
   Gender gender = Gender.male;
@@ -49,12 +49,11 @@ class CreateEmployeeForm extends StatelessWidget {
     'HR-Customers-Support': ['Can Manage Reports']
   };
 
-
   ValueNotifier<String> checkedNotifier = ValueNotifier('');
 
   bool isValidate = true;
 
-  RegExp get _emailRegex =>
+  RegExp get _userIDRegex =>
       RegExp(r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$');
   RegExp get _phoneRegex => RegExp(r'^(\+90\d{10}|\+963\d{10}|\d{11})$');
 
@@ -133,23 +132,23 @@ class CreateEmployeeForm extends StatelessWidget {
                             height: 16,
                           ),
                           OutBorderTextFormField(
-                            labelText: AppLocalizations.of(context)!.email,
-                            hintText: AppLocalizations.of(context)!.emailHint,
+                            labelText: AppLocalizations.of(context)!.userID,
+                            hintText: AppLocalizations.of(context)!.userIDHint,
                             validator: (value) {
                               if (value == null || value.isEmpty) {
-                                Tost().warning(context, "Please enter Email");
+                                Tost().warning(context, "Please enter userID");
                                 isValidate = false;
                                 return;
-                              } else if (!_emailRegex.hasMatch(value)) {
+                              } else if (!_userIDRegex.hasMatch(value)) {
                                 Tost().warning(
-                                    context, "Email address is not valid");
+                                    context, "userID address is not valid");
                                 isValidate = false;
                                 return;
                               }
                               return;
                             },
                             onSave: (value) {
-                              email = value;
+                              userID = value;
                             },
                           ),
                           const SizedBox(
@@ -238,7 +237,12 @@ class CreateEmployeeForm extends StatelessWidget {
                             height: 12,
                           ),
                           SelectWidget(
-                            selectionList: ['Admin','Drivers-Manager','HR-Manager','HR-Customers-Support'],
+                            selectionList: [
+                              'Admin',
+                              'Drivers-Manager',
+                              'HR-Manager',
+                              'HR-Customers-Support'
+                            ],
                             onDropdownChanged: (value) {
                               title = value;
                             },
@@ -432,7 +436,7 @@ class CreateEmployeeForm extends StatelessWidget {
         context.read<EmployeeBloc>().add(CreateEmployeeEvent(
             firstName: firstName!,
             lastName: lastName!,
-            email: email!,
+            userID: userID!,
             password: password!,
             phoneNumber: phoneNumber!,
             title: title,

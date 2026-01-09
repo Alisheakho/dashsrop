@@ -22,9 +22,9 @@ class LoginScreenController extends GetxController {
   String? Function(BuildContext, String?)? textController1Validator;
   String? _textController1Validator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
-      return AppLocalizations.of(context).getText(
-        'fisetNmae' /* Please enter a valid full name */,
-      );
+      return AppLocalizations.of(
+        context,
+      ).getText('fisetNmae' /* Please enter a valid full name */);
     }
 
     return null;
@@ -36,9 +36,9 @@ class LoginScreenController extends GetxController {
   String? Function(BuildContext, String?)? textController11Validator;
   String? _textController11Validator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
-      return AppLocalizations.of(context).getText(
-        'lastName' /* Please enter a valid full name */,
-      );
+      return AppLocalizations.of(
+        context,
+      ).getText('lastName' /* Please enter a valid full name */);
     }
 
     return null;
@@ -50,9 +50,9 @@ class LoginScreenController extends GetxController {
   String? Function(BuildContext, String?)? textController2Validator;
   String? _textController2Validator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
-      return AppLocalizations.of(context).getText(
-        '1z2k6u9v' /* Please enter a valid phone num... */,
-      );
+      return AppLocalizations.of(
+        context,
+      ).getText('1z2k6u9v' /* Please enter a valid phone num... */);
     }
 
     return null;
@@ -64,9 +64,9 @@ class LoginScreenController extends GetxController {
   String? Function(BuildContext, String?)? textController3Validator;
   String? _textController3Validator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
-      return AppLocalizations.of(context).getText(
-        'venjprs4' /* Please enter a valid password */,
-      );
+      return AppLocalizations.of(
+        context,
+      ).getText('venjprs4' /* Please enter a valid password */);
     }
 
     return null;
@@ -78,24 +78,25 @@ class LoginScreenController extends GetxController {
   TextEditingController? textController4;
   String? Function(BuildContext, String?)? textController4Validator;
   String? _textController4Validator(BuildContext context, String? val) {
-    if (val == null || val.isEmpty || !GetUtils.isEmail(val)) {
-      return AppLocalizations.of(context).getText(
-        'validEmail' /* Please enter a valid email... */,
-      );
+    if (val == null || val.isEmpty || !GetUtils.isuserID(val)) {
+      return AppLocalizations.of(
+        context,
+      ).getText('validuserID' /* Please enter a valid userID... */);
     }
 
     return null;
   }
+
   // Model for custom_button component.
   // State field(s) for TextField widget.
   FocusNode? textFieldFocusNode6;
   TextEditingController? textController6;
   String? Function(BuildContext, String?)? textController6Validator;
   String? _textController6Validator(BuildContext context, String? val) {
-    if (val == null || val.isEmpty || !GetUtils.isEmail(val)) {
-      return AppLocalizations.of(context).getText(
-        'validEmail' /* Please enter a valid email... */,
-      );
+    if (val == null || val.isEmpty || !GetUtils.isuserID(val)) {
+      return AppLocalizations.of(
+        context,
+      ).getText('validuserID' /* Please enter a valid userID... */);
     }
 
     return null;
@@ -107,9 +108,9 @@ class LoginScreenController extends GetxController {
   String? Function(BuildContext, String?)? textController5Validator;
   String? _textController5Validator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
-      return AppLocalizations.of(context).getText(
-        'ih689jgy' /* Please enter a valid password */,
-      );
+      return AppLocalizations.of(
+        context,
+      ).getText('ih689jgy' /* Please enter a valid password */);
     }
 
     return null;

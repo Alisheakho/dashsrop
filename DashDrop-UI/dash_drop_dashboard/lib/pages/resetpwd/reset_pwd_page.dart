@@ -75,16 +75,16 @@ class ResetPwdWidget extends LayoutWidget {
           const SizedBox(
             height: 12,
           ),
-          Text(AppLocalizations.of(context)!.emailReceiveResetLink),
+          Text(AppLocalizations.of(context)!.userIDReceiveResetLink),
           const SizedBox(
             height: 20,
           ),
           OutBorderTextFormField(
-            labelText: AppLocalizations.of(context)!.email,
-            hintText: AppLocalizations.of(context)!.emailHint,
-            keyboardType: TextInputType.emailAddress,
+            labelText: AppLocalizations.of(context)!.userID,
+            hintText: AppLocalizations.of(context)!.userIDHint,
+            keyboardType: TextInputType.text,
             suffixWidget: SvgPicture.asset(
-              'assets/signin/email.svg',
+              'assets/signin/userID.svg',
               width: 22,
               height: 22,
             ),

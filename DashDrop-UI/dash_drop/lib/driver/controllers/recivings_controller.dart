@@ -23,27 +23,38 @@ class HomepageLongRecivingController extends GetxController
   RxInt destinationStatusInt = 3.obs;
   RxList<Reciving> recivings = const [
     Reciving(
-        id: 98765,
-        priority: 0,
-        deliveryOrder: DeliveryOrder(
+      id: 98765,
+      priority: 0,
+      deliveryOrder: DeliveryOrder(
+        id: 0,
+        deliveryCost: 0,
+        estimatedTime: '',
+        receivingCode: '',
+        extraProfitRate: 0,
+        pathLengthKm: 0,
+        polyLine: "",
+        destinationLocation: '',
+        destinationLocationDescription: '',
+        sourceLocation: '',
+        sourceLocationDescription: '',
+        status: DeliveryState.pendding,
+        paymentResponsibility: 0,
+        reciverCustomer: Reciver(
           id: 0,
-          deliveryCost: 0,
-          estimatedTime: '',
-          receivingCode: '',
-          extraProfitRate: 0,
-          pathLengthKm: 0,
-          polyLine: "",
-          destinationLocation: '',
-          destinationLocationDescription: '',
-          sourceLocation: '',
-          sourceLocationDescription: '',
-          status: DeliveryState.pendding,
-          paymentResponsibility: 0,
-          reciverCustomer: Reciver(
-              id: 0, firstName: '', lastName: '', phoneNumber: '', email: ''),
-          senderCustomer: Sender(
-              id: 0, firstName: '', lastName: '', phoneNumber: '', email: ''),
-        ))
+          firstName: '',
+          lastName: '',
+          phoneNumber: '',
+          userID: '',
+        ),
+        senderCustomer: Sender(
+          id: 0,
+          firstName: '',
+          lastName: '',
+          phoneNumber: '',
+          userID: '',
+        ),
+      ),
+    ),
   ].obs;
 
   static HomepageLongRecivingController get to =>
@@ -72,8 +83,9 @@ class HomepageLongRecivingController extends GetxController
       refresh();
     });
     SignalrServices.to.hubConnection.on("ReceiveDeliveryOffer", (params) {
-      var recivingItem =
-          Reciving.fromJson(params.first as Map<String, dynamic>);
+      var recivingItem = Reciving.fromJson(
+        params.first as Map<String, dynamic>,
+      );
       if (kDebugMode) {
         print("parapm: ${recivingItem.id}");
       }
@@ -157,8 +169,10 @@ class HomepageLongRecivingController extends GetxController
         deliverring(orderId);
         break;
       case 6:
-        Get.toNamed(AppRoutes.scanBarcodeScreenWidget,
-            arguments: [orderId, receivingCode]);
+        Get.toNamed(
+          AppRoutes.scanBarcodeScreenWidget,
+          arguments: [orderId, receivingCode],
+        );
         break;
       default:
         destinationStatus.value = DeliveryState.accepted;
@@ -166,8 +180,10 @@ class HomepageLongRecivingController extends GetxController
         break;
     }
     if (destinationStatusInt.value <= 6) {
-      await SignalrServices.to
-          .updateDeliveryOrderStatus(orderId, destinationStatusInt.value);
+      await SignalrServices.to.updateDeliveryOrderStatus(
+        orderId,
+        destinationStatusInt.value,
+      );
       destinationStatusInt.value += 1;
     }
   }

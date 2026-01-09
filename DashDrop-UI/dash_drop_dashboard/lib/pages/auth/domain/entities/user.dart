@@ -7,7 +7,7 @@ class User extends Equatable {
   final int id;
   final String name;
   final String role;
-  final String emailaddress;
+  final String text;
   final String title;
   final String dateofbirth;
 
@@ -15,7 +15,7 @@ class User extends Equatable {
     required this.id,
     required this.name,
     required this.role,
-    required this.emailaddress,
+    required this.text,
     required this.title,
     required this.dateofbirth,
   });
@@ -26,7 +26,7 @@ class User extends Equatable {
       id,
       name,
       role,
-      emailaddress,
+      text,
       title,
       dateofbirth,
     ];

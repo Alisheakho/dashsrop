@@ -40,12 +40,12 @@ class PersonalInfoWidget extends StatelessWidget {
           height: 16,
         ),
         OutBorderTextFormField(
-          labelText: AppLocalizations.of(context)!.email,
-          hintText: AppLocalizations.of(context)!.emailHint,
+          labelText: AppLocalizations.of(context)!.userID,
+          hintText: AppLocalizations.of(context)!.userIDHint,
           icon: Container(
             padding: EdgeInsets.symmetric(horizontal: 5),
             child: SvgPicture.asset(
-              'assets/signin/email.svg',
+              'assets/signin/userID.svg',
               width: 22,
               height: 22,
             ),

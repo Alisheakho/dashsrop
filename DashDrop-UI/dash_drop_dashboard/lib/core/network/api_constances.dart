@@ -3,8 +3,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../../pages/auth/data/model/jwt_model.dart';
 
 class ApiConstances {
-  static const String _baseUrl = "http://13.232.169.108/api";
-
+  static const String _baseUrl = "http://127.0.0.1:8000/api";
   static Map<String, dynamic> headers(String token) {
     if (token == '') {
       return {"accept": "application/json"};
@@ -23,9 +22,9 @@ class ApiConstances {
   }
 
   // Authentication
-  static const String loginUrl = "$_baseUrl/Accounts/login";
-  static const String refreshUrl = "$_baseUrl/Accounts/Refresh";
-  static const String resetPasswordUrl = "$_baseUrl/Accounts/reset-password";
+  static const String loginUrl = "$_baseUrl/login";
+  static const String refreshUrl = "$_baseUrl/Refresh";
+  static const String resetPasswordUrl = "$_baseUrl/reset-password";
 
   // Employees
   static const String employeesUrl = "$_baseUrl/Employees";

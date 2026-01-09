@@ -12,35 +12,33 @@ class GetUserEvent extends AuthEvent {}
 class LogoutEvent extends AuthEvent {}
 
 class IsAuthorizedEvent extends AuthEvent {}
+
 class LoginEvent extends AuthEvent {
-  final String email;
+  final String userID;
   final String password;
 
   const LoginEvent({
-    required this.email,
+    required this.userID,
     required this.password,
   });
 
   @override
-  List<Object?> get props => [email, password];
+  List<Object?> get props => [userID, password];
 }
 
-
-
-
 class ResetPasswordEvent extends AuthEvent {
-   final String email;
+  final String userID;
   final String oldPassword;
   final String newPassword;
 
   const ResetPasswordEvent({
-    required this.email,
+    required this.userID,
     required this.oldPassword,
     required this.newPassword,
   });
 
   @override
   List<Object> get props {
-    return [email, oldPassword, newPassword];
+    return [userID, oldPassword, newPassword];
   }
 }

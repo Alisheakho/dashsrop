@@ -26,7 +26,7 @@ class UpdateDriverForm extends StatelessWidget {
 
   String? firstName;
   String? lastName;
-  String? email;
+  String? userID;
   String? phoneNumber;
   int? gender;
   String? birthdate;
@@ -39,15 +39,13 @@ class UpdateDriverForm extends StatelessWidget {
 
   bool isValidate = true;
 
-  RegExp get _emailRegex =>
+  RegExp get _userIDRegex =>
       RegExp(r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$');
   RegExp get _phoneRegex => RegExp(r'^(\+90\d{10}|\+963\d{10}|\d{11})$');
 
   @override
   Widget build(BuildContext context) {
-    
-    return BlocConsumer<DriverBloc, DriverState>(
-      listener: (context, state) {
+    return BlocConsumer<DriverBloc, DriverState>(listener: (context, state) {
       if (state.updateDriverstate == RequestState.loaded) {
         Tost().success(context, "Update Driver success");
         context.read<DriverBloc>().add(GetDriversEvent());
@@ -126,23 +124,24 @@ class UpdateDriverForm extends StatelessWidget {
                       height: 16,
                     ),
                     OutBorderTextFormField(
-                      initialValue: driver.email,
-                      labelText: lang.email,
-                      hintText: lang.emailHint,
+                      initialValue: driver.userID,
+                      labelText: lang.userID,
+                      hintText: lang.userIDHint,
                       validator: (value) {
                         if (value == null || value.isEmpty) {
-                          Tost().warning(context, "Please enter Email");
+                          Tost().warning(context, "Please enter userID");
                           isValidate = false;
                           return;
-                        } else if (!_emailRegex.hasMatch(value)) {
-                          Tost().warning(context, "Email address is not valid");
+                        } else if (!_userIDRegex.hasMatch(value)) {
+                          Tost()
+                              .warning(context, "userID address is not valid");
                           isValidate = false;
                           return;
                         }
                         return;
                       },
                       onSave: (value) {
-                        email = value;
+                        userID = value;
                       },
                     ),
                     const SizedBox(
@@ -405,7 +404,7 @@ class UpdateDriverForm extends StatelessWidget {
             id: driver.id,
             firstName: firstName!,
             lastName: lastName!,
-            email: email!,
+            userID: userID!,
             password: password!,
             phoneNumber: phoneNumber!,
             gender: gender!,

@@ -3,11 +3,11 @@ import 'package:dash_drop_dashboard/core/utils/enums.dart';
 import 'package:equatable/equatable.dart';
 
 class Customer extends Equatable {
-  const  Customer({
+  const Customer({
     required this.id,
     required this.firstName,
     required this.lastName,
-    required this.email,
+    required this.userID,
     required this.phoneNumber,
     required this.gender,
     required this.birthdate,
@@ -18,7 +18,7 @@ class Customer extends Equatable {
   final int id;
   final String firstName;
   final String lastName;
-  final String email;
+  final String userID;
   final String phoneNumber;
   final Gender gender;
   final String birthdate;
@@ -31,7 +31,7 @@ class Customer extends Equatable {
       id,
       firstName,
       lastName,
-      email,
+      userID,
       phoneNumber,
       gender,
       birthdate,
@@ -40,12 +40,11 @@ class Customer extends Equatable {
     ];
   }
 
-
- Customer copyWith({
+  Customer copyWith({
     int? id,
     String? firstName,
     String? lastName,
-    String? email,
+    String? userID,
     String? phoneNumber,
     String? title,
     Gender? gender,
@@ -53,11 +52,11 @@ class Customer extends Equatable {
     String? createdAt,
     String? lastUpdatedAt,
   }) {
-    return  Customer(
+    return Customer(
       id: id ?? this.id,
       firstName: firstName ?? this.firstName,
       lastName: lastName ?? this.lastName,
-      email: email ?? this.email,
+      userID: userID ?? this.userID,
       phoneNumber: phoneNumber ?? this.phoneNumber,
       gender: gender ?? this.gender,
       birthdate: birthdate ?? this.birthdate,

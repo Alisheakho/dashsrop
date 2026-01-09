@@ -79,7 +79,7 @@ class EmployeesTableWidget extends StatelessWidget {
       DataColumn(label: Text(AppLocalizations.of(context)!.id)),
       DataColumn(label: Text(AppLocalizations.of(context)!.firstName)),
       DataColumn(label: Text(AppLocalizations.of(context)!.lastName)),
-      DataColumn(label: Text(AppLocalizations.of(context)!.email)),
+      DataColumn(label: Text(AppLocalizations.of(context)!.userID)),
       DataColumn(label: Text(AppLocalizations.of(context)!.phoneNumber)),
       DataColumn(label: Text(AppLocalizations.of(context)!.title)),
       DataColumn(label: Text(AppLocalizations.of(context)!.gender)),
@@ -95,7 +95,7 @@ class EmployeesTableWidget extends StatelessWidget {
       DataCell(Text("${e.id}")),
       DataCell(Text(e.firstName)),
       DataCell(Text(e.lastName)),
-      DataCell(Text(e.email)),
+      DataCell(Text(e.userID)),
       DataCell(Text(e.phoneNumber)),
       DataCell(Text(e.title)),
       DataCell(

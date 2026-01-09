@@ -26,34 +26,40 @@ class AuthRepository extends BaseAuthRepository {
   }
 
   @override
-  ResultVoid login({required String email, required String password}) async {
+  ResultVoid login({required String userID, required String password}) async {
     try {
       final JwtModel result = await _baseUserRemoteDataSource.login(
-          email: email, password: password);
+        userID: userID,
+        password: password,
+      );
       await _baseUserLocalDataSource.storeToken(jwt: result);
       print(result.token);
       return const Right(null);
     } on AuthException catch (failure) {
-      return Left(ServerFailure(
+      return Left(
+        ServerFailure(
           message: failure.authMessage ?? '',
-          statusCode: failure.statusCode ?? 404));
+          statusCode: failure.statusCode ?? 404,
+        ),
+      );
     }
   }
 
   @override
-  ResultVoid register(
-      {required String firstName,
-      required String lastName,
-      required String email,
-      required String password,
-      required String phoneNumber,
-      required Gender gender,
-      required String birthdate}) async {
+  ResultVoid register({
+    required String firstName,
+    required String lastName,
+    required String userID,
+    required String password,
+    required String phoneNumber,
+    required Gender gender,
+    required String birthdate,
+  }) async {
     try {
       await _baseUserRemoteDataSource.register(
         firstName: firstName,
         lastName: lastName,
-        email: email,
+        userID: userID,
         password: password,
         phoneNumber: phoneNumber,
         gender: gender,
@@ -61,15 +67,21 @@ class AuthRepository extends BaseAuthRepository {
       );
       return const Right(null);
     } on ServerException catch (failure) {
-      return Left(ServerFailure(
+      return Left(
+        ServerFailure(
           message: failure.errorMessageModel.message,
           statusCode:
               failure.statusCode ?? failure.errorMessageModel.statusCode,
-          errors: failure.errorMessageModel.errors));
+          errors: failure.errorMessageModel.errors,
+        ),
+      );
     } on AuthException catch (failure) {
-      return Left(ServerFailure(
+      return Left(
+        ServerFailure(
           message: failure.authMessage ?? '',
-          statusCode: failure.statusCode ?? 404));
+          statusCode: failure.statusCode ?? 404,
+        ),
+      );
     }
   }
 
@@ -79,9 +91,12 @@ class AuthRepository extends BaseAuthRepository {
     try {
       return Right(result);
     } on AuthException catch (failure) {
-      return Left(ServerFailure(
+      return Left(
+        ServerFailure(
           message: failure.authMessage ?? '',
-          statusCode: failure.statusCode ?? 404));
+          statusCode: failure.statusCode ?? 404,
+        ),
+      );
     }
   }
 
@@ -91,9 +106,12 @@ class AuthRepository extends BaseAuthRepository {
     try {
       return Right(result);
     } on AuthException catch (failure) {
-      return Left(ServerFailure(
+      return Left(
+        ServerFailure(
           message: failure.authMessage ?? '',
-          statusCode: failure.statusCode ?? 404));
+          statusCode: failure.statusCode ?? 404,
+        ),
+      );
     }
   }
 }

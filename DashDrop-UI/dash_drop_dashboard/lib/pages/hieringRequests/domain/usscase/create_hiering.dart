@@ -1,4 +1,3 @@
-
 import 'package:dash_drop_dashboard/core/usecase/base_usecase.dart';
 import 'package:dash_drop_dashboard/core/utils/enums.dart';
 import 'package:dash_drop_dashboard/core/utils/typedef.dart';
@@ -6,8 +5,7 @@ import 'package:dash_drop_dashboard/pages/hieringRequests/domain/entities/hierin
 import 'package:dash_drop_dashboard/pages/hieringRequests/domain/repository/base_hiering_repository.dart';
 import 'package:equatable/equatable.dart';
 
-class CreateHieringUseCase
-    extends BaseUseCase<void, CreateHieringParameters> {
+class CreateHieringUseCase extends BaseUseCase<void, CreateHieringParameters> {
   CreateHieringUseCase(this.baseHieringsRepository);
 
   final BaseHieringsRepository baseHieringsRepository;
@@ -17,7 +15,7 @@ class CreateHieringUseCase
     return baseHieringsRepository.createHierings(
       firstName: parameters.firstName,
       lastName: parameters.lastName,
-      email: parameters.email,
+      userID: parameters.userID,
       phoneNumber: parameters.phoneNumber,
       gender: parameters.gender,
       birthdate: parameters.birthdate,
@@ -30,21 +28,21 @@ class CreateHieringUseCase
 }
 
 class CreateHieringParameters extends Equatable {
-const CreateHieringParameters({
-  required this.firstName,
-  required this.lastName,
-  required this.email,
-  required this.phoneNumber,
-  required this.gender,
-  required this.birthdate,
-  required this.vehiclePlateNumber,
-  required this.idNumber,
-  required this.isAccepted,
-  required this.jobOfferId,
-});
+  const CreateHieringParameters({
+    required this.firstName,
+    required this.lastName,
+    required this.userID,
+    required this.phoneNumber,
+    required this.gender,
+    required this.birthdate,
+    required this.vehiclePlateNumber,
+    required this.idNumber,
+    required this.isAccepted,
+    required this.jobOfferId,
+  });
   final String firstName;
   final String lastName;
-  final String email;
+  final String userID;
   final String phoneNumber;
   final Gender gender;
   final String birthdate;
@@ -58,7 +56,7 @@ const CreateHieringParameters({
     return [
       firstName,
       lastName,
-      email,
+      userID,
       phoneNumber,
       gender,
       birthdate,

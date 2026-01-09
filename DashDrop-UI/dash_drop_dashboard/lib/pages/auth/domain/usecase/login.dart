@@ -9,19 +9,19 @@ class LoginUseCase extends BaseUseCase<void, LoginParameters> {
   final BaseAuthRepository authRepository;
 
   @override
-  ResultVoid call(LoginParameters parameters) async => authRepository
-      .login(email: parameters.email, password: parameters.password);
+  ResultVoid call(LoginParameters parameters) async => authRepository.login(
+      userID: parameters.userID, password: parameters.password);
 }
 
 class LoginParameters extends Equatable {
   const LoginParameters({
-    required this.email,
+    required this.userID,
     required this.password,
   });
 
-  final String email;
+  final String userID;
   final String password;
 
   @override
-  List<Object?> get props => [email, password];
+  List<Object?> get props => [userID, password];
 }

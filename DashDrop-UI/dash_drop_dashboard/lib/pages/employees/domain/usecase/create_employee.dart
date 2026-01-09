@@ -17,7 +17,7 @@ class CreateEmployeeUseCase
       employeesRepository.createEmployee(
         firstName: parameters.firstName,
         lastName: parameters.lastName,
-        email: parameters.email,
+        userID: parameters.userID,
         password: parameters.password,
         phoneNumber: parameters.phoneNumber,
         title: parameters.title,
@@ -30,7 +30,7 @@ class CreateEmployeeParameters extends Equatable {
   const CreateEmployeeParameters({
     required this.firstName,
     required this.lastName,
-    required this.email,
+    required this.userID,
     required this.password,
     required this.phoneNumber,
     required this.title,
@@ -40,7 +40,7 @@ class CreateEmployeeParameters extends Equatable {
 
   final String firstName;
   final String lastName;
-  final String email;
+  final String userID;
   final String password;
   final String phoneNumber;
   final String title;
@@ -51,7 +51,7 @@ class CreateEmployeeParameters extends Equatable {
   List<Object?> get props => [
         firstName,
         lastName,
-        email,
+        userID,
         password,
         phoneNumber,
         title,

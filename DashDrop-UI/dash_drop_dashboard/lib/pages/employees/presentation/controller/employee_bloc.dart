@@ -67,7 +67,7 @@ class EmployeeBloc extends Bloc<EmployeeEvent, EmployeeState> {
     final result = await createEmployeeUseCase(CreateEmployeeParameters(
         firstName: event.firstName,
         lastName: event.lastName,
-        email: event.email,
+        userID: event.userID,
         password: event.password,
         phoneNumber: event.phoneNumber,
         title: event.title,
@@ -91,7 +91,7 @@ class EmployeeBloc extends Bloc<EmployeeEvent, EmployeeState> {
         id: event.id,
         firstName: event.firstName,
         lastName: event.lastName,
-        email: event.email,
+        userID: event.userID,
         password: event.password,
         phoneNumber: event.phoneNumber,
         title: event.title,
@@ -104,11 +104,10 @@ class EmployeeBloc extends Bloc<EmployeeEvent, EmployeeState> {
             updateEmployeeState: RequestState.error)), (_) {
       List<Employee> updatedEmployees = state.getEmployees.map((employee) {
         if (employee.id == event.id) {
-
           return employee.copyWith(
             firstName: event.firstName,
             lastName: event.lastName,
-            email: event.email,
+            userID: event.userID,
             phoneNumber: event.phoneNumber,
             title: event.title,
             gender: event.gender,

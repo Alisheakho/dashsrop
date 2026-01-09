@@ -21,7 +21,7 @@ class UpdateHieringForm extends StatelessWidget {
 
   String? firstName;
   String? lastName;
-  String? email;
+  String? userID;
   String? phoneNumber;
   String? vehiclePlateNumber;
   String? idNumber;
@@ -34,7 +34,7 @@ class UpdateHieringForm extends StatelessWidget {
 
   bool isValidate = true;
 
-  RegExp get _emailRegex =>
+  RegExp get _userIDRegex =>
       RegExp(r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$');
   RegExp get _phoneRegex => RegExp(r'^(\+90\d{10}|\+963\d{10}|\d{11})$');
 
@@ -68,7 +68,7 @@ class UpdateHieringForm extends StatelessWidget {
                 height: 16,
               ),
               OutBorderTextFormField(
-                initialValue: hiering.lastName,
+                  initialValue: hiering.lastName,
                   labelText: lang.lastName,
                   hintText: lang.lastName,
                   validator: (value) {
@@ -86,24 +86,24 @@ class UpdateHieringForm extends StatelessWidget {
                 height: 16,
               ),
               OutBorderTextFormField(
-                initialValue: hiering.email,
-                labelText: lang.email,
-                hintText: lang.email,
+                initialValue: hiering.userID,
+                labelText: lang.userID,
+                hintText: lang.userID,
                 validator: (value) {
                   if (value == null || value.isEmpty) {
-                    Tost().warning(context, "Please retype email");
+                    Tost().warning(context, "Please retype userID");
                     isValidate = false;
                     return;
                   }
-                  if (!_emailRegex.hasMatch(value)) {
-                    Tost().warning(context, "Email address is not valid");
+                  if (!_userIDRegex.hasMatch(value)) {
+                    Tost().warning(context, "userID address is not valid");
                     isValidate = false;
                     return;
                   }
                   return;
                 },
                 onSave: (value) {
-                  email = value;
+                  userID = value;
                 },
               ),
               const SizedBox(
@@ -192,7 +192,7 @@ class UpdateHieringForm extends StatelessWidget {
                         })
                         .nonNulls
                         .first;
-                        print( Gender.values
+                    print(Gender.values
                         .map((e) {
                           if (e.name == value) {
                             return e;
@@ -328,10 +328,10 @@ class UpdateHieringForm extends StatelessWidget {
 
       try {
         context.read<HieringBloc>().add(UpdateHieringEvent(
-          id:hiering.id,
+            id: hiering.id,
             firstName: firstName!,
             lastName: lastName!,
-            email: email!,
+            userID: userID!,
             phoneNumber: phoneNumber!,
             gender: gender!,
             birthdate: birthdate!,

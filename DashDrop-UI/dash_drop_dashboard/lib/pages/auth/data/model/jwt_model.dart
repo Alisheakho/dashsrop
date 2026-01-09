@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:equatable/equatable.dart';
 
 class JwtModel extends Equatable {
@@ -23,24 +22,24 @@ class JwtModel extends Equatable {
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
-      'jwtToken': token,
+      'token': token, // Changed from 'jwtToken' to match server standard
       'refreshToken': refreshToken,
     };
   }
 
   factory JwtModel.fromJson(Map<String, dynamic> map) {
     return JwtModel(
-      token: map['jwtToken'] as String,
-      refreshToken: map['refreshToken'] as String,
+      // FIX: Check for 'token' (what server sends) OR 'jwtToken' (fallback)
+      token: (map['token'] ?? map['jwtToken']) as String? ?? "",
+
+      // FIX: Handle refreshToken being null safely
+      refreshToken: (map['refreshToken'] as String?) ?? "",
     );
   }
 
   factory JwtModel.fromStr(String str) {
-    Map json = jsonDecode(str);
-    return JwtModel(
-      token: json['jwtToken'] as String,
-      refreshToken: json['refreshToken'] as String,
-    );
+    Map<String, dynamic> json = jsonDecode(str);
+    return JwtModel.fromJson(json); // Reuse the safe logic above
   }
 
   String toJson() => jsonEncode(toMap());

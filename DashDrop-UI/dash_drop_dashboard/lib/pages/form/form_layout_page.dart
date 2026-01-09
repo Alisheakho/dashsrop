@@ -93,8 +93,8 @@ class FormLayoutPage extends LayoutWidget {
                   height: 16,
                 ),
                 OutBorderTextFormField(
-                    labelText: AppLocalizations.of(context)!.email,
-                    hintText: AppLocalizations.of(context)!.emailHint),
+                    labelText: AppLocalizations.of(context)!.userID,
+                    hintText: AppLocalizations.of(context)!.userIDHint),
                 const SizedBox(
                   height: 16,
                 ),
@@ -146,8 +146,8 @@ class FormLayoutPage extends LayoutWidget {
           AppLocalizations.of(context)!.signInForm,
           Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             OutBorderTextFormField(
-                labelText: AppLocalizations.of(context)!.email,
-                hintText: AppLocalizations.of(context)!.emailHint),
+                labelText: AppLocalizations.of(context)!.userID,
+                hintText: AppLocalizations.of(context)!.userIDHint),
             const SizedBox(
               height: 16,
             ),
@@ -198,8 +198,8 @@ class FormLayoutPage extends LayoutWidget {
               height: 16,
             ),
             OutBorderTextFormField(
-                labelText: AppLocalizations.of(context)!.email,
-                hintText: AppLocalizations.of(context)!.emailHint),
+                labelText: AppLocalizations.of(context)!.userID,
+                hintText: AppLocalizations.of(context)!.userIDHint),
             const SizedBox(
               height: 16,
             ),

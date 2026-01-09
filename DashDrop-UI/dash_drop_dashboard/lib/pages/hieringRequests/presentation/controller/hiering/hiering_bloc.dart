@@ -102,7 +102,7 @@ class HieringBloc extends Bloc<HieringEvent, HieringState> {
         id: event.id,
         firstName: event.firstName,
         lastName: event.lastName,
-        email: event.email,
+        userID: event.userID,
         phoneNumber: event.phoneNumber,
         gender: event.gender,
         birthdate: event.birthdate,
@@ -119,7 +119,7 @@ class HieringBloc extends Bloc<HieringEvent, HieringState> {
           id: event.id,
           firstName: event.firstName,
           lastName: event.lastName,
-          email: event.email,
+          userID: event.userID,
           phoneNumber: event.phoneNumber,
           gender: event.gender,
           birthdate: event.birthdate,
@@ -145,11 +145,12 @@ class HieringBloc extends Bloc<HieringEvent, HieringState> {
   FutureOr<void> _createHieringHandler(
       CreateHieringEvent event, Emitter<HieringState> emit) async {
     emit(state.copyWith(
-        createHierningState: RequestState.loading, nameState: NameState.create));
+        createHierningState: RequestState.loading,
+        nameState: NameState.create));
     final result = await createHieringUseCase(CreateHieringParameters(
         firstName: event.firstName,
         lastName: event.lastName,
-        email: event.email,
+        userID: event.userID,
         phoneNumber: event.phoneNumber,
         gender: event.gender,
         birthdate: event.birthdate,
@@ -164,9 +165,7 @@ class HieringBloc extends Bloc<HieringEvent, HieringState> {
       /* List<Hiering> hiering = state.getDatas;
       hiering.add(r); */
       emit(state.copyWith(
-          
-          state: RequestState.loaded,
-          nameState: NameState.create));
+          state: RequestState.loaded, nameState: NameState.create));
     });
   }
 }

@@ -25,27 +25,46 @@ class AuthRepository extends BaseAuthRepository {
   }
 
   @override
-  ResultVoid login({required String email, required String password}) async {
+  ResultVoid login({required String userID, required String password}) async {
     try {
+      // --- DEBUG PRINT 1: START ---
+      print("AuthRepository: Attempting login...");
+      print("AuthRepository: User: $userID, Pass: $password");
+
       final JwtModel result = await _baseUserRemoteDataSource.login(
-          email: email, password: password);
+          userID: userID, password: password);
+
+      // --- DEBUG PRINT 2: SUCCESS ---
+      print("AuthRepository: Login successful. Response: $result");
+
       await _baseUserLocalDataSource.storeToken(jwt: result);
       return const Right(null);
     } on AuthException catch (failure) {
+      // --- DEBUG PRINT 3: API ERROR ---
+      print("AuthRepository: Caught AuthException");
+      print("AuthRepository: Message: ${failure.authMessage}");
+      print("AuthRepository: StatusCode: ${failure.statusCode}");
+
+      // If the message is null, we return a clearer error instead of just empty string
       return Left(ServerFailure(
-          message: failure.authMessage ?? '',
+          message: failure.authMessage ?? 'Error message is NULL from server',
           statusCode: failure.statusCode ?? 404));
+    } catch (e) {
+      // --- DEBUG PRINT 4: UNEXPECTED CRASH ---
+      // This catches things like JSON parsing errors or Connection Refused
+      print("AuthRepository: UNEXPECTED ERROR: $e");
+      return Left(ServerFailure(message: e.toString(), statusCode: 500));
     }
   }
 
   @override
   ResultVoid resetPassword(
-      {required String email,
+      {required String userID,
       required String oldPassword,
       required String newPassword}) async {
     try {
       await _baseUserRemoteDataSource.retsetPassword(
-          email: email, oldPassword: oldPassword, newPassword: newPassword);
+          userID: userID, oldPassword: oldPassword, newPassword: newPassword);
       return const Right(null);
     } on AuthException catch (failure) {
       return Left(ServerFailure(

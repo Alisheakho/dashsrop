@@ -45,7 +45,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   FutureOr<void> _loginHandler(
       LoginEvent event, Emitter<AuthState> emit) async {
     final result = await loginUseCase(
-        LoginParameters(email: event.email, password: event.password));
+        LoginParameters(userID: event.userID, password: event.password));
     result.fold(
         (l) => emit(state.copyWith(
             loginMessage: l.message, loginState: RequestState.error)),
@@ -56,7 +56,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   FutureOr<void> _resetPasswordHandler(
       ResetPasswordEvent event, Emitter<AuthState> emit) async {
     final result = await resetPasswordUseCase(ResetPasswordParameters(
-        email: event.email,
+        userID: event.userID,
         oldPassword: event.oldPassword,
         newPassword: event.newPassword));
     result.fold(
@@ -76,7 +76,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
             isAuthorizedState: RequestState.error,
             isAuthorized: false)),
         (r) => emit(state.copyWith(
-            isAuthorized: r, isAuthorizedState: RequestState.loaded))); //createUser: r,
+            isAuthorized: r,
+            isAuthorizedState: RequestState.loaded))); //createUser: r,
   }
 
   FutureOr<void> _logoutHandler(

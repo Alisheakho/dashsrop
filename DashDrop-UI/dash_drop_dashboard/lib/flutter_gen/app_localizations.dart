@@ -134,17 +134,17 @@ abstract class AppLocalizations {
   /// **'Login'**
   String get signIn;
 
-  /// No description provided for @email.
+  /// No description provided for @userID.
   ///
   /// In en, this message translates to:
-  /// **'Email'**
-  String get email;
+  /// **'userID'**
+  String get userID;
 
-  /// No description provided for @emailHint.
+  /// No description provided for @userIDHint.
   ///
   /// In en, this message translates to:
-  /// **'Enter your email'**
-  String get emailHint;
+  /// **'Enter your userID'**
+  String get userIDHint;
 
   /// No description provided for @password.
   ///
@@ -590,11 +590,11 @@ abstract class AppLocalizations {
   /// **'Reset Password'**
   String get resetPwd;
 
-  /// No description provided for @emailReceiveResetLink.
+  /// No description provided for @userIDReceiveResetLink.
   ///
   /// In en, this message translates to:
-  /// **'Enter your email address to receive a password reset link.'**
-  String get emailReceiveResetLink;
+  /// **'Enter your userID address to receive a password reset link.'**
+  String get userIDReceiveResetLink;
 
   /// No description provided for @sendPwdResetLink.
   ///

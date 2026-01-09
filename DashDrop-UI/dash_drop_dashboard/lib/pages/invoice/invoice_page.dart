@@ -35,7 +35,7 @@ class InvoicePage extends LayoutWidget {
               SizedBox(
                 height: 10,
               ),
-              Text('Email: contact@example.com',
+              Text('userID: contact@example.com',
                   style: TextStyle(fontSize: 10)),
               SizedBox(
                 height: 10,
@@ -58,7 +58,7 @@ class InvoicePage extends LayoutWidget {
               SizedBox(
                 height: 10,
               ),
-              Text('Email: contact@example.com',
+              Text('userID: contact@example.com',
                   style: TextStyle(fontSize: 10)),
               SizedBox(
                 height: 10,

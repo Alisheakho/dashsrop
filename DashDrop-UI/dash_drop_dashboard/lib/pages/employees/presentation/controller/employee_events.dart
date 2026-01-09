@@ -18,7 +18,6 @@ class GetEmployeeEvent extends EmployeeEvent {
 
   @override
   List<Object?> get props => [id];
-  
 
   @override
   String toString() => 'GetEmployeeEvent(id: $id)';
@@ -28,7 +27,7 @@ class CreateEmployeeEvent extends EmployeeEvent {
   const CreateEmployeeEvent({
     required this.firstName,
     required this.lastName,
-    required this.email,
+    required this.userID,
     required this.password,
     required this.phoneNumber,
     required this.title,
@@ -38,7 +37,7 @@ class CreateEmployeeEvent extends EmployeeEvent {
 
   final String firstName;
   final String lastName;
-  final String email;
+  final String userID;
   final String password;
   final String phoneNumber;
   final String title;
@@ -49,7 +48,7 @@ class CreateEmployeeEvent extends EmployeeEvent {
   List<Object?> get props => [
         firstName,
         lastName,
-        email,
+        userID,
         password,
         phoneNumber,
         title,
@@ -58,12 +57,12 @@ class CreateEmployeeEvent extends EmployeeEvent {
       ];
 }
 
-class UpdateEmployeeEvent extends EmployeeEvent{
+class UpdateEmployeeEvent extends EmployeeEvent {
   const UpdateEmployeeEvent({
     required this.id,
     required this.firstName,
     required this.lastName,
-    required this.email,
+    required this.userID,
     required this.password,
     required this.phoneNumber,
     required this.title,
@@ -74,7 +73,7 @@ class UpdateEmployeeEvent extends EmployeeEvent{
   final int id;
   final String firstName;
   final String lastName;
-  final String email;
+  final String userID;
   final String password;
   final String phoneNumber;
   final String title;
@@ -86,7 +85,7 @@ class UpdateEmployeeEvent extends EmployeeEvent{
         id,
         firstName,
         lastName,
-        email,
+        userID,
         password,
         phoneNumber,
         title,
@@ -102,5 +101,4 @@ class DeleteEmployeeEvent extends EmployeeEvent {
 
   @override
   List<Object?> get props => [id];
-
 }

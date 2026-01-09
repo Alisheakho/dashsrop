@@ -6,8 +6,7 @@ import 'package:equatable/equatable.dart';
 
 import '../repository/base_drivers_repository.dart';
 
-class CreateDriverUseCase
-    extends BaseUseCase<void, CreateDriverParameters> {
+class CreateDriverUseCase extends BaseUseCase<void, CreateDriverParameters> {
   CreateDriverUseCase(this.driversRepository);
 
   final BaseDriversRepository driversRepository;
@@ -17,7 +16,7 @@ class CreateDriverUseCase
     return driversRepository.createDrivers(
       firstName: parameters.firstName,
       lastName: parameters.lastName,
-      email: parameters.email,
+      userID: parameters.userID,
       phoneNumber: parameters.phoneNumber,
       gender: parameters.gender,
       birthdate: parameters.birthdate,
@@ -31,23 +30,23 @@ class CreateDriverUseCase
 }
 
 class CreateDriverParameters extends Equatable {
-const CreateDriverParameters({
-  required this.firstName,
-  required this.lastName,
-  required this.email,
-  required this.phoneNumber,
-  required this.gender,
-  required this.birthdate,
-  required this.vehiclePlateNumber,
-  required this.password,
-  required this.idNumber,
-  required this.regionId,
-  required this.vehicleDetailId,
-});
+  const CreateDriverParameters({
+    required this.firstName,
+    required this.lastName,
+    required this.userID,
+    required this.phoneNumber,
+    required this.gender,
+    required this.birthdate,
+    required this.vehiclePlateNumber,
+    required this.password,
+    required this.idNumber,
+    required this.regionId,
+    required this.vehicleDetailId,
+  });
 
   final String firstName;
   final String lastName;
-  final String email;
+  final String userID;
   final String phoneNumber;
   final int gender;
   final String birthdate;
@@ -62,7 +61,7 @@ const CreateDriverParameters({
     return [
       firstName,
       lastName,
-      email,
+      userID,
       phoneNumber,
       gender,
       birthdate,

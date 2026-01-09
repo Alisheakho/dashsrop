@@ -4,7 +4,6 @@ import 'package:dash_drop_dashboard/core/usecase/base_usecase.dart';
 import 'package:dash_drop_dashboard/core/utils/typedef.dart';
 import 'package:dash_drop_dashboard/pages/auth/domain/repository/base_auth_repository.dart';
 
-
 class ResetPasswordUseCase extends BaseUseCase<void, ResetPasswordParameters> {
   ResetPasswordUseCase(this.authRepository);
 
@@ -13,24 +12,24 @@ class ResetPasswordUseCase extends BaseUseCase<void, ResetPasswordParameters> {
   @override
   ResultVoid call(ResetPasswordParameters parameters) async =>
       authRepository.resetPassword(
-          email: parameters.email,
+          userID: parameters.userID,
           oldPassword: parameters.oldPassword,
           newPassword: parameters.newPassword);
 }
 
 class ResetPasswordParameters extends Equatable {
-  final String email;
+  final String userID;
   final String oldPassword;
   final String newPassword;
 
   const ResetPasswordParameters({
-    required this.email,
+    required this.userID,
     required this.oldPassword,
     required this.newPassword,
   });
 
   @override
   List<Object> get props {
-    return [email, oldPassword, newPassword];
+    return [userID, oldPassword, newPassword];
   }
 }

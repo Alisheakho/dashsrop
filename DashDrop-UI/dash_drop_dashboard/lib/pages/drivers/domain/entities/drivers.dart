@@ -4,7 +4,7 @@ class Drivers extends Equatable {
   final int id;
   final String firstName;
   final String lastName;
-  final String email;
+  final String userID;
   final String phoneNumber;
   final int gender;
   final String birthdate;
@@ -19,7 +19,7 @@ class Drivers extends Equatable {
       {required this.id,
       required this.firstName,
       required this.lastName,
-      required this.email,
+      required this.userID,
       required this.phoneNumber,
       required this.gender,
       required this.birthdate,
@@ -36,7 +36,7 @@ class Drivers extends Equatable {
         id,
         firstName,
         lastName,
-        email,
+        userID,
         phoneNumber,
         gender,
         birthdate,
@@ -52,7 +52,7 @@ class Drivers extends Equatable {
     int? id,
     String? firstName,
     String? lastName,
-    String? email,
+    String? userID,
     String? phoneNumber,
     String? vehiclePlateNumber,
     int? vehicleDetailId,
@@ -67,7 +67,7 @@ class Drivers extends Equatable {
       id: id ?? this.id,
       firstName: firstName ?? this.firstName,
       lastName: lastName ?? this.lastName,
-      email: email ?? this.email,
+      userID: userID ?? this.userID,
       phoneNumber: phoneNumber ?? this.phoneNumber,
       gender: gender ?? this.gender,
       birthdate: birthdate ?? this.birthdate,
@@ -79,14 +79,13 @@ class Drivers extends Equatable {
       lastUpdatedAt: lastUpdatedAt ?? this.lastUpdatedAt,
     );
   }
-
 }
 
 // {
 //     "id": 0,
 //     "firstName": "string",
 //     "lastName": "string",
-//     "email": "user@example.com",
+//     "userID": "user@example.com",
 //     "phoneNumber": "string",
 //     "gender": 0,
 //     "birthdate": "2024-08-08",

@@ -20,12 +20,7 @@ class AuthState extends Equatable {
 
   const AuthState(
       {this.getUser = const User(
-          id: -1,
-          name: '',
-          role: '',
-          emailaddress: '',
-          title: '',
-          dateofbirth: ''),
+          id: -1, name: '', role: '', text: '', title: '', dateofbirth: ''),
       this.getUserState = RequestState.loading,
       this.getUserMessage = '',
       this.loginState = RequestState.loading,

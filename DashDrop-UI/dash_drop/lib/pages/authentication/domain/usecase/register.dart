@@ -13,43 +13,41 @@ class RegisterUseCase extends BaseUseCase<void, RegisterParameters> {
   @override
   ResultVoid call(RegisterParameters parameters) async =>
       authRepository.register(
-          firstName: parameters.firstName,
-          lastName: parameters.lastName,
-          email: parameters.email,
-          password: parameters.password,
-          phoneNumber: parameters.phoneNumber,
-          gender: parameters.gender,
-          birthdate: parameters.birthdate,
-          );
+        firstName: parameters.firstName,
+        lastName: parameters.lastName,
+        userID: parameters.userID,
+        password: parameters.password,
+        phoneNumber: parameters.phoneNumber,
+        gender: parameters.gender,
+        birthdate: parameters.birthdate,
+      );
 }
 
 class RegisterParameters extends Equatable {
   final String firstName;
   final String lastName;
-  final String email;
+  final String userID;
   final String password;
   final String phoneNumber;
   final Gender gender;
-  final String birthdate;  
-  
+  final String birthdate;
+
   const RegisterParameters({
-    required  this.firstName,
-    required  this.lastName,
-    required  this.email,
-    required  this.password,
-    required  this.phoneNumber,
-    required  this.gender,
-    required  this.birthdate
+    required this.firstName,
+    required this.lastName,
+    required this.userID,
+    required this.password,
+    required this.phoneNumber,
+    required this.gender,
+    required this.birthdate,
   });
-
-
 
   @override
   List<Object> get props {
     return [
       firstName,
       lastName,
-      email,
+      userID,
       password,
       phoneNumber,
       gender,

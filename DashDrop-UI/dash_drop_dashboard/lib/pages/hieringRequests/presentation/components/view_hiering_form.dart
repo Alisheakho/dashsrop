@@ -39,9 +39,9 @@ class ViewHieringForm extends StatelessWidget {
             ),
             OutBorderTextFormField(
               readOnly: true,
-              initialValue: hiering.email.toString(),
-              labelText: lang.email,
-              hintText: lang.email,
+              initialValue: hiering.userID.toString(),
+              labelText: lang.userID,
+              hintText: lang.userID,
             ),
             const SizedBox(
               height: 16,
@@ -69,7 +69,7 @@ class ViewHieringForm extends StatelessWidget {
             ),
             OutBorderTextFormField(
               readOnly: true,
-              initialValue:hiering.phoneNumber,
+              initialValue: hiering.phoneNumber,
               labelText: lang.phoneNumber,
               hintText: lang.phoneNumber,
             ),
@@ -94,7 +94,7 @@ class ViewHieringForm extends StatelessWidget {
             const SizedBox(
               height: 16,
             ),
-             OutBorderTextFormField(
+            OutBorderTextFormField(
               readOnly: true,
               initialValue: hiering.jobOfferId.toString(),
               labelText: lang.jobOffer,

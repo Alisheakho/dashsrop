@@ -1,63 +1,96 @@
 import 'package:dash_drop_dashboard/deferred_widget.dart';
+
 import 'package:dash_drop_dashboard/pages/landing/landing_page.dart';
+
 import 'package:dash_drop_dashboard/pages/modal/modal_page.dart'
     deferred as modal;
+
 import 'package:dash_drop_dashboard/pages/table/contacts_page.dart'
     deferred as contacts;
+
 import 'package:dash_drop_dashboard/pages/toast/toast_page.dart'
     deferred as toast;
+
 import 'package:dash_drop_dashboard/pages/tools/tools_page.dart'
     deferred as tools;
+
 import 'package:flutter/material.dart';
+
 import 'package:dash_drop_dashboard/pages/alerts/alert_page.dart'
     deferred as alert;
+
 import 'package:dash_drop_dashboard/pages/button/button_page.dart'
     deferred as button;
+
 import 'package:dash_drop_dashboard/pages/form/form_elements_page.dart'
     deferred as formElements;
+
 import 'package:dash_drop_dashboard/pages/form/form_layout_page.dart'
     deferred as formLayout;
+
 import 'package:dash_drop_dashboard/pages/auth/presentation/screens/login_screen.dart'
     deferred as login;
+
 import 'package:dash_drop_dashboard/pages/calendar/calendar_page.dart'
     deferred as calendar;
+
 import 'package:dash_drop_dashboard/pages/chart/chart_page.dart'
     deferred as chart;
+
 import 'package:dash_drop_dashboard/pages/dashboard/dashdrop_page.dart';
+
 import 'package:dash_drop_dashboard/pages/inbox/index.dart' deferred as inbox;
+
 import 'package:dash_drop_dashboard/pages/invoice/invoice_page.dart'
     deferred as invoice;
+
 import 'package:dash_drop_dashboard/pages/profile/profile_page.dart'
     deferred as profile;
+
 import 'package:dash_drop_dashboard/pages/resetpwd/reset_pwd_page.dart'
     deferred as resetPwd;
+
 import 'package:dash_drop_dashboard/pages/setting/settings_page.dart'
     deferred as settings;
+
 import 'package:dash_drop_dashboard/pages/table/tables_page.dart'
     deferred as tables;
+
 import 'package:dash_drop_dashboard/pages/employees/presentation/screens/employees.dart'
     deferred as employee;
+
 import 'package:dash_drop_dashboard/pages/employees/presentation/screens/create_employee.dart'
     deferred as create_employee;
+
 import 'package:dash_drop_dashboard/pages/employees/presentation/screens/update_employee.dart'
     deferred as update_employee;
+
 import 'package:dash_drop_dashboard/pages/customers/presentation/screen/costomer.dart'
     deferred as customers;
+
 import 'package:dash_drop_dashboard/pages/job_offers/presentation/screens/job_offers.dart'
     deferred as job_offers;
+
 import 'package:dash_drop_dashboard/pages/job_offers/presentation/screens/create_job_offer.dart'
     deferred as create_job_offer;
+
 import 'package:dash_drop_dashboard/pages/job_offers/presentation/screens/update_job_offer.dart'
     deferred as update_job_offer;
+
 import 'pages/check_auth.dart';
+
 import 'package:dash_drop_dashboard/pages/drivers/presentation/screens/driver_screen.dart'
     deferred as drivers;
+
 import 'package:dash_drop_dashboard/pages/drivers/presentation/screens/create_driver.dart'
     deferred as create_driver;
+
 import 'package:dash_drop_dashboard/pages/drivers/presentation/screens/view_details_screen.dart'
     deferred as view_driver;
+
 import 'package:dash_drop_dashboard/pages/drivers/presentation/screens/update_driver.dart'
     deferred as update_driver;
+
 import 'package:dash_drop_dashboard/pages/vehicle_details/presentation/screans/vehicle_screen.dart'
     deferred as vehicle;
 
@@ -279,6 +312,7 @@ class RouteConfiguration {
     if (map == null) {
       return null;
     }
+
     Widget targetPage = map['widget'];
 
     builder(context, match) {

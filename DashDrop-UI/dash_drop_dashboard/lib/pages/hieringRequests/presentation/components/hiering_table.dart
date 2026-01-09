@@ -18,7 +18,8 @@ class HieringTableWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocConsumer<HieringBloc, HieringState>(
       listener: (BuildContext context, HieringState state) {
-        if (state.state == RequestState.loaded && state.nameState == NameState.delete) {
+        if (state.state == RequestState.loaded &&
+            state.nameState == NameState.delete) {
           Tost().success(context, "Delete Hiering completed successfully");
         }
         if (state.state == RequestState.error) {
@@ -81,7 +82,7 @@ class HieringTableWidget extends StatelessWidget {
       DataColumn(label: Text(lang.id)),
       DataColumn(label: Text(lang.firstName)),
       DataColumn(label: Text(lang.lastName)),
-      DataColumn(label: Text(lang.email)),
+      DataColumn(label: Text(lang.userID)),
       DataColumn(label: Text(lang.phoneNumber)),
       DataColumn(label: Text(lang.idNumber)),
       DataColumn(label: Text(lang.createdAt)),
@@ -94,7 +95,7 @@ class HieringTableWidget extends StatelessWidget {
       DataCell(Text("${e.id}")),
       DataCell(Text(e.firstName)),
       DataCell(Text(e.lastName)),
-      DataCell(Text(e.email)),
+      DataCell(Text(e.userID)),
       DataCell(Text(e.phoneNumber)),
       DataCell(Text(e.idNumber)),
       DataCell(Text(

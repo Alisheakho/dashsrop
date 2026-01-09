@@ -17,7 +17,7 @@ class DriverRepository extends BaseDriversRepository {
   ResultFuture<Drivers> createDrivers(
       {required String firstName,
       required String lastName,
-      required String email,
+      required String userID,
       required String phoneNumber,
       required String vehiclePlateNumber,
       required String password,
@@ -27,18 +27,18 @@ class DriverRepository extends BaseDriversRepository {
       required int gender,
       required String birthdate}) async {
     try {
-    final result = await baseDriverRemoteDataSource.createDriver(
-        firstName: firstName,
-        lastName: lastName,
-        email: email,
-        phoneNumber: phoneNumber,
-        gender: gender,
-        birthdate: birthdate,
-        vehiclePlateNumber: vehiclePlateNumber,
-        password: password,
-        idNumber: idNumber,
-        regionId: regionId,
-        vehicleDetailId: vehicleDetailId);
+      final result = await baseDriverRemoteDataSource.createDriver(
+          firstName: firstName,
+          lastName: lastName,
+          userID: userID,
+          phoneNumber: phoneNumber,
+          gender: gender,
+          birthdate: birthdate,
+          vehiclePlateNumber: vehiclePlateNumber,
+          password: password,
+          idNumber: idNumber,
+          regionId: regionId,
+          vehicleDetailId: vehicleDetailId);
       return Right(result);
     } on ServerException catch (failure) {
       return Left(ServerFailure(
@@ -70,7 +70,7 @@ class DriverRepository extends BaseDriversRepository {
   @override
   ResultFuture<Drivers> getDriver({required int id}) async {
     try {
-    final result = await baseDriverRemoteDataSource.getDriver(id: id);
+      final result = await baseDriverRemoteDataSource.getDriver(id: id);
       return Right(result);
     } on ServerException catch (failure) {
       return Left(ServerFailure(
@@ -105,7 +105,7 @@ class DriverRepository extends BaseDriversRepository {
       {required int id,
       required String firstName,
       required String lastName,
-      required String email,
+      required String userID,
       required String phoneNumber,
       required String vehiclePlateNumber,
       required String password,
@@ -118,7 +118,7 @@ class DriverRepository extends BaseDriversRepository {
         id: id,
         firstName: firstName,
         lastName: lastName,
-        email: email,
+        userID: userID,
         phoneNumber: phoneNumber,
         gender: gender,
         birthdate: birthdate,
@@ -143,7 +143,7 @@ class DriverRepository extends BaseDriversRepository {
 
   @override
   ResultFuture<List<Regions>> getRegions() async {
-     final result = await baseDriverRemoteDataSource.getRegions();
+    final result = await baseDriverRemoteDataSource.getRegions();
     try {
       return Right(result);
     } on ServerException catch (failure) {
@@ -158,7 +158,7 @@ class DriverRepository extends BaseDriversRepository {
   }
 
   @override
-  ResultFuture<List<VehicleDetails>> getVehicleDetails() async{
+  ResultFuture<List<VehicleDetails>> getVehicleDetails() async {
     final result = await baseDriverRemoteDataSource.getVehicleDetails();
     try {
       return Right(result);

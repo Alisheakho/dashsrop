@@ -7,7 +7,7 @@ class Employee extends Equatable {
     required this.id,
     required this.firstName,
     required this.lastName,
-    required this.email,
+    required this.userID,
     required this.phoneNumber,
     required this.title,
     required this.gender,
@@ -19,7 +19,7 @@ class Employee extends Equatable {
   final int id;
   final String firstName;
   final String lastName;
-  final String email;
+  final String userID;
   final String phoneNumber;
   final String title;
   final Gender gender;
@@ -33,7 +33,7 @@ class Employee extends Equatable {
       id,
       firstName,
       lastName,
-      email,
+      userID,
       phoneNumber,
       title,
       gender,
@@ -43,12 +43,11 @@ class Employee extends Equatable {
     ];
   }
 
-
   Employee copyWith({
     int? id,
     String? firstName,
     String? lastName,
-    String? email,
+    String? userID,
     String? phoneNumber,
     String? title,
     Gender? gender,
@@ -60,7 +59,7 @@ class Employee extends Equatable {
       id: id ?? this.id,
       firstName: firstName ?? this.firstName,
       lastName: lastName ?? this.lastName,
-      email: email ?? this.email,
+      userID: userID ?? this.userID,
       phoneNumber: phoneNumber ?? this.phoneNumber,
       title: title ?? this.title,
       gender: gender ?? this.gender,

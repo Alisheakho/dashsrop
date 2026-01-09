@@ -29,7 +29,7 @@ class EmployeeState extends Equatable {
         id: 0,
         firstName: '',
         lastName: '',
-        email: '',
+        userID: '',
         phoneNumber: '',
         title: '',
         gender: Gender.male,

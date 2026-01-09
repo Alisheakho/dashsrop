@@ -69,17 +69,16 @@ class DriversTableWidget extends StatelessWidget {
 
       case RequestState.error:
         return CommonCard(
-            height: 300,
-            child: Center(child: Text(state.getDriverMessage)));
+            height: 300, child: Center(child: Text(state.getDriverMessage)));
     }
   }
 
   List<DataColumn> _buildTableColumns(BuildContext context) {
-     final lang = AppLocalizations.of(context)!;
+    final lang = AppLocalizations.of(context)!;
     return [
       DataColumn(label: Text(lang.id)),
       DataColumn(label: Text("${lang.firstName} ${lang.lastName}")),
-      DataColumn(label: Text(lang.email)),
+      DataColumn(label: Text(lang.userID)),
       DataColumn(label: Text(lang.phoneNumber)),
       DataColumn(label: Text(lang.vehiclePlateNumber)),
       DataColumn(label: Text(lang.gender)),
@@ -93,7 +92,7 @@ class DriversTableWidget extends StatelessWidget {
     return [
       DataCell(Text("${e.id}")),
       DataCell(Text("${e.firstName} ${e.lastName}")),
-      DataCell(Text(e.email)),
+      DataCell(Text(e.userID)),
       DataCell(Text(e.phoneNumber)),
       DataCell(Text(e.vehiclePlateNumber)),
       DataCell(
@@ -101,12 +100,10 @@ class DriversTableWidget extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 3),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(45),
-            color: e.gender == 0
-                ? Colors.green.shade50
-                : Colors.pink.shade50,
+            color: e.gender == 0 ? Colors.green.shade50 : Colors.pink.shade50,
           ),
           child: Text(
-            e.gender == 0?"Male":"Female",
+            e.gender == 0 ? "Male" : "Female",
             style: TextStyle(
               color: e.gender == 0 ? Colors.blue : Colors.red,
               fontSize: 13,
@@ -136,11 +133,11 @@ class DriversTableWidget extends StatelessWidget {
             onPressed: () {
               Navigator.pushNamed(context, "/drivers/view", arguments: e.id);
             },
-            icon: const Icon(Icons.question_mark, color: Color.fromARGB(255, 96, 199, 1)),
+            icon: const Icon(Icons.question_mark,
+                color: Color.fromARGB(255, 96, 199, 1)),
           ),
         ],
       )),
     ];
   }
-  
 }

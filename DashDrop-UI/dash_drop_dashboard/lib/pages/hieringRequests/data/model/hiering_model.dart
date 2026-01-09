@@ -7,7 +7,7 @@ class HieringModel extends Hiering {
       {required super.id,
       required super.firstName,
       required super.lastName,
-      required super.email,
+      required super.userID,
       required super.phoneNumber,
       required super.gender,
       required super.birthdate,
@@ -25,7 +25,7 @@ class HieringModel extends Hiering {
         id: map['id'] as int,
         firstName: map['firstName'] as String,
         lastName: map['lastName'] as String,
-        email: map['email'] as String,
+        userID: map['userID'] as String,
         phoneNumber: map['phoneNumber'] as String,
         idNumber: map['idNumber'] as String,
         vehiclePlateNumber: map['vehiclePlateNumber'] as String,
@@ -39,5 +39,4 @@ class HieringModel extends Hiering {
         createdAt: map['createdAt'] as String,
         lastUpdatedAt: map['lastUpdatedAt'] as String);
   }
-
 }

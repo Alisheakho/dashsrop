@@ -28,10 +28,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get signIn => 'Login';
 
   @override
-  String get email => 'Email';
+  String get userID => 'userID';
 
   @override
-  String get emailHint => 'Enter your email';
+  String get userIDHint => 'Enter your userID';
 
   @override
   String get password => 'Password';
@@ -256,8 +256,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get resetPwd => 'Reset Password';
 
   @override
-  String get emailReceiveResetLink =>
-      'Enter your email address to receive a password reset link.';
+  String get userIDReceiveResetLink =>
+      'Enter your userID address to receive a password reset link.';
 
   @override
   String get sendPwdResetLink => 'Send Password Reset Link';
