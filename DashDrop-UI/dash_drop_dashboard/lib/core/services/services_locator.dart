@@ -66,6 +66,10 @@ import '../../pages/job_offers/domain/usecase/get_job_offer.dart';
 import '../../pages/job_offers/domain/usecase/get_job_offers.dart';
 import '../../pages/job_offers/domain/usecase/update_job_offer.dart';
 import '../../pages/job_offers/presentation/controller/job_offer_bloc.dart';
+import '../../pages/branches/data/data_source/branch_remote_data_source.dart';
+import '../../pages/branches/data/repositories/branches_repository.dart';
+import '../../pages/branches/domain/repositories/base_branches_repository.dart';
+import '../../pages/branches/presentation/controller/branch_bloc.dart';
 
 final sl = GetIt.instance;
 
@@ -79,6 +83,17 @@ class ServicesLocator {
     _driverSL();
     _vehicleSl();
     _hieringRequestsSl();
+    _branchesSl();
+  }
+
+  void _branchesSl() {
+    sl.registerFactory(() => BranchBloc(sl()));
+
+    sl.registerLazySingleton<BaseBranchesRepository>(
+        () => BranchesRepository(sl()));
+
+    sl.registerLazySingleton<BaseBranchesRemoteDataSource>(
+        () => BranchesRemoteDataSource());
   }
 
   void _employeeSL() {
@@ -205,7 +220,8 @@ class ServicesLocator {
 
   void _hieringRequestsSl() {
     //bloc
-    sl.registerLazySingleton(() => HieringBloc(sl(), sl(), sl(), sl(), sl(),sl(),sl()));
+    sl.registerLazySingleton(
+        () => HieringBloc(sl(), sl(), sl(), sl(), sl(), sl(), sl()));
     //use case
     sl.registerLazySingleton(() => GetHieringUseCase(sl()));
     sl.registerLazySingleton(() => GetHieringsUseCase(sl()));

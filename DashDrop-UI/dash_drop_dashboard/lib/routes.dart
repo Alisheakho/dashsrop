@@ -115,6 +115,9 @@ import 'package:dash_drop_dashboard/pages/hieringRequests/presentation/screans/c
 import 'package:dash_drop_dashboard/pages/hieringRequests/presentation/screans/update_hiering.dart'
     deferred as hiering_update;
 
+import 'package:dash_drop_dashboard/pages/branches/presentation/ui/branches_view.dart'
+    deferred as branch;
+
 typedef PathWidgetBuilder = Widget Function(BuildContext, String?);
 
 final List<Map<String, Object>> MAIN_PAGES = [
@@ -135,6 +138,10 @@ final List<Map<String, Object>> MAIN_PAGES = [
     'routerPath': '/employees',
     'widget':
         DeferredWidget(employee.loadLibrary, () => employee.EmployeesPage())
+  },
+  {
+    'routerPath': '/branches',
+    'widget': DeferredWidget(branch.loadLibrary, () => branch.BranchesPage())
   },
   {
     'routerPath': '/employees/create',

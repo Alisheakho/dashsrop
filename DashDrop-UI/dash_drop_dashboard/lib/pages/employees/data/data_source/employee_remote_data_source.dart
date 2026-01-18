@@ -40,20 +40,44 @@ class EmployeeRemoteDataSource extends BaseEmployeeRemoteDataSource {
   @override
   Future<List<EmployeeModel>> getEmployees() async {
     try {
-      final response = await Dio().get(ApiConstances.employeesUrl);
+      // 1. Get the token
+      String token = await ApiConstances.getToken();
+
+      // 2. Call the server with the token in headers
+      final response = await Dio().get(
+        ApiConstances.employeesUrl,
+        options: Options(headers: ApiConstances.headers(token)),
+      );
+
+      // 3. DEBUG: Print the response to see what we get
+      print("🚀 Server Response: ${response.data}");
+
+      // 4. FIX: Handle the { "data": [...] } structure
+      // If response.data is a Map, we look for the 'data' key.
+      // If it's already a List, we use it directly.
+      List<dynamic> listData = [];
+
+      if (response.data is Map<String, dynamic>) {
+        listData = response.data['data'] ?? [];
+      } else if (response.data is List) {
+        listData = response.data;
+      }
+
       return List<EmployeeModel>.from(
-          (response.data as List).map((e) => EmployeeModel.fromJson(e)));
+          listData.map((e) => EmployeeModel.fromJson(e)));
     } on DioException catch (e) {
-      if (401 == e.response?.statusCode || 403 == e.response?.statusCode) {
+      if (e.response?.statusCode == 401 || e.response?.statusCode == 403) {
         throw AuthException(
             statusCode: e.response?.statusCode,
             authMessage: e.response?.statusMessage);
       }
+      // If the route is missing (404), throw a clear error
+      print(
+          "❌ Server Error: ${e.response?.statusCode} - ${e.response?.statusMessage}");
       throw ServerException(
-          errorMessageModel: ErrorMessageModel.fromJson(e.response?.data),
+          errorMessageModel: ErrorMessageModel.fromJson(e.response?.data ?? {}),
           statusCode: e.response?.statusCode);
     } catch (e) {
-      // Handle any other exceptions
       print('Unexpected error: $e');
       throw Exception('Failed to get employees: $e');
     }

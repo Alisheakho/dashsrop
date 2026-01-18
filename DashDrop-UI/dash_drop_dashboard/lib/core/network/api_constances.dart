@@ -3,7 +3,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../../pages/auth/data/model/jwt_model.dart';
 
 class ApiConstances {
-  static const String _baseUrl = "http://127.0.0.1:8000/api";
+  static const String baseUrl = "http://127.0.0.1:8000/api";
   static Map<String, dynamic> headers(String token) {
     if (token == '') {
       return {"accept": "application/json"};
@@ -22,35 +22,35 @@ class ApiConstances {
   }
 
   // Authentication
-  static const String loginUrl = "$_baseUrl/login";
-  static const String refreshUrl = "$_baseUrl/Refresh";
-  static const String resetPasswordUrl = "$_baseUrl/reset-password";
+  static const String loginUrl = "$baseUrl/login";
+  static const String refreshUrl = "$baseUrl/Refresh";
+  static const String resetPasswordUrl = "$baseUrl/reset-password";
 
   // Employees
-  static const String employeesUrl = "$_baseUrl/Employees";
+  static const String employeesUrl = "$baseUrl/employees";
   static String employeeUrl(int id) => "$employeesUrl/$id";
 
   // Customers
-  static const String customersUrl = "$_baseUrl/Customers";
+  static const String customersUrl = "$baseUrl/Customers";
   static String customerUrl(int id) => "$customersUrl/$id";
 
   // Job Offers
-  static const String jobOffersUrl = "$_baseUrl/JobOffers";
+  static const String jobOffersUrl = "$baseUrl/JobOffers";
   static String jobOfferUrl(int id) => "$jobOffersUrl/$id";
 
   // Drivers
-  static const String driversUrl = "$_baseUrl/Drivers";
+  static const String driversUrl = "$baseUrl/Drivers";
   static String driverUrl(int id) => "$driversUrl/$id";
 
   // VehicleDetails
-  static const String vehicleDetailsUrl = "$_baseUrl/VehicleDetails";
+  static const String vehicleDetailsUrl = "$baseUrl/VehicleDetails";
   static String vehicleDetailUrl(int id) => "$vehicleDetailsUrl/$id";
 
   // Regions
-  static const String regionsUrl = "$_baseUrl/Regions";
+  static const String regionsUrl = "$baseUrl/Regions";
   static String regionUrl(int id) => "$regionsUrl/$id";
 
   // HieringRequests
-  static const String hieringsUrl = "$_baseUrl/HieringRequests";
+  static const String hieringsUrl = "$baseUrl/HieringRequests";
   static String hieringUrl(int id) => "$hieringsUrl/$id";
 }
