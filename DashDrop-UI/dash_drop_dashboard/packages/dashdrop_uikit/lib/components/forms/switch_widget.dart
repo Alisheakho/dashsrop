@@ -18,9 +18,9 @@ class SwitchWidget extends StatelessWidget {
         builder: (ctx, checked, child) {
           return Switch(
               value: checked,
-              activeThumbColor: const Color(0xFF10B981),
-              inactiveThumbColor: const Color(0xFF8A99AF),
-              inactiveTrackColor: const Color(0xFFDEE4EE),
+              activeColor: Color(0xFF10B981),
+              inactiveThumbColor: Color(0xFF8A99AF),
+              inactiveTrackColor: Color(0xFFDEE4EE),
               onChanged: (r) {
                 toggleNotifier.value = !toggleNotifier.value;
                 onChanged?.call(r);

@@ -39,32 +39,33 @@ class CustomLanguageSelector extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => SizedBox(
-    width: width,
-    height: height,
-    child: _LanguagePickerDropdown(
-      currentLanguage: currentLanguage,
-      languages: _languageMap(languages.toSet()),
-      onChanged: onChanged,
-      backgroundColor: backgroundColor,
-      borderColor: borderColor,
-      borderRadius: borderRadius,
-      dropdownColor: dropdownColor,
-      dropdownIconColor: dropdownIconColor,
-      dropdownIcon: dropdownIcon,
-      itemBuilder: (language) => _LanguagePickerItem(
-        language: language.isoCode,
-        languages: languages,
-        textStyle: textStyle,
-        hideFlags: hideFlags,
-        flagSize: flagSize,
-        flagTextGap: flagTextGap,
-      ),
-    ),
-  );
+        width: width,
+        height: height,
+        child: _LanguagePickerDropdown(
+          currentLanguage: currentLanguage,
+          languages: _languageMap(languages.toSet()),
+          onChanged: onChanged,
+          backgroundColor: backgroundColor,
+          borderColor: borderColor,
+          borderRadius: borderRadius,
+          dropdownColor: dropdownColor,
+          dropdownIconColor: dropdownIconColor,
+          dropdownIcon: dropdownIcon,
+          itemBuilder: (language) => _LanguagePickerItem(
+            language: language.isoCode,
+            languages: languages,
+            textStyle: textStyle,
+            hideFlags: hideFlags,
+            flagSize: flagSize,
+            flagTextGap: flagTextGap,
+          ),
+        ),
+      );
 }
 
 class _LanguagePickerItem extends StatelessWidget {
   const _LanguagePickerItem({
+    super.key,
     required this.language,
     required this.languages,
     this.textStyle,
@@ -88,23 +89,35 @@ class _LanguagePickerItem extends StatelessWidget {
       final flagEmoji = EmojiConverter.fromAlpha2CountryCode(flagInfo);
       flagWidget = Padding(
         padding: const EdgeInsets.only(bottom: 2.0),
-        child: Text(flagEmoji, style: const TextStyle(fontSize: 20.0)),
+        child: Text(
+          flagEmoji,
+          style: const TextStyle(fontSize: 20.0),
+        ),
       );
     } else if (flagInfo is Map) {
       final flagUrl = flagInfo['flag'] as String;
-      flagWidget = Image.network(flagUrl, width: 24, height: 20);
+      flagWidget = Image.network(
+        flagUrl,
+        width: 24,
+        height: 20,
+      );
     }
     flagWidget = Transform.scale(
       scale: flagSize / 24.0,
-      child: SizedBox(width: 24, child: flagWidget),
+      child: SizedBox(
+        width: 24,
+        child: flagWidget,
+      ),
     );
     return Row(
       children: [
-        if (!hideFlags) ...[flagWidget, SizedBox(width: flagTextGap)],
+        if (!hideFlags) ...[
+          flagWidget,
+          SizedBox(width: flagTextGap),
+        ],
         Text(
           _languageMap(languages.toSet())[language]?.name ?? '',
-          style:
-              textStyle ??
+          style: textStyle ??
               const TextStyle(
                 color: Colors.white,
                 fontSize: 13,
@@ -178,7 +191,11 @@ class _LanguagePickerDropdown extends StatelessWidget {
             iconEnabledColor: dropdownIconColor,
             iconDisabledColor: dropdownIconColor,
             icon: dropdownIcon != null
-                ? Icon(dropdownIcon, size: 18.0, color: dropdownIconColor)
+                ? Icon(
+                    dropdownIcon,
+                    size: 18.0,
+                    color: dropdownIconColor,
+                  )
                 : null,
             hint: const Text(
               'Unset',
@@ -207,18 +224,18 @@ class Language {
   Language(this.isoCode, this.name);
 
   Language.fromMap(Map<String, String> map)
-    : name = map['name']!,
-      isoCode = map['isoCode']!;
+      : name = map['name']!,
+        isoCode = map['isoCode']!;
 
   final String name;
   final String isoCode;
 }
 
 Map<String, Language> _languageMap(Set<String> languages) => Map.fromEntries(
-  _defaultLanguagesList
-      .where((element) => languages.contains(element['isoCode']))
-      .map((e) => MapEntry(e['isoCode']!, Language.fromMap(e))),
-);
+      _defaultLanguagesList
+          .where((element) => languages.contains(element['isoCode']))
+          .map((e) => MapEntry(e['isoCode']!, Language.fromMap(e))),
+    );
 
 final List<Map<String, String>> _defaultLanguagesList = [
   {"isoCode": "aa", "name": "Afaraf"},
@@ -411,14 +428,14 @@ final Map<String, dynamic> languageToCountryInfo = {
     "proposed_iso_3166": "aa",
     "flag":
         "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Flag_of_the_Arab_League.svg/400px-Flag_of_the_Arab_League.svg.png",
-    "name": "Arab League",
+    "name": "Arab League"
   },
   "hy": "am",
   "ay": {
     "proposed_iso_3166": "wh",
     "flag":
         "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Banner_of_the_Qulla_Suyu.svg/1920px-Banner_of_the_Qulla_Suyu.svg.png",
-    "name": "Wiphala",
+    "name": "Wiphala"
   },
   "az": "az",
   "bm": "ml",
@@ -442,7 +459,7 @@ final Map<String, dynamic> languageToCountryInfo = {
     "proposed_iso_3166": "ew",
     "flag":
         "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Flag_of_the_Ewe_people.svg/2880px-Flag_of_the_Ewe_people.svg.png",
-    "name": "Ewe",
+    "name": "Ewe"
   },
   "fj": "fj",
   "fil": "ph",
@@ -524,7 +541,7 @@ final Map<String, dynamic> languageToCountryInfo = {
     "proposed_iso_3166": "sw",
     "flag":
         "https://upload.wikimedia.org/wikipedia/commons/d/de/Flag_of_Swahili.gif",
-    "name": "Swahili",
+    "name": "Swahili"
   },
   "ss": "sz",
   "sv": "se",
@@ -553,7 +570,7 @@ final Map<String, dynamic> languageToCountryInfo = {
     "proposed_iso_3166": "yo",
     "flag":
         "https://upload.wikimedia.org/wikipedia/commons/0/04/Flag_of_the_Yoruba_people.svg",
-    "name": "Yoruba",
+    "name": "Yoruba"
   },
   "zu": "za",
   // Custom

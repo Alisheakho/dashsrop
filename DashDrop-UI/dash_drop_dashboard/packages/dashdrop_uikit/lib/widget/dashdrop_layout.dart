@@ -11,7 +11,7 @@ import 'package:responsive_builder/responsive_builder.dart';
 abstract class DashDropLayoutWidget extends StatelessWidget {
   const DashDropLayoutWidget({super.key});
 
-  String get appName => 'Vacation Dashboard';
+  String get appName => 'DashDrop';
 
   bool get showTitle => true;
 
@@ -60,7 +60,7 @@ abstract class DashDropLayoutWidget extends StatelessWidget {
       );
     }
     return SvgPicture.asset(
-      'assets/logo/logo_dark.svg',
+      'assets/logo/logo_${isDark ? 'white' : 'dark'}.svg',
       height: 32,
     );
   }
@@ -162,7 +162,7 @@ abstract class DashDropLayoutWidget extends StatelessWidget {
               context,
               showDrawer,
             ) ??
-            const SizedBox.shrink(),
+            SizedBox.shrink(),
       if (showToolBar)
         const SizedBox(
           height: 16,

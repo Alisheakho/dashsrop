@@ -6,7 +6,7 @@ class BreakTab extends StatelessWidget {
   final String title;
   final Widget? rightWidget;
 
-  const BreakTab(this.title, {super.key, this.rightWidget});
+  BreakTab(this.title, {super.key, this.rightWidget});
 
   @override
   Widget build(BuildContext context) {

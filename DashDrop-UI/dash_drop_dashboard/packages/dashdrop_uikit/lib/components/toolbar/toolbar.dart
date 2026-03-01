@@ -66,7 +66,7 @@ class ToolBarWidget extends StatelessWidget {
             return Container(
               margin: const EdgeInsets.only(left: 10),
               width: 280,
-              child: const SearchWidget(),
+              child: SearchWidget(),
             );
           }
 
@@ -135,21 +135,21 @@ class ToolBarWidget extends StatelessWidget {
               items: <PopupMenuItem<String>>[
                 PopupMenuItem<String>(
                   value: 'value01',
-                  child: const Text('My Profile'),
+                  child: Text('My Profile'),
                   onTap: () async {
                     onProfileClick(context);
                   },
                 ),
                 PopupMenuItem<String>(
                   value: 'value02',
-                  child: const Text('My Contacts'),
+                  child: Text('My Contacts'),
                   onTap: () async {
                     onContactClick(context);
                   },
                 ),
                 PopupMenuItem<String>(
                   value: 'value03',
-                  child: const Text('Settings'),
+                  child: Text('Settings'),
                   onTap: () async {},
                 ),
                 PopupMenuItem<String>(
@@ -158,7 +158,7 @@ class ToolBarWidget extends StatelessWidget {
                     child: _languagesWidget(context)),
                 PopupMenuItem<String>(
                   value: 'value05',
-                  child: const Text('Log out'),
+                  child: Text('Log out'),
                   onTap: () {
                     onLogoutClick();
                   },

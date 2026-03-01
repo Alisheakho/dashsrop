@@ -9,227 +9,559 @@ class AppLocalizationsAr extends AppLocalizations {
   AppLocalizationsAr([String locale = 'ar']) : super(locale);
 
   @override
-  String get appName => 'لوحة الإجازات';
+  String get alertsPageTitle => 'تحذيرات';
 
   @override
-  String get dashboard => 'لوحة التحكم';
+  String get alertsTitle => 'هناك حاجة للاهتمام';
 
   @override
-  String get employees => 'الموظفين';
+  String get alertsMessage =>
+      'ليس لورم إيبسوم مجرد نص وهمية لصناعة الطباعة والطباعة';
 
   @override
-  String get requests => 'الطلبات';
+  String get appName => 'داشدروب';
 
   @override
-  String get login => 'تسجيل الدخول';
+  String get slogan => 'تطوير ويب بسيط أسرع';
 
   @override
-  String get email => 'البريد الإلكتروني';
+  String get signIn => 'تسجيل الدخول';
+
+  @override
+  String get userID => 'البريد الإلكتروني';
+
+  @override
+  String get userIDHint => 'أدخل بريدك الإلكتروني';
 
   @override
   String get password => 'كلمة المرور';
 
   @override
-  String get welcome => 'أهلاً بك';
+  String get passwordHint => '8+ أحرف';
 
   @override
-  String get stats_pending => 'طلبات معلقة';
+  String get signInWithGithub => 'تسجيل الدخول باستخدام Github';
 
   @override
-  String get stats_approved => 'إجازات مقبولة';
+  String get signInWithGoogle => 'تسجيل الدخول باستخدام Google';
 
   @override
-  String get stats_employees => 'إجمالي الموظفين';
+  String get signInWithMicrosoft => 'تسجيل الدخول باستخدام Microsoft';
 
   @override
-  String get stats_allowance => 'رصيد الإجازات';
+  String get signInWithTwitter => 'تسجيل الدخول باستخدام Twitter';
 
   @override
-  String get add_employee => 'إضافة موظف';
+  String get dontHaveAccount => 'ليس لديك حساب؟';
 
   @override
-  String get ministryOfInterior => 'وزارة الداخلية';
+  String get signUp => 'التسجيل';
 
   @override
-  String get drugEnforcement => 'إدارة مكافحة المخدرات';
+  String get startForFree => 'البدء مجانًا';
 
   @override
-  String get secureLogin => 'تسجيل دخول آمن';
+  String get signUpTip => 'التسجيل في داشدروب';
 
   @override
-  String get authorizedPersonnelOnly => 'الدخول للموظفين المصرح لهم فقط';
+  String get retypePassword => 'أعد إدخال كلمة المرور';
 
   @override
-  String get authorizedId => 'رقم الهوية المصرح به';
+  String get retypePasswordHint => 'أعد إدخال كلمة المرور الخاصة بك';
 
   @override
-  String get authorizedIdHint => 'أدخل رقم الهوية';
+  String get createAccount => 'إنشاء حساب';
 
   @override
-  String get securePassword => 'كلمة مرور آمنة';
+  String get signUpWithGoogle => 'التسجيل باستخدام Google';
 
   @override
-  String get accessDashboard => 'الدخول إلى اللوحة';
+  String get haveAnAccount => 'هل لديك حساب بالفعل؟';
 
   @override
-  String get pendingRequests => 'الطلبات المعلقة';
+  String get normalButton => 'زر عادي';
 
   @override
-  String get activeLeaves => 'الإجازات النشطة';
+  String get buttonWithIcon => 'زر مع أيقونة';
 
   @override
-  String get availableAllowance => 'الرصيد المتاح';
+  String get buttonsPageTitle => 'الأزرار';
 
   @override
-  String get totalStaff => 'إجمالي الموظفين';
+  String get btnName => 'زر';
 
   @override
-  String get urgent => 'عاجل';
+  String get calendarPageTitle => 'التقويم';
 
   @override
-  String get onTrack => 'في المسار';
+  String get chartPageTitle => 'الرسم البياني';
 
   @override
-  String get days => 'أيام';
+  String get totalDrivers => 'السائقين الإجمالية';
 
   @override
-  String get active => 'نشط';
+  String get totalProfit => 'الربح الإجمالي';
 
   @override
-  String get leaveTrends => 'اتجاهات الإجازات';
+  String get totalOrder => 'الطلبات الإجمالية';
 
   @override
-  String get leaveTypeDistribution => 'توزيع أنواع الإجازات';
+  String get totalUsers => 'المستخدمين الإجماليين';
 
   @override
-  String get personnelRegistry => 'سجل الموظفين';
+  String get formElements => 'عناصر النموذج';
 
   @override
-  String get personnelRegistryDesc =>
-      'دليل مفصل لجميع موظفي الإدارة المصرح لهم';
+  String get inputFields => 'حقول الإدخال';
 
   @override
-  String get registerPersonnel => 'تسجيل موظف';
+  String get defaultInput => 'الإدخال الافتراضي';
 
   @override
-  String get searchRegistry => 'البحث بالاسم، البريد، أو رقم الهوية...';
+  String get activeInput => 'الإدخال النشط';
 
   @override
-  String get advancedFilters => 'تصفية متقدمة';
+  String get disabledLabel => 'العلامة المعطلة';
 
   @override
-  String get exportData => 'تصدير البيانات';
+  String get toggleSwitchInput => 'تبديل الإدخال';
 
   @override
-  String get id => 'المعرف';
+  String get switchLabel => 'علامة التبديل';
 
   @override
-  String get fullName => 'الاسم الكامل';
+  String get timeAndDate => 'الوقت والتاريخ';
 
   @override
-  String get officialEmail => 'البريد الرسمي';
+  String get datePicker => 'محدد التاريخ';
 
   @override
-  String get assignedBranch => 'الفرع المعين';
+  String get selectDate => 'اختر التاريخ';
 
   @override
-  String get roleStatus => 'الحالة الوظيفية';
+  String get fileUpload => 'رفع الملف';
 
   @override
-  String get contact => 'الاتصال';
+  String get attachFile => 'إرفاق الملف';
 
   @override
-  String get management => 'الإدارة';
+  String get selectImage => 'اختر الصورة';
 
   @override
-  String get confirmDeletion => 'تأكيد الحذف';
+  String get textareaFields => 'حقول النص';
 
   @override
-  String deleteEmployeeConfirm(Object name) {
-    return 'هل أنت متأكد أنك تريد حذف سجل الموظف $name بشكل دائم؟ لا يمكن التراجع عن هذه العملية.';
-  }
+  String get defaultTextarea => 'النص الافتراضي';
+
+  @override
+  String get activeTextarea => 'النص النشط';
+
+  @override
+  String get disabledTextarea => 'النص المعطل';
+
+  @override
+  String get checkboxAndRadis => 'خانات الاختيار والراديو';
+
+  @override
+  String get selectInput => 'اختر الإدخال';
+
+  @override
+  String get selectCountry => 'اختر الدولة';
+
+  @override
+  String get multiselect => 'قائمة منسدلة متعددة الاختيار';
+
+  @override
+  String get ok => 'حسنًا';
 
   @override
   String get cancel => 'إلغاء';
 
   @override
-  String get confirmDelete => 'حذف';
+  String get formLayoutPageTitle => 'تخطيط النموذج';
 
   @override
-  String get personnel => 'موظف';
-
-  @override
-  String get personalDetails => 'البيانات الشخصية';
+  String get contactForm => 'نموذج الاتصال';
 
   @override
   String get firstName => 'الاسم الأول';
 
   @override
+  String get firstNameHint => 'أدخل اسمك الأول';
+
+  @override
   String get lastName => 'الاسم الأخير';
 
   @override
-  String get emailAddress => 'البريد الإلكتروني';
+  String get lastNameHint => 'أدخل اسمك الأخير';
+
+  @override
+  String get subject => 'الموضوع';
+
+  @override
+  String get subjectHint => 'أدخل موضوعك';
+
+  @override
+  String get selectSubjectHint => 'اختر موضوعك';
+
+  @override
+  String get message => 'الرسالة';
+
+  @override
+  String get messageHint => 'اكتب رسالتك';
+
+  @override
+  String get sendMessage => 'إرسال الرسالة';
+
+  @override
+  String get rememberMe => 'تذكرني';
+
+  @override
+  String get forgetPwd => 'نسيت كلمة المرور؟';
+
+  @override
+  String get signInForm => 'نموذج تسجيل الدخول؟';
+
+  @override
+  String get signUpForm => 'نموذج التسجيل؟';
+
+  @override
+  String get fullName => 'الاسم الكامل';
+
+  @override
+  String get fullNameHint => 'أدخل اسمك الكامل';
+
+  @override
+  String get profile => 'الملف الشخصي';
+
+  @override
+  String get edit => 'تحرير';
+
+  @override
+  String get posts => 'المشاركات';
+
+  @override
+  String get followers => 'المتابعون';
+
+  @override
+  String get following => 'يتابع';
+
+  @override
+  String get aboutMe => 'عنيد';
+
+  @override
+  String get followMeOn => 'تابعني على';
+
+  @override
+  String get resetPwd => 'إعادة تعيين كلمة المرور';
+
+  @override
+  String get userIDReceiveResetLink =>
+      'أدخل عنوان بريدك الإلكتروني لتلقي وصلة إعادة تعيين كلمة المرور.';
+
+  @override
+  String get sendPwdResetLink => 'إرسال وصلة إعادة تعيين';
+
+  @override
+  String get settings => 'الإعدادات';
+
+  @override
+  String get personalInfo => 'المعلومات الشخصية';
 
   @override
   String get phoneNumber => 'رقم الهاتف';
 
   @override
-  String get gender => 'الجنس';
+  String get phoneNumberHint => 'أدخل رقم هاتفك';
 
   @override
-  String get male => 'ذكر';
+  String get userName => 'اسم المستخدم';
 
   @override
-  String get female => 'أنثى';
+  String get userNameHint => 'أدخل اسم المستخدم';
+
+  @override
+  String get save => 'حفظ';
+
+  @override
+  String get yourPhoto => 'صورك';
+
+  @override
+  String get editYourPhoto => 'تحرير صورتك';
+
+  @override
+  String get bio => 'السيرة الشخصية';
+
+  @override
+  String get delete => 'حذف';
+
+  @override
+  String get update => 'تحديث';
+
+  @override
+  String get clickToUpload => 'انقر لتحميل أو اسحب';
+
+  @override
+  String get topChannels => 'القنوات الأعلى';
+
+  @override
+  String get topProducts => 'المنتجات الأعلى';
+
+  @override
+  String get loading => 'جار التحميل';
+
+  @override
+  String get visitors => 'الزوار';
+
+  @override
+  String get source => 'المصدر';
+
+  @override
+  String get revenues => 'الإيرادات';
+
+  @override
+  String get sales => 'المبيعات';
+
+  @override
+  String get conversation => 'التحويل';
+
+  @override
+  String get groupMenu => 'القائمة';
+
+  @override
+  String get dashboard => 'لوحة التحكم';
+
+  @override
+  String get calendar => 'التقويم';
+
+  @override
+  String get forms => 'النماذج';
+
+  @override
+  String get tables => 'الجداول';
+
+  @override
+  String get others => 'آخرون';
+
+  @override
+  String get chart => 'الرسم البياني';
+
+  @override
+  String get uiElements => 'عناصر واجهة المستخدم';
+
+  @override
+  String get alerts => 'تحذيرات';
+
+  @override
+  String get buttons => 'الأزرار';
+
+  @override
+  String get basicChart => 'رسم بياني أساسي';
+
+  @override
+  String get dashDrop => 'DashDrop';
+
+  @override
+  String get authentication => 'المصادقة';
+
+  @override
+  String get advanceTable => 'جدول متقدم';
+
+  @override
+  String get profitThisWeek => 'الربح هذا الأسبوع';
+
+  @override
+  String get package => 'حزمة';
+
+  @override
+  String get invoiceDate => 'تاريخ الفاتورة';
+
+  @override
+  String get status => 'الحالة';
+
+  @override
+  String get actions => 'الإجراءات';
+
+  @override
+  String get productName => 'اسم المنتج';
+
+  @override
+  String get category => 'الفئة';
+
+  @override
+  String get price => 'السعر';
+
+  @override
+  String get sold => 'مباعة';
+
+  @override
+  String get profit => 'ربح';
+
+  @override
+  String get alertTips => 'نصائح التحذيرات';
+
+  @override
+  String get alertDialog => 'حوار التحذيرات';
+
+  @override
+  String get info => 'معلومات';
+
+  @override
+  String get success => 'نجاح';
+
+  @override
+  String get warn => 'تحذير';
+
+  @override
+  String get danger => 'خطر';
+
+  @override
+  String get confirm => 'تأكيد';
+
+  @override
+  String get simpleAlert => 'تحذير بسيط';
+
+  @override
+  String get simple => 'بسيط';
+
+  @override
+  String get simpleConfirm => 'تأكيد بسيط';
+
+  @override
+  String get rflutterAlert => 'تحذير RFlutter';
+
+  @override
+  String get rflutterTip => 'Flutter أكثر رائعة مع RFlutter Alert.';
+
+  @override
+  String get cool => 'جذاب';
+
+  @override
+  String get seeDetail => 'انظر التفاصيل...';
+
+  @override
+  String get tryMore => 'حاول المزيد...';
+
+  @override
+  String get colorPicker => 'محدد اللون';
+
+  @override
+  String get or => 'أو';
+
+  @override
+  String get employees => 'الموظفين';
+
+  @override
+  String get employee => 'الموظف';
+
+  @override
+  String get table => 'جدول';
 
   @override
   String get birthdate => 'تاريخ الميلاد';
 
   @override
-  String get employmentInfo => 'معلومات التوظيف';
+  String get createdAt => 'تم إنشاؤه في';
 
   @override
-  String get branch => 'الفرع';
+  String get gender => 'الجنس';
 
   @override
-  String get department => 'القسم';
+  String get id => 'المعرف';
 
   @override
-  String get leaveBalance => 'رصيد الإجازات (أيام)';
+  String get lastUpdatedAt => 'آخر تحديث';
 
   @override
-  String get accessControl => 'التحكم في الوصول';
+  String get title => 'العنوان';
 
   @override
-  String get confirmPassword => 'تأكيد كلمة المرور';
+  String get create => 'إضافة';
 
   @override
-  String get registering => 'جار التسجيل...';
+  String get permissions => 'صلاحيات';
 
   @override
-  String get register => 'تسجيل';
+  String get customerPageTitle => 'العملاء';
 
   @override
-  String get registerNewPersonnel => 'تسجيل موظف جديد';
+  String get regions => 'المنطقة';
 
   @override
-  String get registerDesc => 'إنشاء ملف تعريف موظف جديد وتعيين صلاحيات النظام.';
+  String get jobOffers => 'عروض التوظيف';
 
   @override
-  String get updatePersonnelRecord => 'تحديث سجل الموظف';
+  String get jobOffer => 'التوظيف';
 
   @override
-  String editingProfileFor(Object name) {
-    return 'تعديل الملف الشخصي لـ: $name';
-  }
+  String get description => 'الوصف';
 
   @override
-  String get leavePasswordBlank =>
-      'اترك حقول كلمة المرور فارغة للاحتفاظ بكلمة المرور الحالية.';
+  String get requestDeadlineDate => 'طلب تاريخ الموعد النهائي';
 
   @override
-  String get updating => 'جار التحديث...';
+  String get vehicleDetail => 'تفاصيل السيارة';
 
   @override
-  String get saveChanges => 'حفظ التغييرات';
+  String get drivers => 'السائقين';
+
+  @override
+  String get driver => 'السائق';
+
+  @override
+  String get addDriver => 'اضافة سائق';
+
+  @override
+  String get vehiclePlateNumber => 'رقم لوحة المركبة';
+
+  @override
+  String get idNumber => 'رقم الهوية';
+
+  @override
+  String get view => 'عرض';
+
+  @override
+  String get name => 'الاسم';
+
+  @override
+  String get avgSpeedKm => 'متوسط السرعة (كم)';
+
+  @override
+  String get maxCapacityCubicM => 'أقصى سعة مكعب (متر)';
+
+  @override
+  String get maxRangekm => 'أقصى مدى (كم)';
+
+  @override
+  String get maxWeightKg => 'أقصى وزن (كيلو غرام)';
+
+  @override
+  String get profitPerKm => 'الربح لكل (كيلومتر)';
+
+  @override
+  String get sensitivityLevel => 'مستوى الحساسية';
+
+  @override
+  String get specifications => 'مواصفات';
+
+  @override
+  String get addVehicle => 'أضافة مركبة';
+
+  @override
+  String get vehicleType => 'نوع المركبة';
+
+  @override
+  String get vehicles => 'المركبات';
+
+  @override
+  String get vehicle => 'مركبة';
+
+  @override
+  String get addHiering => 'اضافة موظف';
+
+  @override
+  String get hiering => 'موظف';
+
+  @override
+  String get hierings => 'موظفين';
 }
