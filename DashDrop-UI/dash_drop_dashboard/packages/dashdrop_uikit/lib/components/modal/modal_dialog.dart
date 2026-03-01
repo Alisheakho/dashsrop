@@ -112,8 +112,8 @@ class ModalDialog {
                             ),
                           SingleChildScrollView(
                             child: Padding(
-                              child: child,
                               padding: const EdgeInsets.all(20),
+                              child: child,
                             ),
                           ),
                           const SizedBox(
@@ -128,8 +128,8 @@ class ModalDialog {
                                     left: 20, right: 20, bottom: 20),
                                 child: Row(
                                   children: [
-                                    if (showCancel!) const Spacer(),
-                                    if (showCancel!)
+                                    if (showCancel) const Spacer(),
+                                    if (showCancel)
                                       SizedBox(
                                         width: 120,
                                         child: ButtonWidget(
@@ -144,7 +144,7 @@ class ModalDialog {
                                           },
                                         ),
                                       ),
-                                    if (showCancel!)
+                                    if (showCancel)
                                       const SizedBox(
                                         width: 20,
                                       ),

@@ -83,7 +83,7 @@ class LineChartWidget extends BaseStlessWidget<LineChartProvider> {
         child: SizedBox(
           width: 140,
           child: SelectWidget(
-            selectionList: dropdownItems!,
+            selectionList: dropdownItems,
             onDropdownChanged: (item) {
               if (onDropdownChanged != null) {
                 onDropdownChanged!(item);
@@ -107,7 +107,7 @@ class LineChartWidget extends BaseStlessWidget<LineChartProvider> {
                   isDark ? DashDropColors.darkBackground : DashDropColors.gray,
               child: Row(
                   mainAxisAlignment: MainAxisAlignment.end,
-                  children: dropdownItems!.map((item) {
+                  children: dropdownItems.map((item) {
                     return ValueListenableBuilder(
                         valueListenable: valueNotifier,
                         builder: (c, selectedValue, child) {
@@ -119,7 +119,7 @@ class LineChartWidget extends BaseStlessWidget<LineChartProvider> {
                                 }
                               },
                               child: Container(
-                                  padding: EdgeInsets.symmetric(
+                                  padding: const EdgeInsets.symmetric(
                                       horizontal: 6, vertical: 2),
                                   decoration: BoxDecoration(
                                       color: selectedValue == item
@@ -134,7 +134,7 @@ class LineChartWidget extends BaseStlessWidget<LineChartProvider> {
                                               color: DashDropColors.border)
                                           : null),
                                   child: Text(
-                                    '${item}',
+                                    item,
                                     style: TextStyle(
                                         fontSize: 13,
                                         color: (isDark

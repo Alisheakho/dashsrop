@@ -31,7 +31,7 @@ class TableDataRowsTableDataRows {
   String? id;
   String? columnName;
   String? align;
-  dynamic? data;
+  dynamic data;
 
   TableDataRowsTableDataRows();
 

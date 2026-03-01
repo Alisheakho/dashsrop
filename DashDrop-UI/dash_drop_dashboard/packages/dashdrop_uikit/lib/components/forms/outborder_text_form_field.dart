@@ -54,7 +54,7 @@ class OutBorderTextFormField extends StatelessWidget {
         if (labelText != null)
           Text(
             labelText ?? '',
-            style: TextStyle(fontSize: 14),
+            style: const TextStyle(fontSize: 14),
           ),
         if (labelText != null)
           const SizedBox(
@@ -105,8 +105,8 @@ class OutBorderTextFormField extends StatelessWidget {
                               width: 1)),
                       errorBorder: const OutlineInputBorder(
                           borderSide: BorderSide(color: Colors.red, width: 1)),
-                      errorStyle:
-                          TextStyle(color: Colors.red, fontSize: 12, height: 2),
+                      errorStyle: const TextStyle(
+                          color: Colors.red, fontSize: 12, height: 2),
                       error: null,
                       contentPadding: const EdgeInsets.symmetric(
                         horizontal: 12,
